@@ -1,0 +1,31 @@
+{
+  "name": "verso-editor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "clean": "turbo clean",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo build && changeset publish",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@changesets/cli": "^2.27.0",
+    "husky": "^9.1.0",
+    "lint-staged": "^15.2.0",
+    "typescript": "^5.7.0",
+    "turbo": "^2.5.0",
+    "vitest": "^3.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json}": ["biome check --write"]
+  },
+  "packageManager": "pnpm@10.8.0"
+}

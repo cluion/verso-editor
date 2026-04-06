@@ -1,0 +1,7 @@
+packages:
+  - "packages/*"
+  - "packages/extensions/*"
+  - "packages/ui/*"
+  - "packages/adapters/*"
+  - "packages/serializers/*"
+  - "apps/*"
