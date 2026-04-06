@@ -30,6 +30,16 @@ importers:
         specifier: ^3.1.0
         version: 3.2.4(yaml@2.8.3)
 
+  apps/demo:
+    dependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+    devDependencies:
+      vite:
+        specifier: ^6.3.0
+        version: 6.4.2(yaml@2.8.3)
+
   packages/core:
     dependencies:
       prosemirror-commands:
