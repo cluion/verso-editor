@@ -4,3 +4,9 @@ dist/
 *.tsbuildinfo
 .DS_Store
 coverage/
+
+.claude/
+.codex/
+.gemini/
+openspec/
+plan/
