@@ -6,8 +6,11 @@ import { DOMParser, DOMSerializer, type Schema } from 'prosemirror-model'
 import { EditorState, type Plugin } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
+import type { Extension } from './extension'
 import { createInputRulesPlugin } from './input-rules'
+import { sortExtensions } from './plugin-manager'
 import { defaultSchema } from './schema'
+import { resolveSchema } from './schema-resolver'
 
 type EditorEvents = {
   update: (json: Record<string, unknown>) => void
@@ -21,6 +24,7 @@ interface EditorOptions {
   content?: string
   schema?: Schema
   plugins?: Plugin[]
+  extensions?: Extension[]
 }
 
 export class Editor {
@@ -29,31 +33,20 @@ export class Editor {
   readonly schema: Schema
 
   constructor(options: EditorOptions) {
-    this.schema = options.schema ?? defaultSchema
-    const plugins = this.createPlugins(options.plugins)
+    const extensionMode = options.extensions && options.extensions.length > 0
 
-    const doc = this.parseContent(options.content ?? '<p></p>')
-
-    this.view = new EditorView(options.element, {
-      state: EditorState.create({ doc, plugins }),
-      dispatchTransaction: (tr) => {
-        const newState = this.view.state.apply(tr)
-        this.view.updateState(newState)
-        if (tr.docChanged) {
-          this.emitter.emit('update', this.getJSON())
-        }
-      },
-      handleDOMEvents: {
-        focus: () => {
-          this.emitter.emit('focus')
-          return false
-        },
-        blur: () => {
-          this.emitter.emit('blur')
-          return false
-        },
-      },
-    })
+    if (extensionMode) {
+      const sorted = sortExtensions(options.extensions)
+      this.schema = options.schema ?? resolveSchema(sorted)
+      const plugins = this.createExtensionPlugins(sorted, options.plugins)
+      const doc = this.parseContent(options.content ?? '<p></p>')
+      this.view = this.createView(options.element, doc, plugins)
+    } else {
+      this.schema = options.schema ?? defaultSchema
+      const plugins = this.createDefaultPlugins(options.plugins)
+      const doc = this.parseContent(options.content ?? '<p></p>')
+      this.view = this.createView(options.element, doc, plugins)
+    }
   }
 
   on<K extends keyof EditorEvents>(event: K, handler: EditorEvents[K]): this {
@@ -112,7 +105,30 @@ export class Editor {
     return DOMParser.fromSchema(this.schema).parse(div)
   }
 
-  private createPlugins(extra?: Plugin[]): Plugin[] {
+  private createView(element: HTMLElement, doc: ProseMirrorNode, plugins: Plugin[]): EditorView {
+    return new EditorView(element, {
+      state: EditorState.create({ doc, plugins }),
+      dispatchTransaction: (tr) => {
+        const newState = this.view.state.apply(tr)
+        this.view.updateState(newState)
+        if (tr.docChanged) {
+          this.emitter.emit('update', this.getJSON())
+        }
+      },
+      handleDOMEvents: {
+        focus: () => {
+          this.emitter.emit('focus')
+          return false
+        },
+        blur: () => {
+          this.emitter.emit('blur')
+          return false
+        },
+      },
+    })
+  }
+
+  private createDefaultPlugins(extra?: Plugin[]): Plugin[] {
     const plugins: Plugin[] = [
       history(),
       createInputRulesPlugin(this.schema),
@@ -129,6 +145,30 @@ export class Editor {
     if (extra) {
       plugins.push(...extra)
     }
+
+    return plugins
+  }
+
+  private createExtensionPlugins(extensions: Extension[], extra?: Plugin[]): Plugin[] {
+    const plugins: Plugin[] = []
+
+    for (const ext of extensions) {
+      if (ext.plugins) {
+        for (const factory of ext.plugins) {
+          const result = factory()
+          if (result instanceof Plugin) {
+            plugins.push(result)
+          }
+        }
+      }
+    }
+
+    if (extra) {
+      plugins.push(...extra)
+    }
+
+    // Fallback base keymap
+    plugins.push(keymap(baseKeymap))
 
     return plugins
   }

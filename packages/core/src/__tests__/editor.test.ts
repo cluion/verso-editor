@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { Editor } from '../editor'
+import { MarkExtension, NodeExtension } from '../extension'
 
 describe('Editor', () => {
   function createEditor() {
@@ -74,6 +75,46 @@ describe('Editor', () => {
     editor.off('update', handler)
     editor.setContent('<p>trigger</p>')
     expect(handler).not.toHaveBeenCalled()
+    editor.destroy()
+  })
+})
+
+describe('Editor with extensions', () => {
+  it('creates editor with extensions path', () => {
+    const element = document.createElement('div')
+    document.body.appendChild(element)
+
+    const bold = MarkExtension.create({
+      name: 'bold',
+      markSpec: {
+        parseDOM: [{ tag: 'strong' }],
+        toDOM: () => ['strong', 0] as const,
+      },
+    })
+
+    const editor = new Editor({ element, extensions: [bold] })
+    expect(editor.view.dom.parentElement).toBe(element)
+    expect(editor.schema.marks.bold).toBeDefined()
+    editor.destroy()
+  })
+
+  it('extension schema merges with base nodes', () => {
+    const element = document.createElement('div')
+    document.body.appendChild(element)
+
+    const heading = NodeExtension.create({
+      name: 'heading',
+      nodeSpec: {
+        content: 'inline*',
+        group: 'block',
+        attrs: { level: { default: 1 } },
+        toDOM: () => ['h1', 0] as unknown as HTMLElement,
+      },
+    })
+
+    const editor = new Editor({ element, extensions: [heading] })
+    expect(editor.schema.nodes.heading).toBeDefined()
+    expect(editor.schema.nodes.paragraph).toBeDefined()
     editor.destroy()
   })
 })
