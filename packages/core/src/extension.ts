@@ -1,7 +1,5 @@
 import type { MarkSpec, NodeSpec } from 'prosemirror-model'
 
-type Recursive<T> = { [K in keyof T]?: Recursive<T[K]> }
-
 export interface ExtensionConfig<
   Options extends Record<string, unknown> = Record<string, unknown>,
 > {
@@ -41,7 +39,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
   readonly inputRules: ExtensionInputRulesFactory | undefined
   readonly commands: ExtensionCommands | undefined
 
-  private constructor(
+  protected constructor(
     name: string,
     options: Options,
     dependencies: string[],

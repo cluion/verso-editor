@@ -3,7 +3,7 @@ import { history, redo, undo } from 'prosemirror-history'
 import { keymap } from 'prosemirror-keymap'
 import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import { DOMParser, DOMSerializer, type Schema } from 'prosemirror-model'
-import { EditorState, type Plugin } from 'prosemirror-state'
+import { EditorState, Plugin } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
 import type { Extension } from './extension'
@@ -36,7 +36,7 @@ export class Editor {
     const extensionMode = options.extensions && options.extensions.length > 0
 
     if (extensionMode) {
-      const sorted = sortExtensions(options.extensions)
+      const sorted = sortExtensions(options.extensions ?? [])
       this.schema = options.schema ?? resolveSchema(sorted)
       const plugins = this.createExtensionPlugins(sorted, options.plugins)
       const doc = this.parseContent(options.content ?? '<p></p>')

@@ -18,7 +18,10 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.0",
-    "@verso-editor/core": "workspace:*"
+    "@verso-editor/core": "workspace:*",
+    "prosemirror-commands": "^1.7.0",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.38.0"
   },
   "devDependencies": {
     "jsdom": "^26.1.0",

@@ -1,2 +1,1 @@
-// Bubble Menu - Phase 3 implementation
-export {}
+export { createBubbleMenu, type BubbleMenuItem, type BubbleMenuOptions } from './bubble-menu'
