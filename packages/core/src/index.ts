@@ -1,1 +1,5 @@
-export {}
+export { Editor } from './editor'
+export { EventEmitter } from './event-emitter'
+export { createInputRulesPlugin, inputRulesPluginKey } from './input-rules'
+export { createKeymapPlugins } from './keymap'
+export { defaultSchema, defaultNodeSpecs, defaultMarkSpecs } from './schema'
