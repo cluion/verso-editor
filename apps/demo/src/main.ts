@@ -1,2 +1,15 @@
-// Will be filled with actual code after Phase 1
-console.log('Verso Editor Demo — waiting for core implementation')
+import { Editor } from '@verso-editor/core'
+
+const element = document.querySelector<HTMLElement>('#editor')
+
+if (!element) {
+  throw new Error('Editor element not found')
+}
+
+const editor = new Editor({
+  element,
+  content: '<p>Start typing...</p>',
+})
+
+// Expose for debugging
+Object.assign(window, { editor })
