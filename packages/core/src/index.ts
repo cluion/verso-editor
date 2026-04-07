@@ -8,6 +8,15 @@ export {
   type NodeExtensionConfig,
   type MarkExtensionConfig,
 } from './extension'
+export {
+  createToggleMark,
+  createSetBlockType,
+  createToggleBlockType,
+  createWrapIn,
+  createLift,
+  isMarkActive,
+  isNodeActive,
+} from './command-manager'
 export { createInputRulesPlugin, inputRulesPluginKey } from './input-rules'
 export { createKeymapPlugins } from './keymap'
 export { sortExtensions } from './plugin-manager'
