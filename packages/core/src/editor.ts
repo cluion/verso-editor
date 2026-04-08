@@ -25,14 +25,17 @@ interface EditorOptions {
   schema?: Schema
   plugins?: Plugin[]
   extensions?: Extension[]
+  onError?: (error: Error) => void
 }
 
 export class Editor {
   private emitter = new EventEmitter<EditorEvents>()
+  private readonly errorHandler: (error: Error) => void
   readonly view: EditorView
   readonly schema: Schema
 
   constructor(options: EditorOptions) {
+    this.errorHandler = options.onError ?? ((error: Error) => console.error(error))
     const extensionMode = options.extensions && options.extensions.length > 0
 
     if (extensionMode) {
@@ -162,9 +165,13 @@ export class Editor {
     for (const ext of extensions) {
       if (ext.plugins) {
         for (const factory of ext.plugins) {
-          const result = factory()
-          if (result instanceof Plugin) {
-            plugins.push(result)
+          try {
+            const result = factory()
+            if (result instanceof Plugin) {
+              plugins.push(result)
+            }
+          } catch (error) {
+            this.errorHandler(error instanceof Error ? error : new Error(String(error)))
           }
         }
       }
