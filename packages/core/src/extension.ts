@@ -1,5 +1,19 @@
 import type { MarkSpec, NodeSpec } from 'prosemirror-model'
 
+export type NodeViewFactory = (
+  node: import('prosemirror-model').Node,
+  view: import('prosemirror-view').EditorView,
+  getPos: () => number | undefined,
+) => {
+  dom: HTMLElement
+  contentDOM?: HTMLElement
+  update?: (node: import('prosemirror-model').Node) => boolean
+  destroy?: () => void
+  ignoreMutation?: (mutation: MutationRecord) => boolean
+  selectNode?: () => void
+  deselectNode?: () => void
+}
+
 export interface ExtensionConfig<
   Options extends Record<string, unknown> = Record<string, unknown>,
 > {
@@ -11,6 +25,7 @@ export interface ExtensionConfig<
   keymap?: ExtensionKeymapFactory
   inputRules?: ExtensionInputRulesFactory
   commands?: ExtensionCommands
+  nodeView?: NodeViewFactory
 }
 
 export interface NodeExtensionConfig<
@@ -38,6 +53,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
   readonly keymap: ExtensionKeymapFactory | undefined
   readonly inputRules: ExtensionInputRulesFactory | undefined
   readonly commands: ExtensionCommands | undefined
+  readonly nodeView: NodeViewFactory | undefined
 
   protected constructor(
     name: string,
@@ -47,6 +63,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
     keymap: ExtensionKeymapFactory | undefined,
     inputRules: ExtensionInputRulesFactory | undefined,
     commands: ExtensionCommands | undefined,
+    nodeView: NodeViewFactory | undefined,
   ) {
     this.name = name
     this.options = options
@@ -55,6 +72,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
     this.keymap = keymap
     this.inputRules = inputRules
     this.commands = commands
+    this.nodeView = nodeView
   }
 
   static create<Options extends Record<string, unknown> = Record<string, unknown>>(
@@ -70,6 +88,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
       config.keymap,
       config.inputRules,
       config.commands,
+      config.nodeView,
     )
   }
 
@@ -82,6 +101,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
       this.keymap,
       this.inputRules,
       this.commands,
+      this.nodeView,
     )
   }
 }
@@ -100,6 +120,7 @@ export class NodeExtension<
       base.keymap,
       base.inputRules,
       base.commands,
+      base.nodeView,
     )
     this.nodeSpec = nodeSpec
   }
@@ -131,6 +152,7 @@ export class MarkExtension<
       base.keymap,
       base.inputRules,
       base.commands,
+      base.nodeView,
     )
     this.markSpec = markSpec
   }

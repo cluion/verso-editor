@@ -6,7 +6,7 @@ import { DOMParser, DOMSerializer, type Schema } from 'prosemirror-model'
 import { EditorState, Plugin } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
-import type { Extension } from './extension'
+import type { Extension, NodeViewFactory } from './extension'
 import { createInputRulesPlugin } from './input-rules'
 import { sortExtensions } from './plugin-manager'
 import { defaultSchema } from './schema'
@@ -39,8 +39,9 @@ export class Editor {
       const sorted = sortExtensions(options.extensions ?? [])
       this.schema = options.schema ?? resolveSchema(sorted)
       const plugins = this.createExtensionPlugins(sorted, options.plugins)
+      const nodeViews = this.collectNodeViews(sorted)
       const doc = this.parseContent(options.content ?? '<p></p>')
-      this.view = this.createView(options.element, doc, plugins)
+      this.view = this.createView(options.element, doc, plugins, nodeViews)
     } else {
       this.schema = options.schema ?? defaultSchema
       const plugins = this.createDefaultPlugins(options.plugins)
@@ -105,9 +106,15 @@ export class Editor {
     return DOMParser.fromSchema(this.schema).parse(div)
   }
 
-  private createView(element: HTMLElement, doc: ProseMirrorNode, plugins: Plugin[]): EditorView {
+  private createView(
+    element: HTMLElement,
+    doc: ProseMirrorNode,
+    plugins: Plugin[],
+    nodeViews?: Record<string, NodeViewFactory>,
+  ): EditorView {
     return new EditorView(element, {
       state: EditorState.create({ doc, plugins }),
+      nodeViews,
       dispatchTransaction: (tr) => {
         const newState = this.view.state.apply(tr)
         this.view.updateState(newState)
@@ -171,5 +178,17 @@ export class Editor {
     plugins.push(keymap(baseKeymap))
 
     return plugins
+  }
+
+  private collectNodeViews(extensions: Extension[]): Record<string, NodeViewFactory> {
+    const nodeViews: Record<string, NodeViewFactory> = {}
+
+    for (const ext of extensions) {
+      if (ext.nodeView && 'nodeSpec' in ext) {
+        nodeViews[ext.name] = ext.nodeView
+      }
+    }
+
+    return nodeViews
   }
 }

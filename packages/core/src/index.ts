@@ -7,6 +7,7 @@ export {
   type ExtensionConfig,
   type NodeExtensionConfig,
   type MarkExtensionConfig,
+  type NodeViewFactory,
 } from './extension'
 export {
   createToggleMark,
