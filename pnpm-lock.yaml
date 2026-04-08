@@ -263,6 +263,25 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(yaml@2.8.3)
 
+  packages/extensions/image:
+    dependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+    devDependencies:
+      jsdom:
+        specifier: ^26.1.0
+        version: 26.1.0
+      vite:
+        specifier: ^6.3.0
+        version: 6.4.2(@types/node@25.5.2)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.5.2)(rollup@4.60.1)(typescript@5.9.3)(vite@6.4.2(@types/node@25.5.2)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(yaml@2.8.3)
+
   packages/extensions/italic:
     dependencies:
       '@verso-editor/core':
@@ -344,6 +363,86 @@ importers:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
+    devDependencies:
+      jsdom:
+        specifier: ^26.1.0
+        version: 26.1.0
+      vite:
+        specifier: ^6.3.0
+        version: 6.4.2(@types/node@25.5.2)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.5.2)(rollup@4.60.1)(typescript@5.9.3)(vite@6.4.2(@types/node@25.5.2)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(yaml@2.8.3)
+
+  packages/extensions/placeholder:
+    dependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+    devDependencies:
+      jsdom:
+        specifier: ^26.1.0
+        version: 26.1.0
+      vite:
+        specifier: ^6.3.0
+        version: 6.4.2(@types/node@25.5.2)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.5.2)(rollup@4.60.1)(typescript@5.9.3)(vite@6.4.2(@types/node@25.5.2)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(yaml@2.8.3)
+
+  packages/extensions/starter-kit:
+    dependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      '@verso-editor/extension-blockquote':
+        specifier: workspace:*
+        version: link:../blockquote
+      '@verso-editor/extension-bold':
+        specifier: workspace:*
+        version: link:../bold
+      '@verso-editor/extension-bullet-list':
+        specifier: workspace:*
+        version: link:../bullet-list
+      '@verso-editor/extension-code':
+        specifier: workspace:*
+        version: link:../code
+      '@verso-editor/extension-code-block':
+        specifier: workspace:*
+        version: link:../code-block
+      '@verso-editor/extension-hard-break':
+        specifier: workspace:*
+        version: link:../hard-break
+      '@verso-editor/extension-heading':
+        specifier: workspace:*
+        version: link:../heading
+      '@verso-editor/extension-history':
+        specifier: workspace:*
+        version: link:../history
+      '@verso-editor/extension-horizontal-rule':
+        specifier: workspace:*
+        version: link:../horizontal-rule
+      '@verso-editor/extension-italic':
+        specifier: workspace:*
+        version: link:../italic
+      '@verso-editor/extension-link':
+        specifier: workspace:*
+        version: link:../link
+      '@verso-editor/extension-list-item':
+        specifier: workspace:*
+        version: link:../list-item
+      '@verso-editor/extension-ordered-list':
+        specifier: workspace:*
+        version: link:../ordered-list
+      '@verso-editor/extension-paragraph':
+        specifier: workspace:*
+        version: link:../paragraph
     devDependencies:
       jsdom:
         specifier: ^26.1.0
