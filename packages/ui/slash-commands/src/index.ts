@@ -40,10 +40,13 @@ export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
     },
     view(editorView: EditorView) {
       let menu: HTMLElement | null = null
+      let menuIdCounter = 0
+      const menuId = `vs-slash-menu-${menuIdCounter++}`
 
       function createMenu(): HTMLElement {
         const el = document.createElement('div')
         el.classList.add('vs-slash-menu')
+        el.id = menuId
         el.setAttribute('role', 'listbox')
         el.setAttribute('aria-label', 'Slash commands')
         el.style.display = 'none'
@@ -70,6 +73,7 @@ export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
         filtered.forEach((cmd, index) => {
           const item = document.createElement('div')
           item.classList.add('vs-slash-menu__item')
+          item.id = `${menuId}-item-${index}`
           item.setAttribute('role', 'option')
           item.setAttribute('aria-selected', index === state.selectedIndex ? 'true' : 'false')
           if (index === state.selectedIndex) {
@@ -97,10 +101,18 @@ export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
 
         // Position near cursor
         if (state.range) {
-          const coords = view.coordsAtPos(state.range.from)
-          menu.style.top = `${coords.bottom + 4}px`
-          menu.style.left = `${coords.left}px`
+          try {
+            const coords = view.coordsAtPos(state.range.from)
+            menu.style.top = `${coords.bottom + 4}px`
+            menu.style.left = `${coords.left}px`
+          } catch {
+            // coordsAtPos may fail in jsdom without layout; skip positioning
+          }
         }
+
+        // Update aria-activedescendant to point at the selected item
+        const activeItemId = `${menuId}-item-${state.selectedIndex}`
+        menu.setAttribute('aria-activedescendant', activeItemId)
       }
 
       function selectItem(view: EditorView, _item: SlashCommandItem, state: SlashMenuState): void {

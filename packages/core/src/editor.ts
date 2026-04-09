@@ -26,16 +26,20 @@ interface EditorOptions {
   plugins?: Plugin[]
   extensions?: Extension[]
   onError?: (error: Error) => void
+  ariaLabel?: string
 }
 
 export class Editor {
   private emitter = new EventEmitter<EditorEvents>()
   private readonly errorHandler: (error: Error) => void
+  private readonly ariaLabel: string
+  private liveRegion: HTMLElement | null = null
   readonly view: EditorView
   readonly schema: Schema
 
   constructor(options: EditorOptions) {
     this.errorHandler = options.onError ?? ((error: Error) => console.error(error))
+    this.ariaLabel = options.ariaLabel ?? 'Rich text editor'
     const extensionMode = options.extensions && options.extensions.length > 0
 
     if (extensionMode) {
@@ -51,6 +55,8 @@ export class Editor {
       const doc = this.parseContent(options.content ?? '<p></p>')
       this.view = this.createView(options.element, doc, plugins)
     }
+
+    this.setupAccessibility(options.element)
   }
 
   on<K extends keyof EditorEvents>(event: K, handler: EditorEvents[K]): this {
@@ -99,6 +105,36 @@ export class Editor {
     this.emitter.emit('destroy')
     this.view.destroy()
     this.emitter.destroy()
+    this.liveRegion?.remove()
+    this.liveRegion = null
+  }
+
+  /**
+   * Announce a message to screen readers via the aria-live region.
+   */
+  announce(message: string): void {
+    if (this.liveRegion) {
+      this.liveRegion.textContent = message
+    }
+  }
+
+  private setupAccessibility(element: HTMLElement): void {
+    // Set ARIA attributes on the contenteditable element
+    this.view.dom.setAttribute('role', 'textbox')
+    this.view.dom.setAttribute('aria-multiline', 'true')
+    this.view.dom.setAttribute('aria-label', this.ariaLabel)
+
+    // Create visually hidden live region for screen reader announcements
+    this.liveRegion = document.createElement('div')
+    this.liveRegion.setAttribute('aria-live', 'polite')
+    this.liveRegion.className = 'vs-sr-only'
+    this.liveRegion.style.position = 'absolute'
+    this.liveRegion.style.width = '1px'
+    this.liveRegion.style.height = '1px'
+    this.liveRegion.style.overflow = 'hidden'
+    this.liveRegion.style.clip = 'rect(0, 0, 0, 0)'
+    this.liveRegion.style.whiteSpace = 'nowrap'
+    element.appendChild(this.liveRegion)
   }
 
   private parseContent(html: string): ProseMirrorNode {

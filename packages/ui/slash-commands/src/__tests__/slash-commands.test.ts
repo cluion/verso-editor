@@ -89,4 +89,59 @@ describe('Slash Commands', () => {
     const plugin = createSlashCommandPlugin({ commands: customCommands })
     expect(plugin).toBeInstanceOf(Plugin)
   })
+
+  it('sets aria-activedescendant on listbox when active', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    // Trigger slash command menu
+    const slashEvent = new KeyboardEvent('keydown', { key: '/', bubbles: true })
+    view.dom.dispatchEvent(slashEvent)
+
+    const menu = view.dom.parentElement?.querySelector('.vs-slash-menu') as HTMLElement
+    expect(menu).not.toBeNull()
+    expect(menu?.getAttribute('aria-activedescendant')).toMatch(/^vs-slash-menu-\d+-item-\d+$/)
+
+    view.destroy()
+    views = []
+  })
+
+  it('assigns unique ids to menu items', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    const slashEvent = new KeyboardEvent('keydown', { key: '/', bubbles: true })
+    view.dom.dispatchEvent(slashEvent)
+
+    const items = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__item')
+    expect(items?.length).toBe(3)
+    expect(items?.[0]?.id).toMatch(/^vs-slash-menu-\d+-item-\d+$/)
+    expect(items?.[1]?.id).toMatch(/^vs-slash-menu-\d+-item-\d+$/)
+    expect(items?.[0]?.id).not.toBe(items?.[1]?.id)
+
+    view.destroy()
+    views = []
+  })
+
+  it('updates aria-activedescendant on arrow navigation', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    // Open menu
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: '/', bubbles: true }))
+
+    // Navigate down
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }))
+
+    const menu = view.dom.parentElement?.querySelector('.vs-slash-menu') as HTMLElement
+    const activedesc = menu?.getAttribute('aria-activedescendant')
+    expect(activedesc).toMatch(/^vs-slash-menu-\d+-item-\d+$/)
+
+    // The active item should be the second one (index 1)
+    const items = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__item')
+    expect(items?.[1]?.id).toBe(activedesc)
+
+    view.destroy()
+    views = []
+  })
 })
