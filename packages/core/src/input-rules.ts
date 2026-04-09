@@ -14,6 +14,25 @@ export { key as inputRulesPluginKey }
 export function createInputRulesPlugin(schema: Schema): Plugin {
   const rules: InputRule[] = []
 
+  // --- Inline mark rules ---
+
+  // **text** → bold
+  if (schema.marks.bold) {
+    rules.push(markInputRule(/\*\*(.+)\*\*$/, schema.marks.bold))
+  }
+
+  // *text* → italic (must come after bold rule)
+  if (schema.marks.italic) {
+    rules.push(markInputRule(/\*(.+)\*$/, schema.marks.italic))
+  }
+
+  // `text` → inline code
+  if (schema.marks.code) {
+    rules.push(markInputRule(/`(.+)`$/, schema.marks.code))
+  }
+
+  // --- Block rules ---
+
   // # → heading (h1-h6)
   if (schema.nodes.heading) {
     rules.push(
@@ -69,5 +88,25 @@ export function createInputRulesPlugin(schema: Schema): Plugin {
     state: rulesPlugin.spec.state,
     props: rulesPlugin.spec.props,
     view: rulesPlugin.spec.view,
+  })
+}
+
+/**
+ * Create an InputRule that wraps matched text with a mark.
+ * e.g. typing `*hello*` applies italic to "hello" and removes the asterisks.
+ */
+function markInputRule(pattern: RegExp, markType: Schema['marks'][string]): InputRule {
+  return new InputRule(pattern, (state, match, start, end) => {
+    const text = match[1]
+    const from = start + match[0].indexOf(text)
+    const to = from + text.length
+
+    const tr = state.tr
+    // Remove the delimiter characters
+    tr.delete(to, end)
+    tr.delete(start, from)
+    // Apply the mark to the text
+    tr.addMark(start, start + text.length, markType.create())
+    return tr
   })
 }

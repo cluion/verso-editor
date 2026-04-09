@@ -1,5 +1,6 @@
 import type { Editor } from '@verso-editor/core'
 import { setBlockType, toggleMark } from 'prosemirror-commands'
+import type { EditorState } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 
 export interface BubbleMenuItem {
@@ -21,12 +22,18 @@ interface BubbleMenu {
 export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
   const { editor, element, items, shouldShow } = options
   let destroyed = false
-  let cleanupAutoUpdate: (() => void) | undefined
 
   // Setup element
   element.setAttribute('role', 'toolbar')
-  element.setAttribute('aria-label', 'Formatting toolbar')
+  element.setAttribute('aria-label', 'Bubble menu')
   element.style.display = 'none'
+  element.style.position = 'fixed'
+  element.style.zIndex = '1000'
+
+  // Prevent editor blur when clicking bubble menu buttons
+  element.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
 
   // Create buttons
   for (const item of items) {
@@ -40,30 +47,49 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     element.appendChild(button)
   }
 
-  // Plugin view.update listens to selection changes
-  const view = editor.view
+  // Move to body to avoid parent CSS interfering with fixed positioning
+  document.body.appendChild(element)
 
-  // Override update to listen for selection changes
-  const originalUpdate = view.updateState.bind(view)
-  view.updateState = (state) => {
-    originalUpdate(state)
-    if (!destroyed) {
+  // --- Event listeners ---
+
+  // Editor update: show/hide based on selection state
+  function onEditorUpdate() {
+    if (destroyed) return
+    // Defer to next frame so ProseMirror state + DOM are fully settled
+    requestAnimationFrame(() => {
+      if (destroyed) return
       updateVisibility()
-    }
+    })
   }
+  editor.on('update', onEditorUpdate)
+
+  // Editor blur: always hide
+  function onEditorBlur() {
+    if (destroyed) return
+    // Small delay so click on bubble menu button registers first
+    setTimeout(() => {
+      if (destroyed) return
+      if (!editor.view.hasFocus()) {
+        hide()
+      }
+    }, 150)
+  }
+  editor.on('blur', onEditorBlur)
+
+  // --- Visibility ---
 
   function updateVisibility() {
     if (destroyed) return
 
-    const { empty } = view.state.selection
-    const hasFocus = view.hasFocus()
+    const { empty } = editor.view.state.selection
+    const hasFocus = editor.view.hasFocus()
 
     if (empty || !hasFocus) {
       hide()
       return
     }
 
-    if (shouldShow && !shouldShow(view)) {
+    if (shouldShow && !shouldShow(editor.view)) {
       hide()
       return
     }
@@ -73,43 +99,69 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
   }
 
   function show() {
-    element.style.display = ''
+    element.style.display = 'flex'
+    // Wait for layout to compute offsetWidth/offsetHeight
+    requestAnimationFrame(() => {
+      if (destroyed) return
+      positionBubble()
+    })
   }
 
   function hide() {
     element.style.display = 'none'
-    if (cleanupAutoUpdate) {
-      cleanupAutoUpdate()
-      cleanupAutoUpdate = undefined
-    }
   }
 
+  function positionBubble() {
+    const { from, to, empty } = editor.view.state.selection
+    if (empty) return
+
+    const view = editor.view
+    const startCoords = view.coordsAtPos(from)
+    const endCoords = view.coordsAtPos(to)
+
+    const selectionCenter = (startCoords.left + endCoords.right) / 2
+    const elementWidth = element.offsetWidth
+    const left = Math.max(
+      8,
+      Math.min(selectionCenter - elementWidth / 2, window.innerWidth - elementWidth - 8),
+    )
+
+    const top = startCoords.top - element.offsetHeight - 8
+
+    element.style.left = `${left}px`
+    element.style.top = `${top}px`
+  }
+
+  // --- Active states ---
+
   function updateActiveStates() {
-    const { state } = view
+    const { state } = editor.view
     const buttons = element.querySelectorAll('button[data-command]')
     for (const button of buttons) {
       const command = button.getAttribute('dataCommand') ?? button.getAttribute('data-command')
       const cmd = command ?? ''
 
-      // Check if it's a mark or a node type
       const mark = state.schema.marks[cmd]
       if (mark) {
         const active = isMarkActive(state, cmd)
         button.setAttribute('aria-pressed', active ? 'true' : 'false')
+        button.classList.toggle('active', active)
         continue
       }
 
-      // Node type active check (e.g. heading:level=1)
       const parsed = parseCommand(cmd)
       const nodeType = state.schema.nodes[parsed.nodeName]
       if (nodeType) {
         const active = isNodeActive(state, parsed.nodeName, parsed.attrs)
         button.setAttribute('aria-pressed', active ? 'true' : 'false')
+        button.classList.toggle('active', active)
       }
     }
   }
 
-  function isMarkActive(state: typeof view.state, markName: string): boolean {
+  // --- Helpers ---
+
+  function isMarkActive(state: EditorState, markName: string): boolean {
     const mark = state.schema.marks[markName]
     if (!mark) return false
     const { from, $from, to, empty } = state.selection
@@ -118,7 +170,7 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
   }
 
   function isNodeActive(
-    state: typeof view.state,
+    state: EditorState,
     nodeName: string,
     attrs?: Record<string, unknown>,
   ): boolean {
@@ -139,10 +191,6 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     return false
   }
 
-  /**
-   * Parse command string like "heading:level=1" into node name + attrs.
-   * Falls back to plain node name if no attrs specified.
-   */
   function parseCommand(command: string): { nodeName: string; attrs?: Record<string, unknown> } {
     const colonIdx = command.indexOf(':')
     if (colonIdx === -1) return { nodeName: command }
@@ -165,19 +213,16 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
   function executeCommand(editorInstance: Editor, command: string) {
     const { state, dispatch } = editorInstance.view
 
-    // Try mark toggle first
     const mark = state.schema.marks[command]
     if (mark) {
       toggleMark(mark)(state, dispatch)
       return
     }
 
-    // Try node type toggle (e.g. heading:level=1)
     const { nodeName, attrs } = parseCommand(command)
     const nodeType = state.schema.nodes[nodeName]
     if (nodeType) {
       if (isNodeActive(state, nodeName, attrs)) {
-        // Toggle back to paragraph
         const paragraph = state.schema.nodes.paragraph
         if (paragraph) {
           setBlockType(paragraph)(state, dispatch)
@@ -192,12 +237,18 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     destroy() {
       if (destroyed) return
       destroyed = true
-      // Restore original updateState
-      view.updateState = originalUpdate
+      editor.off('update', onEditorUpdate)
+      editor.off('blur', onEditorBlur)
       hide()
       element.textContent = ''
       element.removeAttribute('role')
       element.removeAttribute('aria-label')
+      element.style.position = ''
+      element.style.zIndex = ''
+      element.style.top = ''
+      element.style.left = ''
+      element.style.display = ''
+      element.remove()
     },
   }
 }

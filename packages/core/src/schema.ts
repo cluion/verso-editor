@@ -33,6 +33,7 @@ const nodes: Record<string, NodeSpec> = {
     group: 'block',
     content: 'text*',
     marks: '',
+    code: true,
     parseDOM: [{ tag: 'pre' }],
     toDOM: () => ['pre', ['code', 0]],
   },

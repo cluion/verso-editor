@@ -1,10 +1,8 @@
-import { createBubbleMenu } from '@verso-editor/bubble-menu'
 import { Editor } from '@verso-editor/core'
 import { setBlockType, toggleMark } from 'prosemirror-commands'
 
 const element = document.querySelector<HTMLElement>('#editor')
 const toolbarEl = document.querySelector<HTMLElement>('#toolbar')
-const bubbleEl = document.querySelector<HTMLElement>('#bubble-menu')
 
 if (!element) {
   throw new Error('Editor element not found')
@@ -14,18 +12,17 @@ const initialContent = `
 <h1>Verso Editor</h1>
 <p>這是一個開源富文本編輯器，基於 ProseMirror 打造。試試以下功能：</p>
 <h2>文字格式</h2>
-<p>選取文字後會跳出 <strong>懸浮工具列</strong>，可以切換粗體、斜體、行內程式碼。</p>
-<h2>標題切換</h2>
-<p>使用上方固定工具列的 H1~H6 按鈕切換標題層級，也可以用 Markdown 快捷鍵：</p>
+<p>使用上方固定工具列的按鈕切換格式：</p>
+<ul>
+  <li><strong>粗體</strong>、<em>斜體</em>、<code>行內程式碼</code></li>
+  <li>H1 ~ H6 標題切換</li>
+</ul>
+<h2>Markdown 快捷鍵</h2>
 <ul>
   <li>輸入 <code>#</code> + 空格 → H1</li>
   <li>輸入 <code>##</code> + 空格 → H2</li>
   <li>輸入 <code>###</code> + 空格 → H3</li>
-</ul>
-<h3>其他快捷鍵</h3>
-<ul>
-  <li><code>Ctrl+B</code> 粗體</li>
-  <li><code>Ctrl+I</code> 斜體</li>
+  <li><code>Ctrl+B</code> 粗體 / <code>Ctrl+I</code> 斜體</li>
   <li><code>&gt;</code> + 空格 → 引用區塊</li>
   <li><code>---</code> → 分隔線</li>
 </ul>
@@ -83,14 +80,12 @@ function isNodeActive(
 function executeCommand(cmd: string): void {
   const { state, dispatch } = editor.view
 
-  // Try mark toggle
   const mark = state.schema.marks[cmd]
   if (mark) {
     toggleMark(mark)(state, dispatch)
     return
   }
 
-  // Try node type toggle
   const { nodeName, attrs } = parseCommand(cmd)
   const nodeType = state.schema.nodes[nodeName]
   if (nodeType) {
@@ -153,20 +148,6 @@ if (toolbarEl) {
 
   editor.on('update', updateToolbar)
   updateToolbar()
-}
-
-// --- Bubble Menu (appears on text selection) ---
-
-if (bubbleEl) {
-  createBubbleMenu({
-    editor,
-    element: bubbleEl,
-    items: [
-      { command: 'bold', label: 'B' },
-      { command: 'italic', label: 'I' },
-      { command: 'code', label: '</>' },
-    ],
-  })
 }
 
 Object.assign(window, { editor })

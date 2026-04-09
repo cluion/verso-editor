@@ -1,5 +1,5 @@
-import { baseKeymap, toggleMark } from 'prosemirror-commands'
-import { history, redo, undo } from 'prosemirror-history'
+import { baseKeymap } from 'prosemirror-commands'
+import { history } from 'prosemirror-history'
 import { keymap } from 'prosemirror-keymap'
 import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import { DOMParser, DOMSerializer, type Schema } from 'prosemirror-model'
@@ -8,6 +8,7 @@ import { EditorView } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
 import type { Extension, NodeViewFactory } from './extension'
 import { createInputRulesPlugin } from './input-rules'
+import { createKeymapPlugins } from './keymap'
 import { sortExtensions } from './plugin-manager'
 import { defaultSchema } from './schema'
 import { resolveSchema } from './schema-resolver'
@@ -172,9 +173,7 @@ export class Editor {
         } catch (error) {
           this.errorHandler(error instanceof Error ? error : new Error(String(error)))
         }
-        if (tr.docChanged) {
-          this.emitter.emit('update', this.getJSON())
-        }
+        this.emitter.emit('update', this.getJSON())
       },
       handleDOMEvents: {
         focus: () => {
@@ -193,13 +192,7 @@ export class Editor {
     const plugins: Plugin[] = [
       history(),
       createInputRulesPlugin(this.schema),
-      keymap({
-        'Mod-z': undo,
-        'Mod-y': redo,
-        'Mod-Shift-z': redo,
-        'Mod-b': toggleMark(this.schema.marks.bold),
-        'Mod-i': toggleMark(this.schema.marks.italic),
-      }),
+      ...createKeymapPlugins(this.schema),
       keymap(baseKeymap),
     ]
 
