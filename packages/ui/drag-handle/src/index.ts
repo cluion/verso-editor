@@ -4,20 +4,35 @@ import type { EditorView } from 'prosemirror-view'
 
 const dragHandleKey = new PluginKey('versoDragHandle')
 
+const DRAG_MIME = 'application/x-verso-drag'
+
 interface DragHandleState {
   active: boolean
   pos: number | null
   node: ProseMirrorNode | null
+  dragging: boolean
+  fromPos: number | null
 }
 
+/**
+ * Create a Drag Handle plugin that provides:
+ * - Hover detection to show/hide a drag handle next to block nodes
+ * - Drag-and-drop sorting of block nodes via handle drag
+ */
 export function createDragHandlePlugin(): Plugin {
   return new Plugin({
     key: dragHandleKey,
     state: {
-      init: (): DragHandleState => ({ active: false, pos: null, node: null }),
+      init: (): DragHandleState => ({
+        active: false,
+        pos: null,
+        node: null,
+        dragging: false,
+        fromPos: null,
+      }),
       apply: (tr, value) => {
         const meta = tr.getMeta(dragHandleKey)
-        if (meta) return meta
+        if (meta) return { ...value, ...meta }
         return value
       },
     },
@@ -27,6 +42,7 @@ export function createDragHandlePlugin(): Plugin {
       handle.setAttribute('role', 'button')
       handle.setAttribute('aria-label', 'Drag to move block')
       handle.setAttribute('tabindex', '0')
+      handle.setAttribute('draggable', 'true')
       handle.style.display = 'none'
       handle.style.position = 'absolute'
       handle.style.cursor = 'grab'
@@ -47,6 +63,23 @@ export function createDragHandlePlugin(): Plugin {
       function hideHandle(): void {
         handle.style.display = 'none'
       }
+
+      // Drag start: record the source position
+      handle.addEventListener('dragstart', (e: DragEvent) => {
+        const state = dragHandleKey.getState(editorView.state) as DragHandleState
+        if (state.pos !== null) {
+          e.dataTransfer?.setData(DRAG_MIME, String(state.pos))
+          if (e.dataTransfer) {
+            e.dataTransfer.effectAllowed = 'move'
+          }
+
+          const tr = editorView.state.tr.setMeta(dragHandleKey, {
+            dragging: true,
+            fromPos: state.pos,
+          })
+          editorView.dispatch(tr)
+        }
+      })
 
       return {
         update(view: EditorView) {
@@ -91,6 +124,60 @@ export function createDragHandlePlugin(): Plugin {
           view.dispatch(tr)
           return false
         },
+      },
+      /**
+       * Handle drop events to reorder block nodes.
+       * When a drag from this plugin is detected, move the source node
+       * to the drop target position.
+       */
+      handleDrop(view, event, _slice, moved) {
+        if (!moved) return false
+
+        const dt = (event as DragEvent).dataTransfer
+        if (!dt) return false
+
+        const dragData = dt.getData(DRAG_MIME)
+        if (!dragData) return false
+
+        const fromPos = Number.parseInt(dragData, 10)
+        if (Number.isNaN(fromPos)) return false
+
+        // Calculate drop position from event coordinates
+        const dropPos = view.posAtCoords({
+          left: (event as DragEvent).clientX,
+          top: (event as DragEvent).clientY,
+        })
+
+        if (!dropPos) return false
+
+        const $drop = view.state.doc.resolve(dropPos.pos)
+        const toNodePos = $drop.before($drop.depth)
+
+        // Don't move to same position
+        if (fromPos === toNodePos) return false
+
+        const fromNode = view.state.doc.nodeAt(fromPos)
+        if (!fromNode) return false
+
+        // Delete from source, insert at target
+        let tr = view.state.tr.delete(fromPos, fromPos + fromNode.nodeSize)
+
+        // Adjust target position if deleting before the target
+        const adjustedToPos = fromPos < toNodePos ? toNodePos - fromNode.nodeSize : toNodePos
+
+        tr = tr.insert(adjustedToPos, fromNode)
+
+        view.dispatch(tr)
+
+        // Reset drag state
+        const resetTr = view.state.tr.setMeta(dragHandleKey, {
+          dragging: false,
+          fromPos: null,
+        })
+        view.dispatch(resetTr)
+
+        event.preventDefault()
+        return true
       },
     },
   })
