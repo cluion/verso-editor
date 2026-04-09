@@ -1,5 +1,5 @@
 import type { Editor } from '@verso-editor/core'
-import { toggleMark } from 'prosemirror-commands'
+import { setBlockType, toggleMark } from 'prosemirror-commands'
 import type { EditorView } from 'prosemirror-view'
 
 export interface BubbleMenuItem {
@@ -89,8 +89,22 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     const buttons = element.querySelectorAll('button[data-command]')
     for (const button of buttons) {
       const command = button.getAttribute('dataCommand') ?? button.getAttribute('data-command')
-      const active = isMarkActive(state, command ?? '')
-      button.setAttribute('aria-pressed', active ? 'true' : 'false')
+      const cmd = command ?? ''
+
+      // Check if it's a mark or a node type
+      const mark = state.schema.marks[cmd]
+      if (mark) {
+        const active = isMarkActive(state, cmd)
+        button.setAttribute('aria-pressed', active ? 'true' : 'false')
+        continue
+      }
+
+      // Node type active check (e.g. heading)
+      const nodeType = state.schema.nodes[cmd]
+      if (nodeType) {
+        const active = isNodeActive(state, cmd)
+        button.setAttribute('aria-pressed', active ? 'true' : 'false')
+      }
     }
   }
 
@@ -102,11 +116,38 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     return state.doc.rangeHasMark(from, to, mark)
   }
 
+  function isNodeActive(state: typeof view.state, nodeName: string): boolean {
+    const nodeType = state.schema.nodes[nodeName]
+    if (!nodeType) return false
+    const { $from } = state.selection
+    for (let d = $from.depth; d > 0; d--) {
+      if ($from.node(d).type === nodeType) return true
+    }
+    return $from.parent.type === nodeType
+  }
+
   function executeCommand(editorInstance: Editor, command: string) {
     const { state, dispatch } = editorInstance.view
+
+    // Try mark toggle first
     const mark = state.schema.marks[command]
     if (mark) {
       toggleMark(mark)(state, dispatch)
+      return
+    }
+
+    // Try node type toggle (e.g. heading1 → toggle between heading and paragraph)
+    const nodeType = state.schema.nodes[command]
+    if (nodeType) {
+      if (isNodeActive(state, command)) {
+        // Toggle back to paragraph
+        const paragraph = state.schema.nodes.paragraph
+        if (paragraph) {
+          setBlockType(paragraph)(state, dispatch)
+        }
+      } else {
+        setBlockType(nodeType)(state, dispatch)
+      }
     }
   }
 
