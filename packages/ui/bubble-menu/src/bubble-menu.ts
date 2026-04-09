@@ -99,10 +99,11 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
         continue
       }
 
-      // Node type active check (e.g. heading)
-      const nodeType = state.schema.nodes[cmd]
+      // Node type active check (e.g. heading:level=1)
+      const parsed = parseCommand(cmd)
+      const nodeType = state.schema.nodes[parsed.nodeName]
       if (nodeType) {
-        const active = isNodeActive(state, cmd)
+        const active = isNodeActive(state, parsed.nodeName, parsed.attrs)
         button.setAttribute('aria-pressed', active ? 'true' : 'false')
       }
     }
@@ -116,14 +117,49 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     return state.doc.rangeHasMark(from, to, mark)
   }
 
-  function isNodeActive(state: typeof view.state, nodeName: string): boolean {
+  function isNodeActive(
+    state: typeof view.state,
+    nodeName: string,
+    attrs?: Record<string, unknown>,
+  ): boolean {
     const nodeType = state.schema.nodes[nodeName]
     if (!nodeType) return false
     const { $from } = state.selection
     for (let d = $from.depth; d > 0; d--) {
-      if ($from.node(d).type === nodeType) return true
+      const node = $from.node(d)
+      if (node.type === nodeType) {
+        if (!attrs) return true
+        return Object.entries(attrs).every(([key, val]) => node.attrs[key] === val)
+      }
     }
-    return $from.parent.type === nodeType
+    if ($from.parent.type === nodeType) {
+      if (!attrs) return true
+      return Object.entries(attrs).every(([key, val]) => $from.parent.attrs[key] === val)
+    }
+    return false
+  }
+
+  /**
+   * Parse command string like "heading:level=1" into node name + attrs.
+   * Falls back to plain node name if no attrs specified.
+   */
+  function parseCommand(command: string): { nodeName: string; attrs?: Record<string, unknown> } {
+    const colonIdx = command.indexOf(':')
+    if (colonIdx === -1) return { nodeName: command }
+
+    const nodeName = command.slice(0, colonIdx)
+    const attrsPart = command.slice(colonIdx + 1)
+    const attrs: Record<string, unknown> = {}
+    for (const pair of attrsPart.split(',')) {
+      const eqIdx = pair.indexOf('=')
+      if (eqIdx !== -1) {
+        const key = pair.slice(0, eqIdx)
+        const rawVal = pair.slice(eqIdx + 1)
+        const numVal = Number(rawVal)
+        attrs[key] = Number.isNaN(numVal) ? rawVal : numVal
+      }
+    }
+    return { nodeName, attrs }
   }
 
   function executeCommand(editorInstance: Editor, command: string) {
@@ -136,17 +172,18 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
       return
     }
 
-    // Try node type toggle (e.g. heading1 → toggle between heading and paragraph)
-    const nodeType = state.schema.nodes[command]
+    // Try node type toggle (e.g. heading:level=1)
+    const { nodeName, attrs } = parseCommand(command)
+    const nodeType = state.schema.nodes[nodeName]
     if (nodeType) {
-      if (isNodeActive(state, command)) {
+      if (isNodeActive(state, nodeName, attrs)) {
         // Toggle back to paragraph
         const paragraph = state.schema.nodes.paragraph
         if (paragraph) {
           setBlockType(paragraph)(state, dispatch)
         }
       } else {
-        setBlockType(nodeType)(state, dispatch)
+        setBlockType(nodeType, attrs)(state, dispatch)
       }
     }
   }

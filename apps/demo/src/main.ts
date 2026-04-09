@@ -22,12 +22,12 @@ if (bubbleEl) {
       { command: 'bold', label: 'B' },
       { command: 'italic', label: 'I' },
       { command: 'code', label: 'Code' },
-      { command: 'heading1', label: 'H1' },
-      { command: 'heading2', label: 'H2' },
-      { command: 'heading3', label: 'H3' },
-      { command: 'heading4', label: 'H4' },
-      { command: 'heading5', label: 'H5' },
-      { command: 'heading6', label: 'H6' },
+      { command: 'heading:level=1', label: 'H1' },
+      { command: 'heading:level=2', label: 'H2' },
+      { command: 'heading:level=3', label: 'H3' },
+      { command: 'heading:level=4', label: 'H4' },
+      { command: 'heading:level=5', label: 'H5' },
+      { command: 'heading:level=6', label: 'H6' },
     ],
   })
   Object.assign(window, { menu })
