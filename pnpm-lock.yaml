@@ -44,6 +44,9 @@ importers:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../packages/core
+      prosemirror-commands:
+        specifier: ^1.7.0
+        version: 1.7.1
     devDependencies:
       vite:
         specifier: ^6.3.0

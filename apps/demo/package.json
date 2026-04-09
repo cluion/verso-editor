@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@verso-editor/bubble-menu": "workspace:*",
-    "@verso-editor/core": "workspace:*"
+    "@verso-editor/core": "workspace:*",
+    "prosemirror-commands": "^1.7.0"
   },
   "devDependencies": {
     "vite": "^6.3.0"
