@@ -1,0 +1,31 @@
+{
+  "name": "@verso-editor/extension-table",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@verso-editor/core": "workspace:*",
+    "prosemirror-tables": "^1.6.0"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "prosemirror-model": "^1.25.0",
+    "prosemirror-state": "^1.4.0",
+    "prosemirror-view": "^1.40.0",
+    "vite": "^6.3.0",
+    "vite-plugin-dts": "^4.5.0",
+    "vitest": "^3.2.0"
+  }
+}
