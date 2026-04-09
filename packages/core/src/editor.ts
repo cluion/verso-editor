@@ -75,7 +75,11 @@ export class Editor {
       doc,
       plugins: this.view.state.plugins,
     })
-    this.view.updateState(state)
+    try {
+      this.view.updateState(state)
+    } catch (error) {
+      this.errorHandler(error instanceof Error ? error : new Error(String(error)))
+    }
     this.emitter.emit('update', this.getJSON())
     return this
   }
@@ -103,7 +107,11 @@ export class Editor {
 
   destroy(): void {
     this.emitter.emit('destroy')
-    this.view.destroy()
+    try {
+      this.view.destroy()
+    } catch (error) {
+      this.errorHandler(error instanceof Error ? error : new Error(String(error)))
+    }
     this.emitter.destroy()
     this.liveRegion?.remove()
     this.liveRegion = null
@@ -151,12 +159,19 @@ export class Editor {
     plugins: Plugin[],
     nodeViews?: Record<string, NodeViewFactory>,
   ): EditorView {
+    // Wrap plugin view methods with error boundary
+    const wrappedPlugins = plugins.map((plugin) => this.wrapPluginWithBoundary(plugin))
+
     return new EditorView(element, {
-      state: EditorState.create({ doc, plugins }),
+      state: EditorState.create({ doc, plugins: wrappedPlugins }),
       nodeViews,
       dispatchTransaction: (tr) => {
         const newState = this.view.state.apply(tr)
-        this.view.updateState(newState)
+        try {
+          this.view.updateState(newState)
+        } catch (error) {
+          this.errorHandler(error instanceof Error ? error : new Error(String(error)))
+        }
         if (tr.docChanged) {
           this.emitter.emit('update', this.getJSON())
         }
@@ -233,5 +248,47 @@ export class Editor {
     }
 
     return nodeViews
+  }
+
+  /**
+   * Wrap a plugin's view methods with error boundary.
+   * Catches errors in update() and destroy() and routes them to onError.
+   */
+  private wrapPluginWithBoundary(plugin: Plugin): Plugin {
+    const originalSpec = plugin.spec
+    const originalView = originalSpec.view
+
+    if (!originalView) return plugin
+
+    const errorHandler = this.errorHandler
+
+    const wrappedSpec = {
+      ...originalSpec,
+      view: (editorView: EditorView) => {
+        const viewResult = originalView(editorView)
+        return {
+          update: viewResult.update
+            ? (view: EditorView, prevState: EditorState) => {
+                try {
+                  viewResult.update?.(view, prevState)
+                } catch (error) {
+                  errorHandler(error instanceof Error ? error : new Error(String(error)))
+                }
+              }
+            : undefined,
+          destroy: viewResult.destroy
+            ? () => {
+                try {
+                  viewResult.destroy?.()
+                } catch (error) {
+                  errorHandler(error instanceof Error ? error : new Error(String(error)))
+                }
+              }
+            : undefined,
+        }
+      },
+    }
+
+    return new Plugin(wrappedSpec)
   }
 }
