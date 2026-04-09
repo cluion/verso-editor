@@ -323,6 +323,15 @@ importers:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.41.8
+        version: 1.41.8
       vite:
         specifier: ^6.3.0
         version: 6.4.2(@types/node@25.5.2)(yaml@2.8.3)
@@ -458,6 +467,15 @@ importers:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.41.8
+        version: 1.41.8
       vite:
         specifier: ^6.3.0
         version: 6.4.2(@types/node@25.5.2)(yaml@2.8.3)
