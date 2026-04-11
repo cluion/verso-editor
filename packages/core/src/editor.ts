@@ -10,6 +10,7 @@ import type { Extension, NodeViewFactory } from './extension'
 import { createInputRulesPlugin } from './input-rules'
 import { createKeymapPlugins } from './keymap'
 import { sortExtensions } from './plugin-manager'
+import { sanitizeHTML } from './sanitize'
 import { defaultSchema } from './schema'
 import { resolveSchema } from './schema-resolver'
 
@@ -147,10 +148,9 @@ export class Editor {
   }
 
   private parseContent(html: string): ProseMirrorNode {
+    const clean = sanitizeHTML(html)
     const div = document.createElement('div')
-    // html is from setContent/insertContent (developer-provided), not raw user input.
-    // ProseMirror's DOMParser + schema validation sanitizes it.
-    div.innerHTML = html
+    div.innerHTML = clean
     return DOMParser.fromSchema(this.schema).parse(div)
   }
 
