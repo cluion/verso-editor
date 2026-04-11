@@ -3,10 +3,17 @@ import { EditorState, Plugin, Selection } from 'prosemirror-state'
 import { EditorView } from 'prosemirror-view'
 import { afterEach, describe, expect, it } from 'vitest'
 import {
+  addColumnAfter,
+  addColumnBefore,
+  addRowAfter,
+  addRowBefore,
   createInsertTableCommand,
   createSetCellBackground,
   createTablePlugins,
   createTableSchema,
+  deleteColumn,
+  deleteRow,
+  deleteTable,
 } from '../index'
 
 const tableNodes = createTableSchema()
@@ -61,6 +68,26 @@ function insertTable(view: EditorView, rows = 3, cols = 3): void {
   cmd(view.state, view.dispatch.bind(view))
 }
 
+function countNodes(view: EditorView, typeName: string): number {
+  let count = 0
+  view.state.doc.descendants((node) => {
+    if (node.type.name === typeName) count++
+  })
+  return count
+}
+
+function findCellPos(view: EditorView, index = 0): number {
+  let found = -1
+  let i = 0
+  view.state.doc.descendants((node, pos) => {
+    if (node.type.name === 'table_cell' && i === index && found === -1) {
+      found = pos + 1
+    }
+    if (node.type.name === 'table_cell') i++
+  })
+  return found
+}
+
 describe('Table Extension', () => {
   describe('Schema', () => {
     it('exports table, table_row, and table_cell node types', () => {
@@ -72,7 +99,6 @@ describe('Table Extension', () => {
     it('table_cell contains paragraph as block content', () => {
       const cellType = schema.nodes.table_cell
       expect(cellType).toBeDefined()
-      // NodeType.contentMatch tells us what's allowed inside
       expect(cellType.contentMatch).toBeDefined()
     })
   })
@@ -98,25 +124,108 @@ describe('Table Extension', () => {
       const view = createTableView()
       insertTable(view, 2, 2)
 
-      let found = false
-      view.state.doc.descendants((node) => {
-        if (node.type.name === 'table') found = true
-      })
-      expect(found).toBe(true)
+      expect(countNodes(view, 'table')).toBe(1)
     })
 
     it('creates correct number of rows and cells', () => {
       const view = createTableView()
       insertTable(view, 3, 2)
 
-      let rowCount = 0
-      let cellCount = 0
-      view.state.doc.descendants((node) => {
-        if (node.type.name === 'table_row') rowCount++
-        if (node.type.name === 'table_cell') cellCount++
-      })
-      expect(rowCount).toBe(3)
-      expect(cellCount).toBe(6) // 3 rows x 2 cols
+      expect(countNodes(view, 'table_row')).toBe(3)
+      expect(countNodes(view, 'table_cell')).toBe(6)
+    })
+  })
+
+  describe('Table Operations', () => {
+    it('addRowAfter adds a row', () => {
+      const view = createTableView()
+      insertTable(view, 2, 2)
+      const before = countNodes(view, 'table_row')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      addRowAfter(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_row')).toBe(before + 1)
+    })
+
+    it('addRowBefore adds a row', () => {
+      const view = createTableView()
+      insertTable(view, 2, 2)
+      const before = countNodes(view, 'table_row')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      addRowBefore(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_row')).toBe(before + 1)
+    })
+
+    it('addColumnAfter adds a column', () => {
+      const view = createTableView()
+      insertTable(view, 2, 2)
+      const before = countNodes(view, 'table_cell')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      addColumnAfter(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_cell')).toBe(before + 2)
+    })
+
+    it('addColumnBefore adds a column', () => {
+      const view = createTableView()
+      insertTable(view, 2, 2)
+      const before = countNodes(view, 'table_cell')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      addColumnBefore(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_cell')).toBe(before + 2)
+    })
+
+    it('deleteRow removes a row', () => {
+      const view = createTableView()
+      insertTable(view, 3, 2)
+      const before = countNodes(view, 'table_row')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      deleteRow(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_row')).toBe(before - 1)
+    })
+
+    it('deleteColumn removes a column', () => {
+      const view = createTableView()
+      insertTable(view, 2, 3)
+      const before = countNodes(view, 'table_cell')
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      deleteColumn(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table_cell')).toBe(before - 2)
+    })
+
+    it('deleteTable removes entire table', () => {
+      const view = createTableView()
+      insertTable(view, 2, 2)
+      expect(countNodes(view, 'table')).toBe(1)
+
+      const cellPos = findCellPos(view, 0)
+      const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
+      view.dispatch(tr)
+
+      deleteTable(view.state, view.dispatch.bind(view))
+      expect(countNodes(view, 'table')).toBe(0)
     })
   })
 
@@ -130,25 +239,14 @@ describe('Table Extension', () => {
       const view = createTableView()
       insertTable(view, 2, 2)
 
-      // Find the first table_cell position
-      let cellPos = -1
-      view.state.doc.descendants((node, pos) => {
-        if (node.type.name === 'table_cell' && cellPos === -1) {
-          cellPos = pos + 1 // inside the cell
-        }
-      })
-      expect(cellPos).toBeGreaterThan(-1)
-
-      // Set selection inside the cell
+      const cellPos = findCellPos(view, 0)
       const tr = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
       view.dispatch(tr)
 
-      // Apply background
       const cmd = createSetCellBackground('#ff0000')
       const result = cmd(view.state, view.dispatch.bind(view))
       expect(result).toBe(true)
 
-      // Verify the cell has the background attr
       let bg: string | null = null
       view.state.doc.descendants((node) => {
         if (node.type.name === 'table_cell' && node.attrs.background && bg === null) {
@@ -162,20 +260,12 @@ describe('Table Extension', () => {
       const view = createTableView()
       insertTable(view, 2, 2)
 
-      let cellPos = -1
-      view.state.doc.descendants((node, pos) => {
-        if (node.type.name === 'table_cell' && cellPos === -1) {
-          cellPos = pos + 1
-        }
-      })
-
+      const cellPos = findCellPos(view, 0)
       const sel = view.state.tr.setSelection(Selection.near(view.state.doc.resolve(cellPos)))
       view.dispatch(sel)
 
-      // Set background first
       createSetCellBackground('#ff0000')(view.state, view.dispatch.bind(view))
 
-      // Remove background
       const cmd = createSetCellBackground(null)
       cmd(view.state, view.dispatch.bind(view))
 

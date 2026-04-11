@@ -5,6 +5,7 @@ export const BlockquoteExtension = NodeExtension.create({
   nodeSpec: {
     content: 'block+',
     group: 'block',
+    parseDOM: [{ tag: 'blockquote' }],
     toDOM: () => ['blockquote', 0] as unknown as HTMLElement,
   },
 })

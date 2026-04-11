@@ -4,6 +4,7 @@ export const HorizontalRuleExtension = NodeExtension.create({
   name: 'horizontal_rule',
   nodeSpec: {
     group: 'block',
+    parseDOM: [{ tag: 'hr' }],
     toDOM: () => ['hr'] as unknown as HTMLElement,
   },
 })
