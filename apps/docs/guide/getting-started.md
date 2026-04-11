@@ -48,40 +48,52 @@ Install the StarterKit bundle for common extensions:
 ::: code-group
 
 ```bash [pnpm]
-pnpm add @verso-editor/starter-kit
+pnpm add @verso-editor/core @verso-editor/extension-starter-kit
 ```
 
 ```bash [npm]
-npm install @verso-editor/starter-kit
+npm install @verso-editor/core @verso-editor/extension-starter-kit
 ```
 
 :::
 
 ```typescript
 import { Editor } from '@verso-editor/core'
-import { starterKit } from '@verso-editor/starter-kit'
+import { createStarterKit } from '@verso-editor/extension-starter-kit'
 
 const editor = new Editor({
   element: document.querySelector('#editor'),
-  extensions: [starterKit()],
+  extensions: createStarterKit(),
 })
 ```
 
-StarterKit includes: bold, italic, code, heading, bullet list, ordered list, blockquote, code block, and history.
+StarterKit includes 14 extensions: bold, italic, code, paragraph, heading, bullet list, ordered list, list item, blockquote, code block, horizontal rule, link, hard break, and history. You can exclude or replace any extension:
+
+```typescript
+// Exclude extensions
+createStarterKit({ heading: false, history: false })
+
+// Replace with a custom extension
+createStarterKit({ bold: myCustomBoldExtension })
+```
 
 ## Framework Adapters
 
 ### React
 
 ```bash
-pnpm add @verso-editor/react
+pnpm add @verso-editor/react @verso-editor/extension-starter-kit
 ```
 
 ```tsx
 import { useEditor, EditorContent } from '@verso-editor/react'
+import { createStarterKit } from '@verso-editor/extension-starter-kit'
 
 function App() {
-  const editor = useEditor({ content: '<p>Hello!</p>' })
+  const editor = useEditor({
+    extensions: createStarterKit(),
+    content: '<p>Hello!</p>',
+  })
 
   if (!editor) return null
 
@@ -92,14 +104,18 @@ function App() {
 ### Vue 3
 
 ```bash
-pnpm add @verso-editor/vue
+pnpm add @verso-editor/vue @verso-editor/extension-starter-kit
 ```
 
 ```vue
 <script setup>
 import { useEditor, EditorContent } from '@verso-editor/vue'
+import { createStarterKit } from '@verso-editor/extension-starter-kit'
 
-const editor = useEditor({ content: '<p>Hello!</p>' })
+const editor = useEditor({
+  extensions: createStarterKit(),
+  content: '<p>Hello!</p>',
+})
 </script>
 
 <template>
@@ -110,17 +126,23 @@ const editor = useEditor({ content: '<p>Hello!</p>' })
 ### Svelte
 
 ```bash
-pnpm add @verso-editor/svelte
+pnpm add @verso-editor/svelte @verso-editor/extension-starter-kit
 ```
 
 ```svelte
 <script>
 import { createEditorStore } from '@verso-editor/svelte'
+import { createStarterKit } from '@verso-editor/extension-starter-kit'
 
-const store = createEditorStore({ content: '<p>Hello!</p>' })
+let container
+const store = createEditorStore({
+  element: container,
+  extensions: createStarterKit(),
+  content: '<p>Hello!</p>',
+})
 </script>
 
-<div bind:this={store.getEditor()?.view.dom.parentElement}></div>
+<div bind:this={container}></div>
 ```
 
 ## Editor API
