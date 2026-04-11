@@ -3,7 +3,7 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  "linked": [["@verso-editor/core", "@verso-editor/bubble-menu", "@verso-editor/toolbar"]],
+  "linked": [["@verso-editor/core", "@verso-editor/bubble-menu"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
