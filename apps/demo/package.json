@@ -9,6 +9,7 @@
   "dependencies": {
     "@verso-editor/bubble-menu": "workspace:*",
     "@verso-editor/core": "workspace:*",
+    "@verso-editor/extension-starter-kit": "workspace:^",
     "prosemirror-commands": "^1.7.0"
   },
   "devDependencies": {

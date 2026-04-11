@@ -3,17 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Verso Editor — Fixed Toolbar</title>
+    <title>Verso Editor — Playground</title>
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
     <div id="app">
-      <h1 class="demo-title">Verso Editor — Fixed Toolbar</h1>
-      <nav class="demo-nav">
-        <a href="./bubble.html">Bubble Menu Demo</a>
-      </nav>
-      <div id="toolbar"></div>
-      <div id="editor"></div>
+      <header class="app-header">
+        <h1 class="app-title">Verso Editor</h1>
+        <nav class="app-nav">
+          <a href="./bubble.html">Bubble Menu Demo</a>
+        </nav>
+      </header>
+      <main class="playground">
+        <section class="playground-editor">
+          <div id="toolbar"></div>
+          <div id="editor"></div>
+        </section>
+        <section class="playground-preview">
+          <div class="preview-tabs">
+            <button class="preview-tab active" data-tab="html">HTML</button>
+            <button class="preview-tab" data-tab="json">JSON</button>
+          </div>
+          <div class="preview-panels">
+            <div class="preview-panel-wrapper active" id="panel-html">
+              <button class="copy-btn" data-target="html" title="Copy HTML">Copy</button>
+              <pre class="preview-panel"><code></code></pre>
+            </div>
+            <div class="preview-panel-wrapper" id="panel-json">
+              <button class="copy-btn" data-target="json" title="Copy JSON">Copy</button>
+              <pre class="preview-panel"><code></code></pre>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
     <script type="module" src="./src/main-toolbar.ts"></script>
   </body>

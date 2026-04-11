@@ -50,6 +50,9 @@ importers:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@verso-editor/extension-starter-kit':
+        specifier: workspace:^
+        version: link:../../packages/extensions/starter-kit
       prosemirror-commands:
         specifier: ^1.7.0
         version: 1.7.1

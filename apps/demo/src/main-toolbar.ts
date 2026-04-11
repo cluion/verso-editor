@@ -1,4 +1,5 @@
 import { Editor } from '@verso-editor/core'
+import { createStarterKit } from '@verso-editor/extension-starter-kit'
 import { setBlockType, toggleMark } from 'prosemirror-commands'
 
 const element = document.querySelector<HTMLElement>('#editor')
@@ -34,6 +35,7 @@ const initialContent = `
 const editor = new Editor({
   element,
   content: initialContent,
+  extensions: createStarterKit(),
 })
 
 // --- Helpers ---
@@ -148,6 +150,52 @@ if (toolbarEl) {
 
   editor.on('update', updateToolbar)
   updateToolbar()
+}
+
+// --- Preview Panels ---
+
+const previewHtmlEl = document.querySelector<HTMLElement>('#panel-html code')
+const previewJsonEl = document.querySelector<HTMLElement>('#panel-json code')
+
+function updatePreview(): void {
+  if (previewHtmlEl) {
+    previewHtmlEl.textContent = editor.getHTML()
+  }
+  if (previewJsonEl) {
+    previewJsonEl.textContent = JSON.stringify(editor.getJSON(), null, 2)
+  }
+}
+
+editor.on('update', updatePreview)
+updatePreview()
+
+// --- Preview Tab Switching ---
+
+const tabButtons = document.querySelectorAll<HTMLButtonElement>('.preview-tab')
+for (const btn of tabButtons) {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab
+    for (const b of tabButtons) {
+      b.classList.toggle('active', b.dataset.tab === tab)
+    }
+    for (const panel of document.querySelectorAll('.preview-panel-wrapper')) {
+      panel.classList.toggle('active', panel.id === `panel-${tab}`)
+    }
+  })
+}
+
+// --- Copy Buttons ---
+
+for (const btn of document.querySelectorAll<HTMLButtonElement>('.copy-btn')) {
+  btn.addEventListener('click', async () => {
+    const target = btn.dataset.target
+    const content = target === 'html' ? editor.getHTML() : JSON.stringify(editor.getJSON(), null, 2)
+    await navigator.clipboard.writeText(content)
+    btn.textContent = 'Copied!'
+    setTimeout(() => {
+      btn.textContent = 'Copy'
+    }, 1500)
+  })
 }
 
 Object.assign(window, { editor })
