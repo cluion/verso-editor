@@ -4,7 +4,7 @@ import { keymap } from 'prosemirror-keymap'
 import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import { DOMParser, DOMSerializer, type Schema } from 'prosemirror-model'
 import { EditorState, Plugin } from 'prosemirror-state'
-import { EditorView } from 'prosemirror-view'
+import { EditorView, type NodeViewConstructor } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
 import type { Extension, NodeViewFactory } from './extension'
 import { createInputRulesPlugin } from './input-rules'
@@ -165,7 +165,7 @@ export class Editor {
 
     return new EditorView(element, {
       state: EditorState.create({ doc, plugins: wrappedPlugins }),
-      nodeViews,
+      nodeViews: nodeViews as Record<string, NodeViewConstructor> | undefined,
       dispatchTransaction: (tr) => {
         const newState = this.view.state.apply(tr)
         try {

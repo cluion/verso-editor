@@ -1,4 +1,4 @@
-import { Plugin } from 'prosemirror-state'
+import { Plugin, PluginKey } from 'prosemirror-state'
 import { describe, expect, it, vi } from 'vitest'
 import { Editor } from '../editor'
 import { MarkExtension, NodeExtension } from '../extension'
@@ -244,7 +244,7 @@ describe('Editor with extensions', () => {
   it('creates editor with extensions and extra plugins', () => {
     const element = document.createElement('div')
     document.body.appendChild(element)
-    const plugin = new Plugin({ key: 'test-plugin' })
+    const plugin = new Plugin({ key: new PluginKey('test-plugin') })
     const bold = MarkExtension.create({
       name: 'bold',
       markSpec: {

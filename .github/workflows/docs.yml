@@ -28,8 +28,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @verso-editor/core build
-      - run: pnpm --filter @verso-editor/extension-starter-kit build
+      - run: pnpm build
       - run: pnpm --filter @verso-editor/docs build
       - uses: actions/upload-pages-artifact@v3
         with:

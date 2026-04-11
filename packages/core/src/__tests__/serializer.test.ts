@@ -152,7 +152,7 @@ describe('JSON serialization edge cases', () => {
     const json = editor.getJSON()
     expect(json.type).toBe('doc')
     expect(Array.isArray(json.content)).toBe(true)
-    expect(json.content.length).toBeGreaterThan(0)
+    expect((json.content as unknown[]).length).toBeGreaterThan(0)
     editor.destroy()
   })
 

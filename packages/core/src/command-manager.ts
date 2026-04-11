@@ -1,17 +1,17 @@
 import { lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands'
 import type { MarkType, NodeType } from 'prosemirror-model'
-import type { EditorState } from 'prosemirror-state'
+import type { EditorState, Transaction } from 'prosemirror-state'
 
-type Command = (state: EditorState, dispatch?: (tr: unknown) => void) => boolean
+type Command = (state: EditorState, dispatch?: (tr: Transaction) => void) => boolean
 
 // Command factories
 
 export function createToggleMark(markType: MarkType): Command {
-  return (state, dispatch) => toggleMark(markType)(state, dispatch as (tr: never) => void)
+  return (state, dispatch) => toggleMark(markType)(state, dispatch)
 }
 
 export function createSetBlockType(nodeType: NodeType, attrs?: Record<string, unknown>): Command {
-  return (state, dispatch) => setBlockType(nodeType, attrs)(state, dispatch as (tr: never) => void)
+  return (state, dispatch) => setBlockType(nodeType, attrs)(state, dispatch)
 }
 
 export function createToggleBlockType(
@@ -26,18 +26,18 @@ export function createToggleBlockType(
       node.type === nodeType &&
       (!attrs || Object.entries(attrs).every(([k, v]) => node.attrs[k] === v))
     ) {
-      return setBlockType(toggleType)(state, dispatch as (tr: never) => void)
+      return setBlockType(toggleType)(state, dispatch)
     }
-    return setBlockType(nodeType, attrs)(state, dispatch as (tr: never) => void)
+    return setBlockType(nodeType, attrs)(state, dispatch)
   }
 }
 
 export function createWrapIn(nodeType: NodeType): Command {
-  return (state, dispatch) => wrapIn(nodeType)(state, dispatch as (tr: never) => void)
+  return (state, dispatch) => wrapIn(nodeType)(state, dispatch)
 }
 
 export function createLift(): Command {
-  return (state, dispatch) => lift(state, dispatch as (tr: never) => void)
+  return (state, dispatch) => lift(state, dispatch)
 }
 
 // isActive queries

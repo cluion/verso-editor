@@ -51,7 +51,7 @@ describe('schema', () => {
 
   it('link toDOM includes href and title', () => {
     const mark = schema.marks.link.create({ href: 'https://example.com', title: 'Example' })
-    const dom = schema.marks.link.spec.toDOM?.(mark) as unknown as Record<string, unknown>
+    const dom = schema.marks.link.spec.toDOM?.(mark, true) as unknown as Record<string, unknown>
     expect(dom[0]).toBe('a')
     const attrs = dom[1] as Record<string, string>
     expect(attrs.href).toBe('https://example.com')
@@ -219,22 +219,22 @@ describe('toDOM', () => {
 
   it('bold toDOM returns ["strong", 0]', () => {
     const mark = schema.marks.bold.create()
-    expect(schema.marks.bold.spec.toDOM?.(mark)).toEqual(['strong', 0])
+    expect(schema.marks.bold.spec.toDOM?.(mark, true)).toEqual(['strong', 0])
   })
 
   it('italic toDOM returns ["em", 0]', () => {
     const mark = schema.marks.italic.create()
-    expect(schema.marks.italic.spec.toDOM?.(mark)).toEqual(['em', 0])
+    expect(schema.marks.italic.spec.toDOM?.(mark, true)).toEqual(['em', 0])
   })
 
   it('code toDOM returns ["code", 0]', () => {
     const mark = schema.marks.code.create()
-    expect(schema.marks.code.spec.toDOM?.(mark)).toEqual(['code', 0])
+    expect(schema.marks.code.spec.toDOM?.(mark, true)).toEqual(['code', 0])
   })
 
   it('link toDOM without title omits title attr', () => {
     const mark = schema.marks.link.create({ href: 'https://example.com', title: null })
-    const dom = schema.marks.link.spec.toDOM?.(mark) as unknown[]
+    const dom = schema.marks.link.spec.toDOM?.(mark, true) as unknown as unknown[]
     const attrs = dom[1] as Record<string, string>
     expect(attrs.href).toBe('https://example.com')
     expect(attrs.title).toBeUndefined()

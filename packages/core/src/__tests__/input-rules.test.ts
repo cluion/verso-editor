@@ -29,7 +29,10 @@ function triggerInputRule(view: EditorView, fullText: string): void {
   }
   // The last character goes through handleTextInput, which triggers input rules
   const pos = view.state.selection.$head.pos
-  const handled = view.someProp('handleTextInput', (f) => f(view, pos, pos, lastChar))
+  const handled = view.someProp('handleTextInput', (f) =>
+    // biome-ignore lint/suspicious/noExplicitAny: prosemirror overloaded signature
+    f(view, pos, pos, lastChar, undefined as any),
+  )
   if (!handled) {
     view.dispatch(view.state.tr.insertText(lastChar))
   }

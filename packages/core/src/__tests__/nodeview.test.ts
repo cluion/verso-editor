@@ -1,10 +1,11 @@
+import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import { describe, expect, it } from 'vitest'
 import { Editor } from '../editor'
 import { NodeExtension } from '../extension'
 
 // Custom NodeView that wraps content in a div with a class
 function customNodeViewFactory() {
-  return (_node: Node, _view: unknown, _getPos: () => number) => {
+  return (_node: ProseMirrorNode, _view: unknown, _getPos: () => number | undefined) => {
     const dom = document.createElement('div')
     dom.classList.add('custom-node')
     const contentDOM = document.createElement('span')
