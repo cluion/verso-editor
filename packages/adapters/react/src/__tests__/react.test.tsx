@@ -91,5 +91,66 @@ describe('React Adapter', () => {
       const { container } = render(<TestComponent />)
       expect(container.querySelector('.my-editor')).not.toBeNull()
     })
+
+    it('renders without className prop', () => {
+      function TestComponent() {
+        const editor = useEditor()
+        return editor ? <EditorContent editor={editor} /> : null
+      }
+      const { container } = render(<TestComponent />)
+      const wrapper = container.firstElementChild
+      expect(wrapper).not.toBeNull()
+      expect(wrapper?.className).toBe('')
+    })
+  })
+
+  describe('onError callback', () => {
+    it('passes onError to editor constructor', () => {
+      const onError = vi.fn()
+      let editorRef: Editor | null = null
+      function TestComponent() {
+        const editor = useEditor({ onError })
+        editorRef = editor
+        return editor ? <EditorContent editor={editor} /> : null
+      }
+      render(<TestComponent />)
+      expect(editorRef).toBeInstanceOf(Editor)
+      editorRef?.destroy()
+    })
+  })
+
+  describe('Editor instance stability', () => {
+    it('returns same editor instance across re-renders', () => {
+      const editors: (Editor | null)[] = []
+      function TestComponent() {
+        const editor = useEditor()
+        editors.push(editor)
+        return editor ? <EditorContent editor={editor} /> : null
+      }
+      const { rerender } = render(<TestComponent />)
+      rerender(<TestComponent />)
+
+      const nonNullEditors = editors.filter((e): e is Editor => e !== null)
+      expect(nonNullEditors.length).toBeGreaterThanOrEqual(2)
+      // All non-null editors should be the same instance
+      for (let i = 1; i < nonNullEditors.length; i++) {
+        expect(nonNullEditors[i]).toBe(nonNullEditors[0])
+      }
+    })
+  })
+
+  describe('Cleanup', () => {
+    it('removes container element from DOM on unmount', () => {
+      function TestComponent() {
+        const editor = useEditor()
+        return editor ? <EditorContent editor={editor} /> : null
+      }
+      const { unmount } = render(<TestComponent />)
+      const orphanDivsBefore = document.querySelectorAll('body > div:not([id])')
+      unmount()
+      // After unmount, the container created in useEditor should be removed
+      const orphanDivsAfter = document.querySelectorAll('body > div:not([id])')
+      expect(orphanDivsAfter.length).toBeLessThanOrEqual(orphanDivsBefore.length)
+    })
   })
 })

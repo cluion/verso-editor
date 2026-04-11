@@ -75,5 +75,52 @@ describe('Svelte Adapter', () => {
       unsub()
       store.destroy()
     })
+
+    it('stops receiving updates after unsubscribe', () => {
+      container = document.createElement('div')
+      document.body.appendChild(container)
+
+      const store = createEditorStore({ element: container })
+      const handler = vi.fn()
+      const unsub = store.onUpdate(handler)
+
+      store.getEditor()?.setContent('<p>First</p>')
+      expect(handler).toHaveBeenCalledTimes(1)
+
+      unsub()
+      store.getEditor()?.setContent('<p>Second</p>')
+      // Handler should not be called again after unsubscribe
+      expect(handler).toHaveBeenCalledTimes(1)
+      store.destroy()
+    })
+
+    it('accepts onError callback', () => {
+      container = document.createElement('div')
+      document.body.appendChild(container)
+
+      const onError = vi.fn()
+      const store = createEditorStore({ element: container, onError })
+      expect(store.getEditor()).toBeInstanceOf(Editor)
+      store.destroy()
+    })
+
+    it('destroy is idempotent', () => {
+      container = document.createElement('div')
+      document.body.appendChild(container)
+
+      const store = createEditorStore({ element: container })
+      store.destroy()
+      // Calling destroy again should not throw
+      expect(() => store.destroy()).not.toThrow()
+    })
+
+    it('getEditor returns null after destroy', () => {
+      container = document.createElement('div')
+      document.body.appendChild(container)
+
+      const store = createEditorStore({ element: container })
+      store.destroy()
+      expect(store.getEditor()).toBeNull()
+    })
   })
 })
