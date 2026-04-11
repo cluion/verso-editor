@@ -109,5 +109,45 @@ describe('HTML Serializer', () => {
       const text = restored.firstChild?.firstChild
       expect(text?.marks?.[0].type.name).toBe('bold')
     })
+
+    it('parses italic marks', () => {
+      const doc = fromHTML('<p><em>italic</em></p>', schema)
+      const text = doc.firstChild?.firstChild
+      expect(text?.marks?.[0].type.name).toBe('italic')
+    })
+
+    it('round-trips italic marks', () => {
+      const original = schema.nodes.doc.create(
+        null,
+        schema.nodes.paragraph.create(null, schema.text('italic', [schema.marks.italic.create()])),
+      )
+      const html = toHTML(original, schema)
+      const restored = fromHTML(html, schema)
+      const text = restored.firstChild?.firstChild
+      expect(text?.marks?.[0].type.name).toBe('italic')
+    })
+
+    it('parses nested bold + italic marks', () => {
+      const doc = fromHTML('<p><strong><em>both</em></strong></p>', schema)
+      const text = doc.firstChild?.firstChild
+      const markNames = text?.marks?.map((m) => m.type.name).sort()
+      expect(markNames).toEqual(['bold', 'italic'])
+    })
+
+    it('handles empty paragraph', () => {
+      const doc = fromHTML('<p></p>', schema)
+      expect(doc.childCount).toBe(1)
+    })
+
+    it('round-trips multiple paragraphs with mixed marks', () => {
+      const original = schema.nodes.doc.create(null, [
+        schema.nodes.paragraph.create(null, schema.text('plain')),
+        schema.nodes.paragraph.create(null, schema.text('bold', [schema.marks.bold.create()])),
+        schema.nodes.paragraph.create(null, schema.text('italic', [schema.marks.italic.create()])),
+      ])
+      const html = toHTML(original, schema)
+      const restored = fromHTML(html, schema)
+      expect(restored.childCount).toBe(3)
+    })
   })
 })

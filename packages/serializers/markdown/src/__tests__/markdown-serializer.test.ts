@@ -100,5 +100,50 @@ describe('Markdown Serializer', () => {
       const restored = fromMarkdown(md, schema)
       expect(restored.textContent).toBe('Hello')
     })
+
+    it('round-trips bold text', () => {
+      const doc = schema.nodes.doc.create(
+        null,
+        schema.nodes.paragraph.create(null, schema.text('bold', [schema.marks.strong.create()])),
+      )
+      const md = toMarkdown(doc)
+      const restored = fromMarkdown(md, schema)
+      const text = restored.firstChild?.firstChild
+      expect(text?.marks?.[0].type.name).toBe('strong')
+    })
+
+    it('round-trips italic text', () => {
+      const doc = schema.nodes.doc.create(
+        null,
+        schema.nodes.paragraph.create(null, schema.text('italic', [schema.marks.em.create()])),
+      )
+      const md = toMarkdown(doc)
+      const restored = fromMarkdown(md, schema)
+      const text = restored.firstChild?.firstChild
+      expect(text?.marks?.[0].type.name).toBe('em')
+    })
+  })
+
+  describe('toMarkdown', () => {
+    it('serializes a heading', () => {
+      const doc = schema.nodes.doc.create(
+        null,
+        schema.nodes.heading.create({ level: 2 }, schema.text('Heading')),
+      )
+      const md = toMarkdown(doc)
+      expect(md).toContain('## Heading')
+    })
+  })
+
+  describe('fromMarkdown', () => {
+    it('parses code block', () => {
+      const doc = fromMarkdown('```\ncode\n```', schema)
+      expect(doc.firstChild?.type.name).toBe('code_block')
+    })
+
+    it('parses multiple paragraphs', () => {
+      const doc = fromMarkdown('First\n\nSecond', schema)
+      expect(doc.childCount).toBe(2)
+    })
   })
 })

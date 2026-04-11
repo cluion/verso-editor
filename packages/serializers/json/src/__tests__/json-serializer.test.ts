@@ -106,5 +106,60 @@ describe('JSON Serializer', () => {
     it('throws on invalid JSON structure', () => {
       expect(() => fromJSON(schema, {} as Record<string, unknown>)).toThrow()
     })
+
+    it('restores marks from JSON', () => {
+      const json = {
+        type: 'doc',
+        content: [
+          {
+            type: 'paragraph',
+            content: [
+              {
+                type: 'text',
+                text: 'styled',
+                marks: [{ type: 'bold' }],
+              },
+            ],
+          },
+        ],
+      }
+
+      const doc = fromJSON(schema, json)
+      const text = doc.firstChild?.firstChild
+      expect(text?.marks?.[0].type.name).toBe('bold')
+    })
+  })
+
+  describe('edge cases', () => {
+    it('handles empty paragraph', () => {
+      const doc = schema.nodes.doc.create(null, schema.nodes.paragraph.create(null))
+      const json = toJSON(doc)
+      const restored = fromJSON(schema, json)
+      expect(restored.eq(doc)).toBe(true)
+    })
+
+    it('handles multiple marks on same text', () => {
+      const doc = schema.nodes.doc.create(
+        null,
+        schema.nodes.paragraph.create(null, schema.text('both', [schema.marks.bold.create()])),
+      )
+      const json = toJSON(doc)
+      expect(json.content[0].content[0].marks).toHaveLength(1)
+
+      const restored = fromJSON(schema, json)
+      expect(restored.eq(doc)).toBe(true)
+    })
+
+    it('round-trips a document with mixed marked and plain text', () => {
+      const doc = schema.nodes.doc.create(null, [
+        schema.nodes.paragraph.create(null, [
+          schema.text('plain '),
+          schema.text('bold', [schema.marks.bold.create()]),
+        ]),
+      ])
+      const json = toJSON(doc)
+      const restored = fromJSON(schema, json)
+      expect(restored.eq(doc)).toBe(true)
+    })
   })
 })
