@@ -4,7 +4,7 @@ import { NodeExtension } from '../extension'
 
 // Custom NodeView that wraps content in a div with a class
 function customNodeViewFactory() {
-  return (node: Node, view: unknown, getPos: () => number) => {
+  return (_node: Node, _view: unknown, _getPos: () => number) => {
     const dom = document.createElement('div')
     dom.classList.add('custom-node')
     const contentDOM = document.createElement('span')

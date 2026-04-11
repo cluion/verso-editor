@@ -147,7 +147,6 @@ describe('Keymap formatting commands', () => {
       editor.view.dispatch(editor.view.state.tr.insertText('line1'))
       // Insert hard break
       const { hard_break } = defaultSchema.nodes
-      const pos = editor.view.state.selection.$head.pos
       editor.view.dispatch(
         editor.view.state.tr.replaceSelectionWith(hard_break.create()).scrollIntoView(),
       )
@@ -166,7 +165,6 @@ describe('Keymap formatting commands', () => {
         element,
         content: '<pre><code></code></pre>',
       })
-      const pos = editor.view.state.selection.$head.pos
       // In code block, insert text with newline
       editor.view.dispatch(editor.view.state.tr.insertText('line1\nline2'))
       const html = editor.getHTML()

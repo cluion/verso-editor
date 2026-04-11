@@ -29,13 +29,11 @@ describe('command factories', () => {
   })
 
   it('createSetBlockType returns a working command', () => {
-    const state = createState()
     const cmd = createSetBlockType(defaultSchema.nodes.heading, { level: 2 })
     expect(cmd).toBeTypeOf('function')
   })
 
   it('createToggleBlockType toggles between two node types', () => {
-    const state = createState()
     const cmd = createToggleBlockType(defaultSchema.nodes.heading, defaultSchema.nodes.paragraph, {
       level: 1,
     })
@@ -43,13 +41,11 @@ describe('command factories', () => {
   })
 
   it('createWrapIn returns a working command', () => {
-    const state = createState()
     const cmd = createWrapIn(defaultSchema.nodes.blockquote)
     expect(cmd).toBeTypeOf('function')
   })
 
   it('createLift returns a working command', () => {
-    const state = createState()
     const cmd = createLift()
     expect(cmd).toBeTypeOf('function')
   })
