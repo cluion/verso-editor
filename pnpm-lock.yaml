@@ -741,12 +741,21 @@ importers:
       '@verso-editor/extension-code-block':
         specifier: workspace:*
         version: link:../code-block
+      '@verso-editor/extension-font-family':
+        specifier: workspace:*
+        version: link:../font-family
+      '@verso-editor/extension-font-size':
+        specifier: workspace:*
+        version: link:../font-size
       '@verso-editor/extension-hard-break':
         specifier: workspace:*
         version: link:../hard-break
       '@verso-editor/extension-heading':
         specifier: workspace:*
         version: link:../heading
+      '@verso-editor/extension-highlight':
+        specifier: workspace:*
+        version: link:../highlight
       '@verso-editor/extension-history':
         specifier: workspace:*
         version: link:../history
@@ -768,6 +777,27 @@ importers:
       '@verso-editor/extension-paragraph':
         specifier: workspace:*
         version: link:../paragraph
+      '@verso-editor/extension-strikethrough':
+        specifier: workspace:*
+        version: link:../strikethrough
+      '@verso-editor/extension-subscript':
+        specifier: workspace:*
+        version: link:../subscript
+      '@verso-editor/extension-superscript':
+        specifier: workspace:*
+        version: link:../superscript
+      '@verso-editor/extension-task-list':
+        specifier: workspace:*
+        version: link:../task-list
+      '@verso-editor/extension-text-align':
+        specifier: workspace:*
+        version: link:../text-align
+      '@verso-editor/extension-text-color':
+        specifier: workspace:*
+        version: link:../text-color
+      '@verso-editor/extension-underline':
+        specifier: workspace:*
+        version: link:../underline
     devDependencies:
       jsdom:
         specifier: ^26.1.0

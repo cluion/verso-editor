@@ -30,7 +30,17 @@
     "@verso-editor/extension-link": "workspace:*",
     "@verso-editor/extension-list-item": "workspace:*",
     "@verso-editor/extension-ordered-list": "workspace:*",
-    "@verso-editor/extension-paragraph": "workspace:*"
+    "@verso-editor/extension-paragraph": "workspace:*",
+    "@verso-editor/extension-underline": "workspace:*",
+    "@verso-editor/extension-strikethrough": "workspace:*",
+    "@verso-editor/extension-subscript": "workspace:*",
+    "@verso-editor/extension-superscript": "workspace:*",
+    "@verso-editor/extension-text-color": "workspace:*",
+    "@verso-editor/extension-highlight": "workspace:*",
+    "@verso-editor/extension-font-family": "workspace:*",
+    "@verso-editor/extension-font-size": "workspace:*",
+    "@verso-editor/extension-text-align": "workspace:*",
+    "@verso-editor/extension-task-list": "workspace:*"
   },
   "devDependencies": {
     "jsdom": "^26.1.0",
