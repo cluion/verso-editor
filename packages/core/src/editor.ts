@@ -221,12 +221,17 @@ export class Editor {
       }
     }
 
+    // Core plugins: history, input rules, formatting keymaps
+    plugins.push(
+      history(),
+      createInputRulesPlugin(this.schema),
+      ...createKeymapPlugins(this.schema),
+      keymap(baseKeymap),
+    )
+
     if (extra) {
       plugins.push(...extra)
     }
-
-    // Fallback base keymap
-    plugins.push(keymap(baseKeymap))
 
     return plugins
   }
