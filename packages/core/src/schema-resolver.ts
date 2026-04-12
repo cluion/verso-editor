@@ -7,7 +7,26 @@ const BASE_NODES: Record<string, NodeSpec> = {
   paragraph: {
     content: 'inline*',
     group: 'block',
-    toDOM: () => ['p', 0] as unknown as HTMLElement,
+    attrs: {
+      textAlign: { default: null as string | null },
+    },
+    parseDOM: [
+      {
+        tag: 'p',
+        getAttrs: (dom) => {
+          const style = (dom as HTMLElement).getAttribute('style') ?? ''
+          const match = style.match(/(?:^|;)\s*text-align:\s*([^;]+)/i)
+          return match ? { textAlign: match[1].trim() } : { textAlign: null }
+        },
+      },
+    ],
+    toDOM: (node: { attrs: Record<string, unknown> }) => {
+      const align = node.attrs.textAlign as string | null
+      if (align) {
+        return ['p', { style: `text-align: ${align}` }, 0] as unknown as HTMLElement
+      }
+      return ['p', 0] as unknown as HTMLElement
+    },
   },
   text: { group: 'inline' },
   hard_break: {

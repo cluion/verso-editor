@@ -109,5 +109,34 @@ function createFormattingKeymap(schema: Schema): Record<string, Command> {
     }) satisfies Command
   }
 
+  // Text align: Mod-Shift-l/e/r/j
+  const alignTarget = schema.nodes.paragraph ?? schema.nodes.heading
+  if (alignTarget?.spec.attrs && 'textAlign' in alignTarget.spec.attrs) {
+    const toggleAlign = (align: string): Command => {
+      return (state, dispatch) => {
+        const { $from } = state.selection
+        for (let d = $from.depth; d > 0; d--) {
+          const node = $from.node(d)
+          if (node.type.spec.attrs && 'textAlign' in node.type.spec.attrs) {
+            if (dispatch) {
+              dispatch(
+                state.tr.setNodeMarkup($from.before(d), undefined, {
+                  ...node.attrs,
+                  textAlign: node.attrs.textAlign === align ? null : align,
+                }),
+              )
+            }
+            return true
+          }
+        }
+        return false
+      }
+    }
+    bindings['Mod-Shift-l'] = toggleAlign('left')
+    bindings['Mod-Shift-e'] = toggleAlign('center')
+    bindings['Mod-Shift-r'] = toggleAlign('right')
+    bindings['Mod-Shift-j'] = toggleAlign('justify')
+  }
+
   return bindings
 }
