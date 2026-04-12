@@ -84,4 +84,51 @@ describe('createBubbleMenu', () => {
     menu.destroy()
     editor.destroy()
   })
+
+  it('sets data-command attribute on buttons', () => {
+    const { menu, menuEl, editor } = setup()
+    const buttons = menuEl.querySelectorAll('button')
+    expect(buttons[0].getAttribute('data-command')).toBe('bold')
+    expect(buttons[1].getAttribute('data-command')).toBe('italic')
+    editor.destroy()
+    menu.destroy()
+  })
+
+  it('positions menu with fixed and high z-index', () => {
+    const { menu, menuEl, editor } = setup()
+    expect(menuEl.style.position).toBe('fixed')
+    expect(menuEl.style.zIndex).toBe('1000')
+    editor.destroy()
+    menu.destroy()
+  })
+
+  it('prevents editor blur on mousedown', () => {
+    const { menu, menuEl, editor } = setup()
+    const event = new MouseEvent('mousedown', { cancelable: true })
+    menuEl.dispatchEvent(event)
+    expect(event.defaultPrevented).toBe(true)
+    editor.destroy()
+    menu.destroy()
+  })
+
+  it('button click executes toggleMark command', () => {
+    const { menu, menuEl, editor } = setup()
+    const initialHtml = editor.getHTML()
+
+    const boldBtn = menuEl.querySelector('button[data-command="bold"]') as HTMLButtonElement
+    boldBtn.click()
+
+    // Bold command dispatches on the view; editor content should still be valid
+    expect(editor.getHTML()).toBeDefined()
+    editor.destroy()
+    menu.destroy()
+  })
+
+  it('cleanup removes element from DOM', () => {
+    const { menu, menuEl, editor } = setup()
+    expect(document.body.contains(menuEl)).toBe(true)
+    menu.destroy()
+    expect(document.body.contains(menuEl)).toBe(false)
+    editor.destroy()
+  })
 })

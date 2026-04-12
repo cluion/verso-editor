@@ -144,4 +144,81 @@ describe('Slash Commands', () => {
     view.destroy()
     views = []
   })
+
+  it('closes menu on Escape key', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    // Open menu
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: '/', bubbles: true }))
+
+    const menu = view.dom.parentElement?.querySelector('.vs-slash-menu') as HTMLElement
+    expect(menu?.style.display).toBe('block')
+
+    // Close with Escape
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+    expect(menu?.style.display).toBe('none')
+
+    view.destroy()
+    views = []
+  })
+
+  it('renders item title and description', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: '/', bubbles: true }))
+
+    const titles = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__title')
+    const descs = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__desc')
+
+    expect(titles?.[0]?.textContent).toBe('Paragraph')
+    expect(descs?.[0]?.textContent).toBe('Add a paragraph')
+    expect(titles?.[1]?.textContent).toBe('Heading 1')
+
+    view.destroy()
+    views = []
+  })
+
+  it('wraps selection on ArrowDown at last item', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: '/', bubbles: true }))
+
+    // Navigate down 3 times (past last item)
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }))
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }))
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }))
+
+    const menu = view.dom.parentElement?.querySelector('.vs-slash-menu') as HTMLElement
+    const activedesc = menu?.getAttribute('aria-activedescendant')
+
+    // Should wrap back to first item (index 0)
+    const items = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__item')
+    expect(items?.[0]?.id).toBe(activedesc)
+
+    view.destroy()
+    views = []
+  })
+
+  it('wraps selection on ArrowUp at first item', () => {
+    const plugin = createSlashCommandPlugin({ commands })
+    const view = createView([plugin])
+
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: '/', bubbles: true }))
+
+    // Navigate up from first item (should wrap to last)
+    view.dom.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp', bubbles: true }))
+
+    const menu = view.dom.parentElement?.querySelector('.vs-slash-menu') as HTMLElement
+    const activedesc = menu?.getAttribute('aria-activedescendant')
+
+    // Should wrap to last item (index 2)
+    const items = view.dom.parentElement?.querySelectorAll('.vs-slash-menu__item')
+    expect(items?.[2]?.id).toBe(activedesc)
+
+    view.destroy()
+    views = []
+  })
 })

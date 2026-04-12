@@ -189,4 +189,64 @@ describe('Drag Handle - Drag Sort', () => {
     // Initial doc has First, Second, Third
     expect(view.state.doc.childCount).toBe(3)
   })
+
+  it('sets ARIA attributes on handle', () => {
+    const plugin = createDragHandlePlugin()
+    const view = createView([plugin])
+
+    const handle = view.dom.parentElement?.querySelector('.vs-drag-handle') as HTMLElement
+    expect(handle?.getAttribute('role')).toBe('button')
+    expect(handle?.getAttribute('aria-label')).toBe('Drag to move block')
+    expect(handle?.getAttribute('tabindex')).toBe('0')
+  })
+
+  it('creates icon element inside handle', () => {
+    const plugin = createDragHandlePlugin()
+    const view = createView([plugin])
+
+    const icon = view.dom.parentElement?.querySelector('.vs-drag-handle__icon')
+    expect(icon).not.toBeNull()
+    expect(icon?.textContent).toBeTruthy()
+  })
+
+  it('has correct cursor style', () => {
+    const plugin = createDragHandlePlugin()
+    const view = createView([plugin])
+
+    const handle = view.dom.parentElement?.querySelector('.vs-drag-handle') as HTMLElement
+    expect(handle?.style.cursor).toBe('grab')
+  })
+
+  it('plugin state key is accessible', () => {
+    const plugin = createDragHandlePlugin()
+    const view = createView([plugin])
+
+    // Plugin state should be initialized
+    const state = plugin.getState?.(view.state)
+    expect(state).toBeDefined()
+    expect(state?.dragging).toBe(false)
+  })
+
+  it('mouseleave hides handle', () => {
+    const plugin = createDragHandlePlugin()
+    const view = createViewWithMultipleParagraphs([plugin])
+
+    // First show the handle via mouseover
+    const firstP = view.dom.querySelector('p')
+    if (firstP) {
+      const mouseoverEvent = new MouseEvent('mouseover', {
+        bubbles: true,
+        cancelable: true,
+      })
+      Object.defineProperty(mouseoverEvent, 'target', { value: firstP })
+      view.dom.dispatchEvent(mouseoverEvent)
+    }
+
+    const handle = view.dom.parentElement?.querySelector('.vs-drag-handle') as HTMLElement
+    expect(handle.style.display).toBe('block')
+
+    // Now mouseleave should hide it
+    view.dom.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    expect(handle.style.display).toBe('none')
+  })
 })
