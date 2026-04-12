@@ -31,6 +31,11 @@ export function createInputRulesPlugin(schema: Schema): Plugin {
     rules.push(markInputRule(/`(.+)`$/, schema.marks.code))
   }
 
+  // ~~text~~ → strikethrough
+  if (schema.marks.strikethrough) {
+    rules.push(markInputRule(/~~(.+)~~$/, schema.marks.strikethrough))
+  }
+
   // --- Block rules ---
 
   // # → heading (h1-h6)

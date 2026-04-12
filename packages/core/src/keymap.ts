@@ -36,6 +36,18 @@ function createFormattingKeymap(schema: Schema): Record<string, Command> {
   if (schema.marks.code) {
     bindings['Mod-e'] = toggleMark(schema.marks.code) as Command
   }
+  if (schema.marks.underline) {
+    bindings['Mod-u'] = toggleMark(schema.marks.underline) as Command
+  }
+  if (schema.marks.strikethrough) {
+    bindings['Mod-Shift-s'] = toggleMark(schema.marks.strikethrough) as Command
+  }
+  if (schema.marks.subscript) {
+    bindings['Mod-,'] = toggleMark(schema.marks.subscript) as Command
+  }
+  if (schema.marks.superscript) {
+    bindings['Mod-.'] = toggleMark(schema.marks.superscript) as Command
+  }
 
   // Headings: Mod-Alt-1~6 (toggle)
   if (schema.nodes.heading && schema.nodes.paragraph) {
