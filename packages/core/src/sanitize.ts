@@ -14,6 +14,10 @@ const DEFAULT_ALLOWED_TAGS = [
   'i',
   'u',
   's',
+  'del',
+  'sub',
+  'sup',
+  'mark',
   'code',
   'pre',
   'h1',
@@ -46,6 +50,11 @@ const DEFAULT_ALLOWED_ATTRIBUTES: Record<string, string[]> = {
   th: ['colspan', 'rowspan'],
   pre: ['data-language'],
   ol: ['start'],
+  span: ['style'],
+  p: ['style'],
+  li: ['data-type', 'data-checked'],
+  ul: ['data-type'],
+  mark: ['style'],
 }
 
 export function sanitizeHTML(html: string, options?: SanitizeOptions): string {
@@ -56,9 +65,15 @@ export function sanitizeHTML(html: string, options?: SanitizeOptions): string {
 
   return DOMPurify.sanitize(html, {
     ALLOWED_TAGS: allowedTags,
-    ALLOWED_ATTR: Object.values(allowedAttributes).flat(),
+    ALLOWED_ATTR: [
+      ...new Set(Object.values(allowedAttributes).flat()),
+      'data-type',
+      'data-checked',
+    ],
     ALLOW_DATA_ATTR: false,
-    FORBID_TAGS: ['style', 'script', 'iframe', 'form', 'input', 'textarea', 'button'],
+    FORBID_TAGS: ['style', 'script', 'iframe', 'form', 'textarea', 'button'],
     FORBID_ATTR: ['onerror', 'onload', 'onclick', 'onmouseover', 'formaction'],
+    ADD_TAGS: ['input'],
+    ADD_ATTR: ['type', 'checked'],
   })
 }

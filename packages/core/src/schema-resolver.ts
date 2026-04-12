@@ -13,7 +13,7 @@ const BASE_NODES: Record<string, NodeSpec> = {
     parseDOM: [
       {
         tag: 'p',
-        getAttrs: (dom) => {
+        getAttrs: (dom: HTMLElement) => {
           const style = (dom as HTMLElement).getAttribute('style') ?? ''
           const match = style.match(/(?:^|;)\s*text-align:\s*([^;]+)/i)
           return match ? { textAlign: match[1].trim() } : { textAlign: null }
