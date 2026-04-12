@@ -21,12 +21,15 @@ export const HeadingExtension = NodeExtension.create({
       },
     })),
     toDOM: (node) => {
-      const attrs: Record<string, string> = {}
       const align = node.attrs.textAlign as string | null
       if (align) {
-        attrs.style = `text-align: ${align}`
+        return [
+          `h${node.attrs.level}`,
+          { style: `text-align: ${align}` },
+          0,
+        ] as unknown as HTMLElement
       }
-      return [`h${node.attrs.level}`, attrs, 0] as unknown as HTMLElement
+      return [`h${node.attrs.level}`, 0] as unknown as HTMLElement
     },
   },
 })

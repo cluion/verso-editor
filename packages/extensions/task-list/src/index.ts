@@ -16,7 +16,7 @@ export const TaskListExtension = NodeExtension.create({
 export const TaskItemExtension = NodeExtension.create({
   name: 'taskItem',
   nodeSpec: {
-    content: 'inline (taskList)?',
+    content: 'inline*',
     attrs: {
       checked: { default: false },
     },
