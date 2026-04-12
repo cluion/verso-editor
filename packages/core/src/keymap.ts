@@ -1,8 +1,16 @@
-import { baseKeymap, lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands'
+import {
+  baseKeymap,
+  lift,
+  setBlockType,
+  splitBlock,
+  toggleMark,
+  wrapIn,
+} from 'prosemirror-commands'
 import { redo, undo } from 'prosemirror-history'
 import { keymap } from 'prosemirror-keymap'
 import type { Schema } from 'prosemirror-model'
 import type { EditorState, Plugin, Transaction } from 'prosemirror-state'
+import { TextSelection } from 'prosemirror-state'
 
 type Command = (state: EditorState, dispatch?: (tr: Transaction) => void) => boolean
 
@@ -136,6 +144,36 @@ function createFormattingKeymap(schema: Schema): Record<string, Command> {
     bindings['Mod-Shift-e'] = toggleAlign('center')
     bindings['Mod-Shift-r'] = toggleAlign('right')
     bindings['Mod-Shift-j'] = toggleAlign('justify')
+  }
+
+  // Task list: Enter to create new task item or exit on empty
+  if (schema.nodes.taskItem && schema.nodes.paragraph) {
+    const taskItemEnter: Command = (state, dispatch) => {
+      const { $from } = state.selection
+      const parent = $from.parent
+
+      if (parent.type.name !== 'taskItem') {
+        return false
+      }
+
+      // If task item is empty, exit the list
+      if (parent.content.size === 0) {
+        if (dispatch) {
+          const tr = state.tr
+          const pos = $from.before($from.depth)
+          tr.delete(pos, $from.after($from.depth))
+          const insertPos = $from.after($from.depth - 1)
+          tr.insert(insertPos, schema.nodes.paragraph.create())
+          tr.setSelection(TextSelection.near(tr.doc.resolve(insertPos + 1)))
+          dispatch(tr)
+        }
+        return true
+      }
+
+      // Non-empty: split to create new task item
+      return splitBlock(state, dispatch)
+    }
+    bindings.Enter = taskItemEnter
   }
 
   return bindings
