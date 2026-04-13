@@ -19,7 +19,7 @@
     "@verso-editor/core": "workspace:*"
   },
   "devDependencies": {
-    "jsdom": "^26.1.0",
+    "jsdom": "^29.0.2",
     "prosemirror-model": "^1.25.0",
     "prosemirror-state": "^1.4.0",
     "prosemirror-view": "^1.41.0",
