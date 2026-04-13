@@ -22,7 +22,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm audit --audit-level moderate
+      - run: pnpm audit --audit-level high
 
   lint:
     name: Lint
