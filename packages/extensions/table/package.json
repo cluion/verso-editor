@@ -20,7 +20,7 @@
     "prosemirror-tables": "^1.6.0"
   },
   "devDependencies": {
-    "jsdom": "^26.1.0",
+    "jsdom": "^29.0.2",
     "prosemirror-model": "^1.25.0",
     "prosemirror-state": "^1.4.0",
     "prosemirror-view": "^1.40.0",
