@@ -25,16 +25,42 @@ describe('ImageExtension', () => {
       expect(attrs.title.default).toBe('')
       expect(attrs.width.default).toBeNull()
       expect(attrs.height.default).toBeNull()
+      expect(attrs.caption.default).toBe('')
     })
 
-    it('toDOM returns ["img", attrs]', () => {
-      const node = { attrs: { src: 'test.png', alt: 'test', title: '', width: null, height: null } }
+    it('toDOM returns ["img", attrs] for image without caption', () => {
+      const node = {
+        attrs: { src: 'test.png', alt: 'test', title: '', width: null, height: null, caption: '' },
+      }
       const dom = ImageExtension.nodeSpec?.toDOM?.(node as never)
       expect((dom as unknown[])[0]).toBe('img')
     })
 
-    it('parseDOM extracts src, alt, title, width, height', () => {
+    it('toDOM returns ["figure", ...] for image with caption', () => {
+      const node = {
+        attrs: {
+          src: 'test.png',
+          alt: 'test',
+          title: '',
+          width: null,
+          height: null,
+          caption: 'A caption',
+        },
+      }
+      const dom = ImageExtension.nodeSpec?.toDOM?.(node as never)
+      expect((dom as unknown[])[0]).toBe('figure')
+    })
+
+    it('parseDOM extracts from figure[data-type="image"]', () => {
       const rule = ImageExtension.nodeSpec?.parseDOM?.[0] as {
+        tag: string
+        getAttrs: (dom: HTMLElement) => Record<string, unknown>
+      }
+      expect(rule.tag).toBe('figure[data-type="image"]')
+    })
+
+    it('parseDOM extracts from img[src]', () => {
+      const rule = ImageExtension.nodeSpec?.parseDOM?.[1] as {
         tag: string
         getAttrs: (dom: HTMLElement) => Record<string, unknown>
       }
@@ -55,7 +81,7 @@ describe('ImageExtension', () => {
     })
 
     it('parseDOM handles missing optional attrs', () => {
-      const rule = ImageExtension.nodeSpec?.parseDOM?.[0] as {
+      const rule = ImageExtension.nodeSpec?.parseDOM?.[1] as {
         getAttrs: (dom: HTMLElement) => Record<string, unknown>
       }
       const el = document.createElement('img')

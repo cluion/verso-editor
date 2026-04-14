@@ -17,20 +17,20 @@ import { describe, expect, it } from 'vitest'
 import { createStarterKit } from '../index'
 
 describe('createStarterKit', () => {
-  it('returns all 25 extensions by default', () => {
+  it('returns all 33 extensions by default', () => {
     const extensions = createStarterKit()
-    expect(extensions.length).toBe(25)
+    expect(extensions.length).toBe(33)
   })
 
   it('excludes extension when set to false', () => {
     const extensions = createStarterKit({ heading: false })
-    expect(extensions.length).toBe(24)
+    expect(extensions.length).toBe(32)
     expect(extensions.find((e) => e.name === 'heading')).toBeUndefined()
   })
 
   it('excludes multiple extensions', () => {
     const extensions = createStarterKit({ heading: false, link: false, history: false })
-    expect(extensions.length).toBe(22)
+    expect(extensions.length).toBe(30)
   })
 
   it('replaces extension with custom one', () => {
@@ -42,7 +42,7 @@ describe('createStarterKit', () => {
       },
     })
     const extensions = createStarterKit({ bold: customBold })
-    expect(extensions.length).toBe(25)
+    expect(extensions.length).toBe(33)
     const boldExt = extensions.find((e) => e.name === 'bold')
     expect(boldExt).toBe(customBold)
   })

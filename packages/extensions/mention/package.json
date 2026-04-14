@@ -1,5 +1,5 @@
 {
-  "name": "@verso-editor/extension-placeholder",
+  "name": "@verso-editor/extension-mention",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -19,7 +19,7 @@
     "@verso-editor/core": "workspace:*"
   },
   "devDependencies": {
-    "jsdom": "^29.0.2",
+    "jsdom": "^26.1.0",
     "prosemirror-model": "^1.25.0",
     "prosemirror-state": "^1.4.0",
     "prosemirror-view": "^1.40.0",

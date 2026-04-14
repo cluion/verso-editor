@@ -3,9 +3,8 @@ import type { Node } from 'prosemirror-model'
 import type { EditorView } from 'prosemirror-view'
 
 /**
- * Create an Image NodeView with resize handles.
- * Wraps the <img> in a container with corner resize handles
- * that update the node's width/height attributes on drag.
+ * Create an Image NodeView with resize handles and optional caption.
+ * Wraps the <img> in a <figure> with <figcaption> when caption is present.
  */
 export function createImageNodeView(): NodeViewFactory {
   return (node: Node, view: EditorView, getPos: () => number | undefined) => {
@@ -20,6 +19,15 @@ export function createImageNodeView(): NodeViewFactory {
     if (node.attrs.height) img.setAttribute('height', String(node.attrs.height))
 
     wrapper.appendChild(img)
+
+    // Caption support
+    let figcaption: HTMLElement | null = null
+    if (node.attrs.caption) {
+      figcaption = document.createElement('figcaption')
+      figcaption.textContent = node.attrs.caption
+      figcaption.classList.add('verso-image-caption')
+      wrapper.appendChild(figcaption)
+    }
 
     // Create corner resize handles
     const handlePositions = ['nw', 'ne', 'sw', 'se'] as const
@@ -96,6 +104,20 @@ export function createImageNodeView(): NodeViewFactory {
         else img.removeAttribute('title')
         if (updatedNode.attrs.width) img.setAttribute('width', String(updatedNode.attrs.width))
         if (updatedNode.attrs.height) img.setAttribute('height', String(updatedNode.attrs.height))
+
+        // Update caption
+        const newCaption = updatedNode.attrs.caption ?? ''
+        if (newCaption) {
+          if (!figcaption) {
+            figcaption = document.createElement('figcaption')
+            figcaption.classList.add('verso-image-caption')
+            wrapper.insertBefore(figcaption, handles[0])
+          }
+          figcaption.textContent = newCaption
+        } else if (figcaption) {
+          figcaption.remove()
+          figcaption = null
+        }
 
         return true
       },

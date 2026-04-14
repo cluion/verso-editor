@@ -1,6 +1,13 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  vite: {
+    build: {
+      rollupOptions: {
+        external: [/prosemirror-.*/],
+      },
+    },
+  },
   title: 'Verso Editor',
   description: 'A modular, extensible rich text editor built on ProseMirror',
   base: '/verso-editor/',

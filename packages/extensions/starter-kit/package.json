@@ -40,7 +40,15 @@
     "@verso-editor/extension-font-family": "workspace:*",
     "@verso-editor/extension-font-size": "workspace:*",
     "@verso-editor/extension-text-align": "workspace:*",
-    "@verso-editor/extension-task-list": "workspace:*"
+    "@verso-editor/extension-task-list": "workspace:*",
+    "@verso-editor/extension-autolink": "workspace:*",
+    "@verso-editor/extension-mention": "workspace:*",
+    "@verso-editor/extension-video": "workspace:*",
+    "@verso-editor/extension-file-embed": "workspace:*",
+    "@verso-editor/extension-typography": "workspace:*",
+    "@verso-editor/extension-drop-cursor": "workspace:*",
+    "@verso-editor/extension-gap-cursor": "workspace:*",
+    "@verso-editor/extension-placeholder": "workspace:*"
   },
   "devDependencies": {
     "jsdom": "^29.0.2",
