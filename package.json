@@ -32,5 +32,6 @@
   "lint-staged": {
     "*.{ts,tsx,js,json}": ["biome check --write"]
   },
-  "packageManager": "pnpm@10.8.0"
+  "packageManager": "pnpm@10.8.0",
+  "license": "MIT"
 }

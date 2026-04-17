@@ -5,7 +5,7 @@ A headless, extensible rich text editor built on [ProseMirror](https://prosemirr
 ## Features
 
 - **Headless** — no opinionated UI, bring your own toolbar and menus
-- **Plugin-based** — 22 built-in extensions, write your own with the Extension API
+- **Plugin-based** — 33 built-in extensions, write your own with the Extension API
 - **Framework adapters** — React, Vue, and Svelte wrappers
 - **Starter Kit** — one function to get bold, italic, headings, lists, links, and more
 - **HTML Sanitization** — DOMPurify-powered XSS protection built in
@@ -103,7 +103,7 @@ const editor = useEditor({
 
 ## Starter Kit Extensions
 
-`createStarterKit()` includes 14 extensions. Pass `false` to exclude, or a custom extension to replace:
+`createStarterKit()` includes 33 extensions. Pass `false` to exclude, or a custom extension to replace:
 
 ```typescript
 import { createStarterKit } from '@verso-editor/extension-starter-kit'
@@ -117,22 +117,55 @@ createStarterKit({ bold: myCustomBoldExtension })
 
 Included extensions:
 
+### Marks
+
 | Extension | Package |
 |-----------|---------|
 | Bold | `@verso-editor/extension-bold` |
 | Italic | `@verso-editor/extension-italic` |
+| Underline | `@verso-editor/extension-underline` |
+| Strikethrough | `@verso-editor/extension-strikethrough` |
 | Code (inline) | `@verso-editor/extension-code` |
+| Subscript | `@verso-editor/extension-subscript` |
+| Superscript | `@verso-editor/extension-superscript` |
+| Link | `@verso-editor/extension-link` |
+| Highlight | `@verso-editor/extension-highlight` |
+| Text Color | `@verso-editor/extension-text-color` |
+
+### Blocks
+
+| Extension | Package |
+|-----------|---------|
 | Paragraph | `@verso-editor/extension-paragraph` |
 | Heading | `@verso-editor/extension-heading` |
 | Blockquote | `@verso-editor/extension-blockquote` |
 | Horizontal Rule | `@verso-editor/extension-horizontal-rule` |
 | Code Block | `@verso-editor/extension-code-block` |
-| List Item | `@verso-editor/extension-list-item` |
 | Bullet List | `@verso-editor/extension-bullet-list` |
 | Ordered List | `@verso-editor/extension-ordered-list` |
-| Link | `@verso-editor/extension-link` |
-| Hard Break | `@verso-editor/extension-hard-break` |
+| Task List | `@verso-editor/extension-task-list` |
+| Image (with caption) | `@verso-editor/extension-image` |
+| Table (with headers) | `@verso-editor/extension-table` |
+| Video (YouTube/Vimeo) | `@verso-editor/extension-video` |
+| File Embed | `@verso-editor/extension-file-embed` |
+
+### Utilities
+
+| Extension | Package |
+|-----------|---------|
 | History (undo/redo) | `@verso-editor/extension-history` |
+| Hard Break | `@verso-editor/extension-hard-break` |
+| Typography | `@verso-editor/extension-typography` |
+| Autolink | `@verso-editor/extension-autolink` |
+| Mention | `@verso-editor/extension-mention` |
+| Placeholder | `@verso-editor/extension-placeholder` |
+| Drop Cursor | `@verso-editor/extension-drop-cursor` |
+| Gap Cursor | `@verso-editor/extension-gap-cursor` |
+| Font Family | `@verso-editor/extension-font-family` |
+| Font Size | `@verso-editor/extension-font-size` |
+| Text Align | `@verso-editor/extension-text-align` |
+| Character Count | `@verso-editor/extension-character-count` |
+| List Item | `@verso-editor/extension-list-item` |
 
 ## Custom Extension
 
@@ -158,7 +191,7 @@ const editor = new Editor({
 | Package | Description |
 |---------|-------------|
 | `@verso-editor/core` | Editor engine, schema, sanitization |
-| `@verso-editor/extension-*` | 22 individual extensions |
+| `@verso-editor/extension-*` | 33 individual extensions |
 | `@verso-editor/extension-starter-kit` | Bundled starter kit |
 | `@verso-editor/react` | React adapter |
 | `@verso-editor/vue` | Vue adapter |

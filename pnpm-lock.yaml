@@ -101,10 +101,6 @@ importers:
         version: 3.5.32(typescript@5.9.3)
 
   packages/adapters/react:
-    dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
     devDependencies:
       '@testing-library/react':
         specifier: ^16.3.0
@@ -115,6 +111,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.0
         version: 19.2.3(@types/react@19.2.14)
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -135,11 +134,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/adapters/svelte:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -154,11 +152,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/adapters/vue:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       '@vue/test-utils':
         specifier: ^2.4.0
         version: 2.4.6
@@ -225,11 +222,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/ai:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -253,11 +249,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/autolink:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -278,11 +273,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/blockquote:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -297,11 +291,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/bold:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -316,11 +309,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/bullet-list:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -335,11 +327,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/character-count:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -363,11 +354,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/code:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -382,11 +372,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/code-block:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -411,9 +400,6 @@ importers:
 
   packages/extensions/collaboration:
     dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       y-prosemirror:
         specifier: ^1.2.0
         version: 1.3.7(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.8)(y-protocols@1.0.7(yjs@13.6.30))(yjs@13.6.30)
@@ -421,6 +407,9 @@ importers:
         specifier: ^13.6.0
         version: 13.6.30
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -447,11 +436,10 @@ importers:
         version: 3.0.0(yjs@13.6.30)
 
   packages/extensions/drop-cursor:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -475,11 +463,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/file-embed:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -497,11 +484,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/font-family:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -522,11 +508,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/font-size:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -548,13 +533,13 @@ importers:
 
   packages/extensions/gap-cursor:
     dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       prosemirror-gapcursor:
         specifier: ^1.3.0
         version: 1.4.1
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -569,11 +554,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/hard-break:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -588,11 +572,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/heading:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -607,11 +590,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/highlight:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -633,13 +615,13 @@ importers:
 
   packages/extensions/history:
     dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       prosemirror-history:
         specifier: ^1.4.1
         version: 1.5.0
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -654,11 +636,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/horizontal-rule:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -673,11 +654,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/image:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -701,11 +681,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/image-upload:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -729,11 +708,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/italic:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -748,11 +726,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/link:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -767,11 +744,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/list-item:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -786,11 +762,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/mention:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -814,11 +789,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/ordered-list:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -833,11 +807,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/paragraph:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -852,11 +825,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/placeholder:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -881,9 +853,6 @@ importers:
 
   packages/extensions/starter-kit:
     dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       '@verso-editor/extension-autolink':
         specifier: workspace:*
         version: link:../autolink
@@ -981,6 +950,9 @@ importers:
         specifier: workspace:*
         version: link:../video
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -995,11 +967,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/strikethrough:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1014,11 +985,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/subscript:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1033,11 +1003,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/superscript:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1053,13 +1022,13 @@ importers:
 
   packages/extensions/table:
     dependencies:
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       prosemirror-tables:
         specifier: ^1.6.0
         version: 1.8.5
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1083,11 +1052,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/task-list:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1111,11 +1079,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/text-align:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1136,11 +1103,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/text-color:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1161,11 +1127,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/typography:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -1183,11 +1148,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/underline:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1202,11 +1166,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/video:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -1230,11 +1193,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@26.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/serializers/html:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1252,11 +1214,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/serializers/json:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1300,9 +1261,6 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.6.0
         version: 1.7.6
-      '@verso-editor/core':
-        specifier: workspace:*
-        version: link:../../core
       prosemirror-commands:
         specifier: ^1.7.0
         version: 1.7.1
@@ -1313,6 +1271,9 @@ importers:
         specifier: ^1.38.0
         version: 1.41.8
     devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1327,11 +1288,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/drag-handle:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
@@ -1355,11 +1315,10 @@ importers:
         version: 3.2.4(@types/node@25.5.2)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/slash-commands:
-    dependencies:
+    devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../core
-    devDependencies:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2

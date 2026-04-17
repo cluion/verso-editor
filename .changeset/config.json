@@ -3,9 +3,12 @@
   "changelog": ["@changesets/changelog-github", { "repo": "nGamerV/verso-editor" }],
   "commit": false,
   "fixed": [],
-  "linked": [["@verso-editor/core", "@verso-editor/bubble-menu"]],
+  "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": [],
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "onlyUpdatePeerDependentsWhenOutOfRange": true
+  }
 }
