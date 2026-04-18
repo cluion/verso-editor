@@ -9,7 +9,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: [/prosemirror-.*/, '@verso-editor/core'],
+      external: [/prosemirror-.*/, /^@verso-editor\/.*/],
     },
   },
   plugins: [dts()],
