@@ -39,5 +39,10 @@
     "vite-plugin-dts": "^4.5.0",
     "vitest": "^3.1.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cluion/verso-editor.git",
+    "directory": "packages/core"
+  }
 }

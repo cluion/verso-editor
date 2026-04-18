@@ -32,5 +32,10 @@
     "vitest": "^3.2.0",
     "@verso-editor/core": "workspace:*"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cluion/verso-editor.git",
+    "directory": "packages/adapters/react"
+  }
 }

@@ -59,5 +59,10 @@
   "license": "MIT",
   "peerDependencies": {
     "@verso-editor/core": "workspace:^"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cluion/verso-editor.git",
+    "directory": "packages/extensions/starter-kit"
   }
 }
