@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 test.describe('Sanitization', () => {
   test('script tags are stripped from pasted content', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]')
+    const editor = page.locator('#editor [contenteditable]').first()
     await editor.click()
 
     // Use evaluate to simulate paste with malicious HTML
@@ -30,7 +30,7 @@ test.describe('Sanitization', () => {
 
   test('event handler attributes are stripped', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]')
+    const editor = page.locator('#editor [contenteditable]').first()
     await editor.click()
 
     await page.evaluate(() => {
@@ -59,7 +59,7 @@ test.describe('Sanitization', () => {
 
   test('safe HTML is preserved', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]')
+    const editor = page.locator('#editor [contenteditable]').first()
     await editor.click()
 
     await page.evaluate(() => {
