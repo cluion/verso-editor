@@ -17,7 +17,7 @@ test.describe('Formatting', () => {
   }
 
   test('keyboard shortcut toggles bold', async ({ page }) => {
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await selectAll(page)
     const modifier = process.platform === 'darwin' ? 'Meta' : 'Control'
@@ -27,7 +27,7 @@ test.describe('Formatting', () => {
   })
 
   test('keyboard shortcut toggles italic', async ({ page }) => {
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await selectAll(page)
     const modifier = process.platform === 'darwin' ? 'Meta' : 'Control'
@@ -37,7 +37,7 @@ test.describe('Formatting', () => {
   })
 
   test('toolbar bold button works', async ({ page }) => {
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await selectAll(page)
     const boldBtn = page.locator('#toolbar button[data-command="bold"]')
@@ -47,7 +47,7 @@ test.describe('Formatting', () => {
   })
 
   test('toolbar italic button works', async ({ page }) => {
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await selectAll(page)
     const italicBtn = page.locator('#toolbar button[data-command="italic"]')
@@ -57,7 +57,7 @@ test.describe('Formatting', () => {
   })
 
   test('toolbar H1 button converts paragraph', async ({ page }) => {
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await selectAll(page)
     const h1Btn = page.locator('#toolbar button[data-command="heading:level=1"]')

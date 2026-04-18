@@ -3,12 +3,12 @@ import { expect, test } from '@playwright/test'
 test.describe('Sanitization', () => {
   test('script tags are stripped from pasted content', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
 
     // Use evaluate to simulate paste with malicious HTML
     await page.evaluate(() => {
-      const editorEl = document.querySelector('#editor [contenteditable]')
+      const editorEl = document.querySelector('#editor .ProseMirror')
       if (!editorEl) return
       editorEl.focus()
       const dataTransfer = new DataTransfer()
@@ -30,11 +30,11 @@ test.describe('Sanitization', () => {
 
   test('event handler attributes are stripped', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
 
     await page.evaluate(() => {
-      const editorEl = document.querySelector('#editor [contenteditable]')
+      const editorEl = document.querySelector('#editor .ProseMirror')
       if (!editorEl) return
       editorEl.focus()
       const dataTransfer = new DataTransfer()
@@ -59,11 +59,11 @@ test.describe('Sanitization', () => {
 
   test('safe HTML is preserved', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
 
     await page.evaluate(() => {
-      const editorEl = document.querySelector('#editor [contenteditable]')
+      const editorEl = document.querySelector('#editor .ProseMirror')
       if (!editorEl) return
       editorEl.focus()
       const dataTransfer = new DataTransfer()

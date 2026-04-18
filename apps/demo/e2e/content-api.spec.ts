@@ -28,7 +28,7 @@ test.describe('Content API', () => {
         '<p>Dynamic content</p>',
       )
     })
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await expect(editor).toContainText('Dynamic content')
   })
 
@@ -48,7 +48,7 @@ test.describe('Content API', () => {
 
   test('preview panel updates on edit', async ({ page }) => {
     await page.goto('/')
-    const editor = page.locator('#editor [contenteditable]').first()
+    const editor = page.locator('#editor .ProseMirror')
     await editor.click()
     await page.keyboard.press('End')
     await page.keyboard.press('Enter')
