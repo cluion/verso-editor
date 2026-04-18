@@ -1,4 +1,4 @@
-# @verso-editor/extension-table
+# @verso-editor/extension-mention
 
 ## 0.2.0
 
@@ -28,14 +28,3 @@
 
 - Updated dependencies [[`669bf3a`](https://github.com/cluion/verso-editor/commit/669bf3a4ce295eb3d99301e2767f81235f95bb26)]:
   - @verso-editor/core@0.1.1
-
-## 0.1.0
-
-### Minor Changes
-
-- Initial 0.1.0 release with core editor, 22 extensions, framework adapters, serializers, and UI components.
-
-### Patch Changes
-
-- Updated dependencies
-  - @verso-editor/core@0.1.0
