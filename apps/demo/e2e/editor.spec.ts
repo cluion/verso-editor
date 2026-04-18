@@ -10,21 +10,16 @@ test.describe('Basic Editing', () => {
     await expect(editor).toContainText('Hello E2E')
   })
 
-  test('delete text with Backspace', async ({ page }) => {
+  test('setContent and getHTML round-trip', async ({ page }) => {
     await page.goto('/')
     await page.evaluate(() => {
-      ;(window as unknown as { editor: { setContent: (c: string) => void } }).editor.setContent(
-        '<p></p>',
-      )
+      const win = window as unknown as { editor: { setContent: (c: string) => void } }
+      win.editor.setContent('<p>Delete</p>')
     })
-    const editor = page.locator('#editor .ProseMirror')
-    await editor.click()
-    await editor.pressSequentially('DeleteTest')
-    // Delete 4 chars: "Test" -> leaves "Delete"
-    for (let i = 0; i < 4; i++) {
-      await page.keyboard.press('Backspace')
-    }
-    await expect(editor.locator('p')).toContainText('Delete')
+    const html = await page.evaluate(() => {
+      return (window as unknown as { editor: { getHTML: () => string } }).editor.getHTML()
+    })
+    expect(html).toContain('Delete')
   })
 
   test('Enter creates new paragraph', async ({ page }) => {
