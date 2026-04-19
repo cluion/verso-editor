@@ -16,7 +16,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "html2pdf.js": "^0.10.2"
+    "html2pdf.js": "^0.14.0"
   },
   "devDependencies": {
     "jsdom": "^29.0.2",
