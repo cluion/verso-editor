@@ -67,7 +67,7 @@ const editor = new Editor({
 })
 ```
 
-StarterKit includes 14 extensions: bold, italic, code, paragraph, heading, bullet list, ordered list, list item, blockquote, code block, horizontal rule, link, hard break, and history. You can exclude or replace any extension:
+StarterKit includes 45 extensions covering text formatting, block elements, lists, links, media, collaboration features, and more. You can exclude or replace any extension:
 
 ```typescript
 // Exclude extensions

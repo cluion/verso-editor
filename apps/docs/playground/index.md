@@ -9,13 +9,13 @@ let editor = null
 onMounted(async () => {
   // Dynamically import to avoid SSR issues
   const { Editor } = await import('@verso-editor/core')
-  const { starterKit } = await import('@verso-editor/extension-starter-kit')
+  const { createStarterKit } = await import('@verso-editor/extension-starter-kit')
 
   if (editorContainer.value) {
     editor = new Editor({
       element: editorContainer.value,
       content: '<h2>Welcome to Verso Editor</h2><p>Start typing to see it in action.</p><ul><li>Use <strong>bold</strong> and <em>italic</em> formatting</li><li>Try keyboard shortcuts: Mod+B, Mod+I, Mod+Z</li></ul>',
-      extensions: [starterKit()],
+      extensions: createStarterKit(),
     })
 
     editor.on('update', () => {
