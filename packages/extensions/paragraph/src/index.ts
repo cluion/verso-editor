@@ -7,21 +7,31 @@ export const ParagraphExtension = NodeExtension.create({
     group: 'block',
     attrs: {
       textAlign: { default: null as string | null },
+      dir: { default: null as string | null },
     },
     parseDOM: [
       {
         tag: 'p',
         getAttrs: (dom) => {
-          const style = (dom as HTMLElement).getAttribute('style') ?? ''
+          const el = dom as HTMLElement
+          const style = el.getAttribute('style') ?? ''
           const match = style.match(/(?:^|;)\s*text-align:\s*([^;]+)/i)
-          return match ? { textAlign: match[1].trim() } : { textAlign: null }
+          const dir = el.getAttribute('dir')
+          return {
+            textAlign: match ? match[1].trim() : null,
+            dir: dir === 'rtl' || dir === 'ltr' || dir === 'auto' ? dir : null,
+          }
         },
       },
     ],
     toDOM: (node) => {
+      const attrs: Record<string, string> = {}
       const align = node.attrs.textAlign as string | null
-      if (align) {
-        return ['p', { style: `text-align: ${align}` }, 0] as unknown as HTMLElement
+      const dir = node.attrs.dir as string | null
+      if (align) attrs.style = `text-align: ${align}`
+      if (dir) attrs.dir = dir
+      if (Object.keys(attrs).length > 0) {
+        return ['p', attrs, 0] as unknown as HTMLElement
       }
       return ['p', 0] as unknown as HTMLElement
     },

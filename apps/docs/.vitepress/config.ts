@@ -26,6 +26,7 @@ export default defineConfig({
             { text: 'Quick Start', link: '/guide/quick-start' },
             { text: 'Getting Started', link: '/guide/getting-started' },
             { text: 'Extensions', link: '/guide/extensions' },
+            { text: 'Advanced Extensions', link: '/guide/advanced-extensions' },
           ],
         },
       ],

@@ -5,13 +5,15 @@ A headless, extensible rich text editor built on [ProseMirror](https://prosemirr
 ## Features
 
 - **Headless** — no opinionated UI, bring your own toolbar and menus
-- **Plugin-based** — 33 built-in extensions, write your own with the Extension API
+- **Plugin-based** — 46 built-in extensions, write your own with the Extension API
 - **Framework adapters** — React, Vue, and Svelte wrappers
 - **Starter Kit** — one function to get bold, italic, headings, lists, links, and more
 - **HTML Sanitization** — DOMPurify-powered XSS protection built in
 - **Input Rules** — markdown-like shortcuts (`**bold**`, `*italic*`, `` `code` ``)
 - **Accessibility** — ARIA labels and live region announcements
 - **Serialization** — HTML, JSON, and Markdown serializers
+- **i18n** — built-in locale system with zh-TW, ja, en
+- **Import/Export** — PDF export and Word (.docx) import
 - **TypeScript** — fully typed with exported types
 
 ## Quick Start
@@ -103,7 +105,7 @@ const editor = useEditor({
 
 ## Starter Kit Extensions
 
-`createStarterKit()` includes 33 extensions. Pass `false` to exclude, or a custom extension to replace:
+`createStarterKit()` includes 46 extensions. Pass `false` to exclude, or a custom extension to replace:
 
 ```typescript
 import { createStarterKit } from '@verso-editor/extension-starter-kit'
@@ -167,6 +169,18 @@ Included extensions:
 | Character Count | `@verso-editor/extension-character-count` |
 | List Item | `@verso-editor/extension-list-item` |
 
+### Advanced (Phase C-3)
+
+| Extension | Package | Description |
+|-----------|---------|-------------|
+| Math / LaTeX | `@verso-editor/extension-math` | KaTeX rendering, `$...$` inline / `$$...$$` block InputRules |
+| Details / Accordion | `@verso-editor/extension-details` | Collapsible `<details>/<summary>` blocks |
+| Footnotes | `@verso-editor/extension-footnote` | Inline references with auto-numbering and bidirectional links |
+| Find & Replace | `@verso-editor/extension-find-replace` | Search highlight, regex, case-sensitive, replace/replaceAll |
+| RTL Support | `@verso-editor/extension-rtl` | `dir` attribute toggle on paragraph/heading (`Mod-Alt-d`) |
+| Print View | `@verso-editor/extension-print-view` | `@media print` CSS + `print()` command |
+| Document Outline | `@verso-editor/extension-outline` | Heading extraction with `getOutline()` method |
+
 ## Custom Extension
 
 ```typescript
@@ -190,8 +204,8 @@ const editor = new Editor({
 
 | Package | Description |
 |---------|-------------|
-| `@verso-editor/core` | Editor engine, schema, sanitization |
-| `@verso-editor/extension-*` | 33 individual extensions |
+| `@verso-editor/core` | Editor engine, schema, sanitization, locale system |
+| `@verso-editor/extension-*` | 46 individual extensions |
 | `@verso-editor/extension-starter-kit` | Bundled starter kit |
 | `@verso-editor/react` | React adapter |
 | `@verso-editor/vue` | Vue adapter |
@@ -202,6 +216,12 @@ const editor = new Editor({
 | `@verso-editor/bubble-menu` | Bubble menu UI |
 | `@verso-editor/drag-handle` | Drag handle UI |
 | `@verso-editor/slash-commands` | Slash commands UI |
+| `@verso-editor/ui-emoji-picker` | Emoji picker UI with `:` suggestion |
+| `@verso-editor/ui-special-chars` | Special characters panel (math, currency, arrows) |
+| `@verso-editor/exporter-pdf` | PDF export via html2pdf.js |
+| `@verso-editor/importer-docx` | Word (.docx) import via mammoth.js |
+| `@verso-editor/templates` | Preset document templates |
+| `@verso-editor/locales` | i18n locale files (en, zh-TW, ja) |
 
 ## Development
 

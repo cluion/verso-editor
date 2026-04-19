@@ -5,10 +5,22 @@ import { BoldExtension } from '@verso-editor/extension-bold'
 import { BulletListExtension } from '@verso-editor/extension-bullet-list'
 import { CodeExtension } from '@verso-editor/extension-code'
 import { CodeBlockExtension } from '@verso-editor/extension-code-block'
+import {
+  DetailsContentExtension,
+  DetailsExtension,
+  DetailsSummaryExtension,
+} from '@verso-editor/extension-details'
 import { DropCursorExtension } from '@verso-editor/extension-drop-cursor'
 import { FileEmbedExtension } from '@verso-editor/extension-file-embed'
+import { FindReplaceExtension } from '@verso-editor/extension-find-replace'
 import { FontFamilyExtension } from '@verso-editor/extension-font-family'
 import { FontSizeExtension } from '@verso-editor/extension-font-size'
+import {
+  FootnoteItemExtension,
+  FootnoteReferenceExtension,
+  FootnoteSectionExtension,
+  FootnotesPlugin,
+} from '@verso-editor/extension-footnote'
 import { GapCursorExtension } from '@verso-editor/extension-gap-cursor'
 import { HardBreakExtension } from '@verso-editor/extension-hard-break'
 import { HeadingExtension } from '@verso-editor/extension-heading'
@@ -18,10 +30,14 @@ import { HorizontalRuleExtension } from '@verso-editor/extension-horizontal-rule
 import { ItalicExtension } from '@verso-editor/extension-italic'
 import { LinkExtension } from '@verso-editor/extension-link'
 import { ListItemExtension } from '@verso-editor/extension-list-item'
+import { MathExtension } from '@verso-editor/extension-math'
 import { MentionExtension } from '@verso-editor/extension-mention'
 import { OrderedListExtension } from '@verso-editor/extension-ordered-list'
+import { OutlineExtension } from '@verso-editor/extension-outline'
 import { ParagraphExtension } from '@verso-editor/extension-paragraph'
 import { PlaceholderExtension } from '@verso-editor/extension-placeholder'
+import { PrintViewExtension } from '@verso-editor/extension-print-view'
+import { RtlExtension } from '@verso-editor/extension-rtl'
 import { StrikethroughExtension } from '@verso-editor/extension-strikethrough'
 import { SubscriptExtension } from '@verso-editor/extension-subscript'
 import { SuperscriptExtension } from '@verso-editor/extension-superscript'
@@ -67,6 +83,14 @@ interface StarterKitOptions {
   dropCursor?: boolean | typeof DropCursorExtension
   gapCursor?: boolean | typeof GapCursorExtension
   placeholder?: boolean | typeof PlaceholderExtension
+  // Phase C-3 additions
+  math?: boolean | typeof MathExtension
+  details?: boolean | typeof DetailsExtension
+  footnote?: boolean | typeof FootnoteReferenceExtension
+  findReplace?: boolean | typeof FindReplaceExtension
+  rtl?: boolean | typeof RtlExtension
+  printView?: boolean | typeof PrintViewExtension
+  outline?: boolean | typeof OutlineExtension
 }
 
 export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
@@ -107,6 +131,19 @@ export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
     ['dropCursor', DropCursorExtension],
     ['gapCursor', GapCursorExtension],
     ['placeholder', PlaceholderExtension],
+    // Phase C-3 additions
+    ['math', MathExtension],
+    ['details', DetailsExtension],
+    ['detailsSummary', DetailsSummaryExtension],
+    ['detailsContent', DetailsContentExtension],
+    ['footnoteReference', FootnoteReferenceExtension],
+    ['footnoteSection', FootnoteSectionExtension],
+    ['footnoteItem', FootnoteItemExtension],
+    ['footnotes', FootnotesPlugin],
+    ['findReplace', FindReplaceExtension],
+    ['rtl', RtlExtension],
+    ['printView', PrintViewExtension],
+    ['outline', OutlineExtension],
   ]
 
   for (const [key, ext] of all) {

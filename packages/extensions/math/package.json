@@ -1,0 +1,42 @@
+{
+  "name": "@verso-editor/extension-math",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "katex": "^0.16.11"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@verso-editor/core": "workspace:*",
+    "jsdom": "^29.0.2",
+    "prosemirror-inputrules": "^1.5.0",
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.8",
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.5.0",
+    "vitest": "^3.2.0"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@verso-editor/core": "workspace:^"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cluion/verso-editor.git",
+    "directory": "packages/extensions/math"
+  }
+}

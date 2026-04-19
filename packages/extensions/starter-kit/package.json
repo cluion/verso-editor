@@ -47,7 +47,14 @@
     "@verso-editor/extension-typography": "workspace:*",
     "@verso-editor/extension-drop-cursor": "workspace:*",
     "@verso-editor/extension-gap-cursor": "workspace:*",
-    "@verso-editor/extension-placeholder": "workspace:*"
+    "@verso-editor/extension-placeholder": "workspace:*",
+    "@verso-editor/extension-math": "workspace:*",
+    "@verso-editor/extension-details": "workspace:*",
+    "@verso-editor/extension-footnote": "workspace:*",
+    "@verso-editor/extension-find-replace": "workspace:*",
+    "@verso-editor/extension-rtl": "workspace:*",
+    "@verso-editor/extension-print-view": "workspace:*",
+    "@verso-editor/extension-outline": "workspace:*"
   },
   "devDependencies": {
     "jsdom": "^29.0.2",

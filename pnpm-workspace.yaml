@@ -4,4 +4,6 @@ packages:
   - "packages/ui/*"
   - "packages/adapters/*"
   - "packages/serializers/*"
+  - "packages/exporter/*"
+  - "packages/importer/*"
   - "apps/*"
