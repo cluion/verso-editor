@@ -1,5 +1,69 @@
 # @verso-editor/extension-starter-kit
 
+## 1.0.0
+
+### Minor Changes
+
+- [`91ddb94`](https://github.com/cluion/verso-editor/commit/91ddb94d9f4b4bff9aca6660351220491d2a67fa) Thanks [@cluion](https://github.com/cluion)! - Phase C-3: 13 new packages for advanced features
+
+  - **Math/LaTeX** — KaTeX rendering with inline `$...$` and block `$$...$$` InputRules, click-to-edit NodeView
+  - **Emoji Picker** — Suggestion plugin triggered by `:`, searchable emoji list
+  - **Details/Accordion** — Collapsible `<details>/<summary>` blocks with toggle NodeView
+  - **Footnotes** — Inline references with auto-numbering, footnote section collection, and bidirectional links
+  - **Find & Replace** — Search highlight decorations, regex/case-sensitive options, replace/replaceAll commands
+  - **i18n** — Core locale system (`setLocale`/`t()`) + locales package (en, zh-TW, ja)
+  - **RTL Support** — `dir` attribute on paragraph/heading, `Mod-Alt-d` keymap to toggle direction
+  - **Print View** — `@media print` CSS styles + `print()` command
+  - **PDF Export** — `exportPDF()` API powered by html2pdf.js
+  - **Word Import** — `importDocx()` API powered by mammoth.js
+  - **Document Outline** — Plugin that monitors headings and provides `getOutline()` method
+  - **Templates** — Preset template library (blank, report, letter, meeting notes, blog post, README)
+  - **Special Characters** — Categorized panel with math, currency, arrows, punctuation, and symbols
+
+### Patch Changes
+
+- Updated dependencies [[`91ddb94`](https://github.com/cluion/verso-editor/commit/91ddb94d9f4b4bff9aca6660351220491d2a67fa)]:
+  - @verso-editor/core@0.2.0
+  - @verso-editor/extension-math@1.0.0
+  - @verso-editor/extension-details@1.0.0
+  - @verso-editor/extension-footnote@1.0.0
+  - @verso-editor/extension-find-replace@1.0.0
+  - @verso-editor/extension-rtl@1.0.0
+  - @verso-editor/extension-print-view@1.0.0
+  - @verso-editor/extension-outline@1.0.0
+  - @verso-editor/extension-paragraph@1.0.0
+  - @verso-editor/extension-heading@1.0.0
+  - @verso-editor/extension-autolink@1.0.0
+  - @verso-editor/extension-blockquote@1.0.0
+  - @verso-editor/extension-bold@1.0.0
+  - @verso-editor/extension-bullet-list@1.0.0
+  - @verso-editor/extension-code@1.0.0
+  - @verso-editor/extension-code-block@1.0.0
+  - @verso-editor/extension-drop-cursor@1.0.0
+  - @verso-editor/extension-file-embed@1.0.0
+  - @verso-editor/extension-font-family@1.0.0
+  - @verso-editor/extension-font-size@1.0.0
+  - @verso-editor/extension-gap-cursor@1.0.0
+  - @verso-editor/extension-hard-break@1.0.0
+  - @verso-editor/extension-highlight@1.0.0
+  - @verso-editor/extension-history@1.0.0
+  - @verso-editor/extension-horizontal-rule@1.0.0
+  - @verso-editor/extension-italic@1.0.0
+  - @verso-editor/extension-link@1.0.0
+  - @verso-editor/extension-list-item@1.0.0
+  - @verso-editor/extension-mention@1.0.0
+  - @verso-editor/extension-ordered-list@1.0.0
+  - @verso-editor/extension-placeholder@1.0.0
+  - @verso-editor/extension-strikethrough@1.0.0
+  - @verso-editor/extension-subscript@1.0.0
+  - @verso-editor/extension-superscript@1.0.0
+  - @verso-editor/extension-task-list@1.0.0
+  - @verso-editor/extension-text-align@1.0.0
+  - @verso-editor/extension-text-color@1.0.0
+  - @verso-editor/extension-typography@1.0.0
+  - @verso-editor/extension-underline@1.0.0
+  - @verso-editor/extension-video@1.0.0
+
 ## 0.2.0
 
 ### Minor Changes
