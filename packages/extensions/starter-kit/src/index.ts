@@ -2,9 +2,12 @@ import type { Extension } from '@verso-editor/core'
 import { AutolinkExtension } from '@verso-editor/extension-autolink'
 import { BlockquoteExtension } from '@verso-editor/extension-blockquote'
 import { BoldExtension } from '@verso-editor/extension-bold'
+import { BookmarkExtension } from '@verso-editor/extension-bookmark'
 import { BulletListExtension } from '@verso-editor/extension-bullet-list'
+import { CaseChangeExtension } from '@verso-editor/extension-case-change'
 import { CodeExtension } from '@verso-editor/extension-code'
 import { CodeBlockExtension } from '@verso-editor/extension-code-block'
+import { CommentExtension, CommentMark } from '@verso-editor/extension-comment'
 import {
   DetailsContentExtension,
   DetailsExtension,
@@ -21,6 +24,8 @@ import {
   FootnoteSectionExtension,
   FootnotesPlugin,
 } from '@verso-editor/extension-footnote'
+import { FormatPainterExtension } from '@verso-editor/extension-format-painter'
+import { FullscreenExtension } from '@verso-editor/extension-fullscreen'
 import { GapCursorExtension } from '@verso-editor/extension-gap-cursor'
 import { HardBreakExtension } from '@verso-editor/extension-hard-break'
 import { HeadingExtension } from '@verso-editor/extension-heading'
@@ -34,9 +39,14 @@ import { MathExtension } from '@verso-editor/extension-math'
 import { MentionExtension } from '@verso-editor/extension-mention'
 import { OrderedListExtension } from '@verso-editor/extension-ordered-list'
 import { OutlineExtension } from '@verso-editor/extension-outline'
+import { PaginationExtension } from '@verso-editor/extension-pagination'
 import { ParagraphExtension } from '@verso-editor/extension-paragraph'
 import { PlaceholderExtension } from '@verso-editor/extension-placeholder'
 import { PrintViewExtension } from '@verso-editor/extension-print-view'
+import {
+  EditableMark,
+  RestrictedEditingExtension,
+} from '@verso-editor/extension-restricted-editing'
 import { RtlExtension } from '@verso-editor/extension-rtl'
 import { StrikethroughExtension } from '@verso-editor/extension-strikethrough'
 import { SubscriptExtension } from '@verso-editor/extension-subscript'
@@ -44,6 +54,11 @@ import { SuperscriptExtension } from '@verso-editor/extension-superscript'
 import { TaskItemExtension, TaskListExtension } from '@verso-editor/extension-task-list'
 import { TextAlignExtension } from '@verso-editor/extension-text-align'
 import { TextColorExtension } from '@verso-editor/extension-text-color'
+import {
+  DeletionMark,
+  InsertionMark,
+  TrackChangesExtension,
+} from '@verso-editor/extension-track-changes'
 import { TypographyExtension } from '@verso-editor/extension-typography'
 import { UnderlineExtension } from '@verso-editor/extension-underline'
 import { VideoExtension } from '@verso-editor/extension-video'
@@ -91,6 +106,15 @@ interface StarterKitOptions {
   rtl?: boolean | typeof RtlExtension
   printView?: boolean | typeof PrintViewExtension
   outline?: boolean | typeof OutlineExtension
+  // Phase C-4 additions
+  trackChanges?: boolean | typeof TrackChangesExtension
+  comment?: boolean | typeof CommentExtension
+  restrictedEditing?: boolean | typeof RestrictedEditingExtension
+  pagination?: boolean | typeof PaginationExtension
+  formatPainter?: boolean | typeof FormatPainterExtension
+  fullscreen?: boolean | typeof FullscreenExtension
+  caseChange?: boolean | typeof CaseChangeExtension
+  bookmark?: boolean | typeof BookmarkExtension
 }
 
 export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
@@ -144,6 +168,19 @@ export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
     ['rtl', RtlExtension],
     ['printView', PrintViewExtension],
     ['outline', OutlineExtension],
+    // Phase C-4 additions
+    ['insertionMark', InsertionMark],
+    ['deletionMark', DeletionMark],
+    ['trackChanges', TrackChangesExtension],
+    ['commentMark', CommentMark],
+    ['comment', CommentExtension],
+    ['editableMark', EditableMark],
+    ['restrictedEditing', RestrictedEditingExtension],
+    ['pagination', PaginationExtension],
+    ['formatPainter', FormatPainterExtension],
+    ['fullscreen', FullscreenExtension],
+    ['caseChange', CaseChangeExtension],
+    ['bookmark', BookmarkExtension],
   ]
 
   for (const [key, ext] of all) {

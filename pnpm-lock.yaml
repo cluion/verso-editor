@@ -50,9 +50,36 @@ importers:
       '@verso-editor/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@verso-editor/extension-bookmark':
+        specifier: workspace:*
+        version: link:../../packages/extensions/bookmark
+      '@verso-editor/extension-case-change':
+        specifier: workspace:*
+        version: link:../../packages/extensions/case-change
+      '@verso-editor/extension-comment':
+        specifier: workspace:*
+        version: link:../../packages/extensions/comment
+      '@verso-editor/extension-format-painter':
+        specifier: workspace:*
+        version: link:../../packages/extensions/format-painter
+      '@verso-editor/extension-fullscreen':
+        specifier: workspace:*
+        version: link:../../packages/extensions/fullscreen
+      '@verso-editor/extension-pagination':
+        specifier: workspace:*
+        version: link:../../packages/extensions/pagination
+      '@verso-editor/extension-restricted-editing':
+        specifier: workspace:*
+        version: link:../../packages/extensions/restricted-editing
       '@verso-editor/extension-starter-kit':
         specifier: workspace:^
         version: link:../../packages/extensions/starter-kit
+      '@verso-editor/extension-track-changes':
+        specifier: workspace:*
+        version: link:../../packages/extensions/track-changes
+      '@verso-editor/ui-context-menu':
+        specifier: workspace:*
+        version: link:../../packages/ui/context-menu
       prosemirror-commands:
         specifier: ^1.7.0
         version: 1.7.1
@@ -327,6 +354,33 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/extensions/bookmark:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
   packages/extensions/bullet-list:
     devDependencies:
       '@verso-editor/core':
@@ -335,6 +389,33 @@ importers:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/extensions/case-change:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -453,6 +534,33 @@ importers:
       y-websocket:
         specifier: ^3.0.0
         version: 3.0.0(yjs@13.6.30)
+
+  packages/extensions/comment:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/details:
     devDependencies:
@@ -605,6 +713,60 @@ importers:
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/footnote:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/extensions/format-painter:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/extensions/fullscreen:
     devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
@@ -964,6 +1126,33 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/extensions/pagination:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
   packages/extensions/paragraph:
     devDependencies:
       '@verso-editor/core':
@@ -1030,6 +1219,33 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/extensions/restricted-editing:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
   packages/extensions/rtl:
     devDependencies:
       '@verso-editor/core':
@@ -1068,15 +1284,24 @@ importers:
       '@verso-editor/extension-bold':
         specifier: workspace:*
         version: link:../bold
+      '@verso-editor/extension-bookmark':
+        specifier: workspace:*
+        version: link:../bookmark
       '@verso-editor/extension-bullet-list':
         specifier: workspace:*
         version: link:../bullet-list
+      '@verso-editor/extension-case-change':
+        specifier: workspace:*
+        version: link:../case-change
       '@verso-editor/extension-code':
         specifier: workspace:*
         version: link:../code
       '@verso-editor/extension-code-block':
         specifier: workspace:*
         version: link:../code-block
+      '@verso-editor/extension-comment':
+        specifier: workspace:*
+        version: link:../comment
       '@verso-editor/extension-details':
         specifier: workspace:*
         version: link:../details
@@ -1098,6 +1323,12 @@ importers:
       '@verso-editor/extension-footnote':
         specifier: workspace:*
         version: link:../footnote
+      '@verso-editor/extension-format-painter':
+        specifier: workspace:*
+        version: link:../format-painter
+      '@verso-editor/extension-fullscreen':
+        specifier: workspace:*
+        version: link:../fullscreen
       '@verso-editor/extension-gap-cursor':
         specifier: workspace:*
         version: link:../gap-cursor
@@ -1137,6 +1368,9 @@ importers:
       '@verso-editor/extension-outline':
         specifier: workspace:*
         version: link:../outline
+      '@verso-editor/extension-pagination':
+        specifier: workspace:*
+        version: link:../pagination
       '@verso-editor/extension-paragraph':
         specifier: workspace:*
         version: link:../paragraph
@@ -1146,6 +1380,9 @@ importers:
       '@verso-editor/extension-print-view':
         specifier: workspace:*
         version: link:../print-view
+      '@verso-editor/extension-restricted-editing':
+        specifier: workspace:*
+        version: link:../restricted-editing
       '@verso-editor/extension-rtl':
         specifier: workspace:*
         version: link:../rtl
@@ -1167,6 +1404,9 @@ importers:
       '@verso-editor/extension-text-color':
         specifier: workspace:*
         version: link:../text-color
+      '@verso-editor/extension-track-changes':
+        specifier: workspace:*
+        version: link:../track-changes
       '@verso-editor/extension-typography':
         specifier: workspace:*
         version: link:../typography
@@ -1343,6 +1583,33 @@ importers:
       prosemirror-state:
         specifier: ^1.4.3
         version: 1.4.4
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/extensions/track-changes:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1546,6 +1813,24 @@ importers:
       prosemirror-view:
         specifier: ^1.38.0
         version: 1.41.8
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/ui/context-menu:
     devDependencies:
       '@verso-editor/core':
         specifier: workspace:*

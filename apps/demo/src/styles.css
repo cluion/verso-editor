@@ -284,6 +284,7 @@ body {
   display: flex;
   gap: 2px;
   padding: 4px 6px;
+  align-items: center;
 }
 
 #bubble-menu button {
@@ -305,4 +306,147 @@ body {
 #bubble-menu button.active {
   background: #4a90d9;
   color: #fff;
+}
+
+.bubble-sep {
+  width: 1px;
+  height: 20px;
+  background: #ddd;
+  margin: 0 4px;
+}
+
+/* --- Phase C-4: Toolbar separator & C-4 buttons --- */
+
+.toolbar-sep {
+  width: 1px;
+  background: #ddd;
+  margin: 0 6px;
+  align-self: stretch;
+}
+
+#toolbar .c4-btn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  color: #555;
+  border-color: #ccc;
+  background: #f8f9fa;
+}
+
+#toolbar .c4-btn:hover {
+  background: #e8eef5;
+  border-color: #4a90d9;
+  color: #2a6ab5;
+}
+
+/* --- Phase C-4: Track Changes --- */
+
+#editor .verso-insertion {
+  background: #d4edda;
+  border-bottom: 2px solid #28a745;
+  border-radius: 2px;
+}
+
+#editor .verso-deletion {
+  background: #f8d7da;
+  text-decoration: line-through;
+  color: #dc3545;
+  border-radius: 2px;
+}
+
+/* --- Phase C-4: Comments --- */
+
+#editor .verso-comment {
+  background: #fff3cd;
+  border-bottom: 2px solid #ffc107;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#editor .verso-comment:hover {
+  background: #ffe69c;
+}
+
+/* --- Phase C-4: Bookmarks --- */
+
+#editor .verso-bookmark {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#editor .verso-bookmark::before {
+  content: "\1F516";
+  font-size: 14px;
+  position: relative;
+  display: inline;
+}
+
+/* --- Phase C-4: Pagination page breaks --- */
+
+#editor .verso-page-break {
+  border-top: 2px dashed #ccc;
+  margin: 16px 0;
+  height: 0;
+  position: relative;
+}
+
+#editor .verso-page-break::after {
+  content: "— Page Break —";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 0 8px;
+  color: #999;
+  font-size: 11px;
+}
+
+/* --- Phase C-4: Context Menu --- */
+
+.vo-context-menu {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  min-width: 180px;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.vo-context-menu-item {
+  padding: 6px 16px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.1s;
+}
+
+.vo-context-menu-item:hover {
+  background: #f0f0f0;
+}
+
+.vo-context-menu-item-disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.vo-context-menu-item-disabled:hover {
+  background: transparent;
+}
+
+.vo-context-menu-separator {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 4px 0;
+}
+
+/* --- Phase C-4: Editable region --- */
+
+#editor .verso-editable {
+  outline: 2px dashed #4a90d9;
+  outline-offset: 2px;
+  border-radius: 2px;
 }

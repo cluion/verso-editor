@@ -10,6 +10,7 @@ import type { Extension, NodeViewFactory } from './extension'
 import { createInputRulesPlugin } from './input-rules'
 import { createKeymapPlugins } from './keymap'
 import { sortExtensions } from './plugin-manager'
+import { RevisionHistory, type RevisionSnapshot, createSnapshot } from './revision'
 import { sanitizeHTML } from './sanitize'
 import { defaultSchema } from './schema'
 import { resolveSchema } from './schema-resolver'
@@ -36,6 +37,7 @@ export class Editor {
   private readonly errorHandler: (error: Error) => void
   private readonly ariaLabel: string
   private liveRegion: HTMLElement | null = null
+  private revisions = new RevisionHistory()
   readonly view: EditorView
   readonly schema: Schema
 
@@ -126,6 +128,31 @@ export class Editor {
     if (this.liveRegion) {
       this.liveRegion.textContent = message
     }
+  }
+
+  createSnapshot(): RevisionSnapshot {
+    const snapshot = createSnapshot(this.view.state.doc)
+    this.revisions.add(snapshot)
+    return snapshot
+  }
+
+  getRevisionHistory(): RevisionSnapshot[] {
+    return this.revisions.getAll()
+  }
+
+  restoreRevision(snapshot: RevisionSnapshot): this {
+    const doc = this.schema.nodeFromJSON(snapshot.doc)
+    const state = EditorState.create({
+      doc,
+      plugins: this.view.state.plugins,
+    })
+    try {
+      this.view.updateState(state)
+    } catch (error) {
+      this.errorHandler(error instanceof Error ? error : new Error(String(error)))
+    }
+    this.emitter.emit('update', this.getJSON())
+    return this
   }
 
   private setupAccessibility(element: HTMLElement): void {

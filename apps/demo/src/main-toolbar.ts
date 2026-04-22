@@ -1,5 +1,11 @@
 import { Editor } from '@verso-editor/core'
+import { goToBookmark } from '@verso-editor/extension-bookmark'
+import { toLowerCase, toTitleCase, toUpperCase } from '@verso-editor/extension-case-change'
+import { addComment, removeComment } from '@verso-editor/extension-comment'
+import { toggleFullscreen } from '@verso-editor/extension-fullscreen'
 import { createStarterKit } from '@verso-editor/extension-starter-kit'
+import { acceptChanges, rejectChanges } from '@verso-editor/extension-track-changes'
+import { ContextMenu } from '@verso-editor/ui-context-menu'
 import { setBlockType, toggleMark } from 'prosemirror-commands'
 
 const element = document.querySelector<HTMLElement>('#editor')
@@ -28,6 +34,8 @@ const initialContent = `
   <li><code>---</code> → 分隔線</li>
 </ul>
 <blockquote>這是一段引用文字，用來展示引用區塊的樣式。</blockquote>
+<h3>Phase C-4 企業級功能</h3>
+<p>追蹤修訂、評論、版本歷史、格式複製、大小寫轉換、書籤等功能已在工具列中可用。</p>
 <h3>開始編輯</h3>
 <p>直接在這裡打字、刪除、格式化，體驗編輯器的各項功能。</p>
 `.trim()
@@ -115,14 +123,116 @@ if (toolbarEl) {
     { command: 'heading:level=6', label: 'H6' },
   ]
 
+  const c4Items = [
+    { label: '✔ Accept', action: () => acceptChanges(editor.view.state, editor.view.dispatch) },
+    { label: '✘ Reject', action: () => rejectChanges(editor.view.state, editor.view.dispatch) },
+    {
+      label: 'Comment',
+      action: () => {
+        const id = `cmt-${Date.now()}`
+        const threadId = `thread-${Date.now()}`
+        addComment(id, threadId)(editor.view.state, editor.view.dispatch)
+      },
+    },
+    {
+      label: 'Rm Comment',
+      action: () => {
+        const threadId = prompt('Enter threadId to remove:')
+        if (threadId) removeComment(threadId)(editor.view.state, editor.view.dispatch)
+      },
+    },
+    { label: 'UPPER', action: () => toUpperCase()(editor.view.state, editor.view.dispatch) },
+    { label: 'lower', action: () => toLowerCase()(editor.view.state, editor.view.dispatch) },
+    { label: 'Title', action: () => toTitleCase()(editor.view.state, editor.view.dispatch) },
+    {
+      label: 'Bookmark',
+      action: () => {
+        const name = prompt('Bookmark name:') ?? 'bm1'
+        const { state, dispatch } = editor.view
+        const bmType = state.schema.nodes.bookmark
+        if (bmType) {
+          const node = bmType.create({ id: `bm-${Date.now()}`, name })
+          dispatch(state.tr.replaceSelectionWith(node))
+        }
+      },
+    },
+    {
+      label: 'Go BM',
+      action: () => {
+        const id = prompt('Bookmark id (e.g. bm-...):')
+        if (id) goToBookmark(id)(editor.view.state, editor.view.dispatch)
+      },
+    },
+    {
+      label: 'Snapshot',
+      action: () => {
+        const snap = editor.createSnapshot()
+        const history = editor.getRevisionHistory()
+        alert(`Snapshot created: ${snap.id}\nTotal snapshots: ${history.length}`)
+      },
+    },
+    {
+      label: 'Restore',
+      action: () => {
+        const history = editor.getRevisionHistory()
+        if (history.length === 0) {
+          alert('No snapshots yet')
+          return
+        }
+        const list = history
+          .map((s, i) => `${i}: ${s.id} (${new Date(s.timestamp).toLocaleTimeString()})`)
+          .join('\n')
+        const idx = Number(prompt(`Snapshots:\n${list}\n\nEnter index to restore:`))
+        if (!Number.isNaN(idx) && history[idx]) {
+          editor.restoreRevision(history[idx])
+        }
+      },
+    },
+    {
+      label: 'Fullscreen',
+      action: () => toggleFullscreen()(editor.view.state, editor.view.dispatch),
+    },
+    {
+      label: 'Paginated',
+      action: () => {
+        const { state, dispatch } = editor.view
+        const tr = state.tr.setMeta('pagination', { mode: 'paginated' })
+        dispatch(tr)
+      },
+    },
+    {
+      label: 'Continuous',
+      action: () => {
+        const { state, dispatch } = editor.view
+        const tr = state.tr.setMeta('pagination', { mode: 'continuous' })
+        dispatch(tr)
+      },
+    },
+  ]
+
   toolbarEl.setAttribute('role', 'toolbar')
   toolbarEl.setAttribute('aria-label', 'Formatting toolbar')
 
+  // Basic formatting buttons
   for (const item of toolbarItems) {
     const button = document.createElement('button')
     button.textContent = item.label
     button.setAttribute('data-command', item.command)
     button.addEventListener('click', () => executeCommand(item.command))
+    toolbarEl.appendChild(button)
+  }
+
+  // Separator
+  const sep = document.createElement('span')
+  sep.className = 'toolbar-sep'
+  toolbarEl.appendChild(sep)
+
+  // C-4 feature buttons
+  for (const item of c4Items) {
+    const button = document.createElement('button')
+    button.textContent = item.label
+    button.className = 'c4-btn'
+    button.addEventListener('click', item.action)
     toolbarEl.appendChild(button)
   }
 
@@ -151,6 +261,43 @@ if (toolbarEl) {
   editor.on('update', updateToolbar)
   updateToolbar()
 }
+
+// --- Context Menu ---
+
+const contextMenu = new ContextMenu({ items: [] })
+
+element.addEventListener('contextmenu', (e) => {
+  e.preventDefault()
+  const { state, dispatch } = editor.view
+  contextMenu.show(e.clientX, e.clientY, [
+    { label: 'Bold', command: () => toggleMark(state.schema.marks.bold)(state, dispatch) },
+    { label: 'Italic', command: () => toggleMark(state.schema.marks.italic)(state, dispatch) },
+    { label: 'Separator', command: () => {}, separator: true },
+    { label: 'UPPERCASE', command: () => toUpperCase()(state, dispatch) },
+    { label: 'lowercase', command: () => toLowerCase()(state, dispatch) },
+    { label: 'Title Case', command: () => toTitleCase()(state, dispatch) },
+    { label: 'Separator', command: () => {}, separator: true },
+    {
+      label: 'Add Comment',
+      command: () => {
+        const id = `cmt-${Date.now()}`
+        addComment(id, `thread-${Date.now()}`)(state, dispatch)
+      },
+    },
+    {
+      label: 'Insert Bookmark',
+      command: () => {
+        const name = prompt('Bookmark name:') ?? 'bm1'
+        const bmType = state.schema.nodes.bookmark
+        if (bmType)
+          dispatch(state.tr.replaceSelectionWith(bmType.create({ id: `bm-${Date.now()}`, name })))
+      },
+    },
+    { label: 'Separator', command: () => {}, separator: true },
+    { label: 'Accept Changes', command: () => acceptChanges(state, dispatch) },
+    { label: 'Reject Changes', command: () => rejectChanges(state, dispatch) },
+  ])
+})
 
 // --- Preview Panels ---
 

@@ -19,18 +19,18 @@ import { createStarterKit } from '../index'
 describe('createStarterKit', () => {
   it('returns all extensions by default', () => {
     const extensions = createStarterKit()
-    expect(extensions.length).toBe(45)
+    expect(extensions.length).toBe(57)
   })
 
   it('excludes extension when set to false', () => {
     const extensions = createStarterKit({ heading: false })
-    expect(extensions.length).toBe(44)
+    expect(extensions.length).toBe(56)
     expect(extensions.find((e) => e.name === 'heading')).toBeUndefined()
   })
 
   it('excludes multiple extensions', () => {
     const extensions = createStarterKit({ heading: false, link: false, history: false })
-    expect(extensions.length).toBe(42)
+    expect(extensions.length).toBe(54)
   })
 
   it('replaces extension with custom one', () => {
@@ -42,7 +42,7 @@ describe('createStarterKit', () => {
       },
     })
     const extensions = createStarterKit({ bold: customBold })
-    expect(extensions.length).toBe(45)
+    expect(extensions.length).toBe(57)
     const boldExt = extensions.find((e) => e.name === 'bold')
     expect(boldExt).toBe(customBold)
   })

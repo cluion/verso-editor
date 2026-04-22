@@ -25,3 +25,9 @@ export { defaultSchema, defaultNodeSpecs, defaultMarkSpecs } from './schema'
 export { resolveSchema } from './schema-resolver'
 export { sanitizeHTML, type SanitizeOptions } from './sanitize'
 export { setLocale, getLocale, t } from './locale'
+export {
+  createSnapshot,
+  compareSnapshots,
+  RevisionHistory,
+  type RevisionSnapshot,
+} from './revision'
