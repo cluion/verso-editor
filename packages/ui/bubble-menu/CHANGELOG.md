@@ -1,5 +1,12 @@
 # @verso-editor/bubble-menu
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`aa2ca2e`](https://github.com/cluion/verso-editor/commit/aa2ca2e911712036cf9296c3dfcff9f7703dd8a6)]:
+  - @verso-editor/core@2.0.0
+
 ## 1.0.0
 
 ### Patch Changes

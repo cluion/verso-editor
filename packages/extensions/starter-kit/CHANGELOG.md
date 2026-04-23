@@ -1,5 +1,84 @@
 # @verso-editor/extension-starter-kit
 
+## 2.0.0
+
+### Minor Changes
+
+- [`aa2ca2e`](https://github.com/cluion/verso-editor/commit/aa2ca2e911712036cf9296c3dfcff9f7703dd8a6) Thanks [@cluion](https://github.com/cluion)! - Phase C-4: 企業級功能 — 10 個新 extension + Revision History
+
+  ### 新增套件
+
+  - **extension-track-changes**: 追蹤修訂（insertion/deletion marks、acceptChanges/rejectChanges、author/timestamp）
+  - **extension-comment**: 評論批註（comment mark、addComment/removeComment、onClickComment callback）
+  - **extension-restricted-editing**: 限制編輯（editable mark、filterTransaction 攔截不可編輯區域）
+  - **extension-pagination**: 分頁檢視（CSS page break decorations、paginated/continuous 模式切換）
+  - **extension-format-painter**: 格式複製刷（copyMarkFormat/pasteMarkFormat、Mod-Shift-c/v 快捷鍵）
+  - **extension-fullscreen**: 全螢幕模式（toggleFullscreen、瀏覽器 Fullscreen API）
+  - **extension-case-change**: 大小寫轉換（toUpperCase/toLowerCase/toTitleCase）
+  - **extension-bookmark**: 書籤錨點（inline atom node、goToBookmark 跳轉）
+  - **ui-context-menu**: 右鍵選單 UI 元件（可配置選單項目、點擊外部關閉）
+
+  ### Core 變更
+
+  - 新增 `revision.ts` 模組：createSnapshot、compareSnapshots、RevisionHistory class
+  - Editor 加入 createSnapshot()、getRevisionHistory()、restoreRevision() 方法
+
+  ### StarterKit 整合
+
+  - createStarterKit 新增 12 個 extension 選項（trackChanges、comment、restrictedEditing、pagination、formatPainter、fullscreen、caseChange、bookmark 及對應 marks）
+
+### Patch Changes
+
+- Updated dependencies [[`aa2ca2e`](https://github.com/cluion/verso-editor/commit/aa2ca2e911712036cf9296c3dfcff9f7703dd8a6)]:
+  - @verso-editor/core@2.0.0
+  - @verso-editor/extension-track-changes@2.0.0
+  - @verso-editor/extension-comment@2.0.0
+  - @verso-editor/extension-restricted-editing@2.0.0
+  - @verso-editor/extension-pagination@2.0.0
+  - @verso-editor/extension-format-painter@2.0.0
+  - @verso-editor/extension-fullscreen@2.0.0
+  - @verso-editor/extension-case-change@2.0.0
+  - @verso-editor/extension-bookmark@2.0.0
+  - @verso-editor/extension-autolink@2.0.0
+  - @verso-editor/extension-blockquote@2.0.0
+  - @verso-editor/extension-bold@2.0.0
+  - @verso-editor/extension-bullet-list@2.0.0
+  - @verso-editor/extension-code@2.0.0
+  - @verso-editor/extension-code-block@2.0.0
+  - @verso-editor/extension-details@2.0.0
+  - @verso-editor/extension-drop-cursor@2.0.0
+  - @verso-editor/extension-file-embed@2.0.0
+  - @verso-editor/extension-find-replace@2.0.0
+  - @verso-editor/extension-font-family@2.0.0
+  - @verso-editor/extension-font-size@2.0.0
+  - @verso-editor/extension-footnote@2.0.0
+  - @verso-editor/extension-gap-cursor@2.0.0
+  - @verso-editor/extension-hard-break@2.0.0
+  - @verso-editor/extension-heading@2.0.0
+  - @verso-editor/extension-highlight@2.0.0
+  - @verso-editor/extension-history@2.0.0
+  - @verso-editor/extension-horizontal-rule@2.0.0
+  - @verso-editor/extension-italic@2.0.0
+  - @verso-editor/extension-link@2.0.0
+  - @verso-editor/extension-list-item@2.0.0
+  - @verso-editor/extension-math@2.0.0
+  - @verso-editor/extension-mention@2.0.0
+  - @verso-editor/extension-ordered-list@2.0.0
+  - @verso-editor/extension-outline@2.0.0
+  - @verso-editor/extension-paragraph@2.0.0
+  - @verso-editor/extension-placeholder@2.0.0
+  - @verso-editor/extension-print-view@2.0.0
+  - @verso-editor/extension-rtl@2.0.0
+  - @verso-editor/extension-strikethrough@2.0.0
+  - @verso-editor/extension-subscript@2.0.0
+  - @verso-editor/extension-superscript@2.0.0
+  - @verso-editor/extension-task-list@2.0.0
+  - @verso-editor/extension-text-align@2.0.0
+  - @verso-editor/extension-text-color@2.0.0
+  - @verso-editor/extension-typography@2.0.0
+  - @verso-editor/extension-underline@2.0.0
+  - @verso-editor/extension-video@2.0.0
+
 ## 1.0.0
 
 ### Minor Changes
