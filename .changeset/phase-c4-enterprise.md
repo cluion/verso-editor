@@ -1,5 +1,4 @@
 ---
-"@verso-editor/core": major
 "@verso-editor/extension-starter-kit": minor
 "@verso-editor/extension-track-changes": minor
 "@verso-editor/extension-comment": minor
