@@ -1087,6 +1087,33 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/extensions/mermaid:
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.0
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.0
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
   packages/extensions/ordered-list:
     devDependencies:
       '@verso-editor/core':
@@ -1362,6 +1389,9 @@ importers:
       '@verso-editor/extension-mention':
         specifier: workspace:*
         version: link:../mention
+      '@verso-editor/extension-mermaid':
+        specifier: workspace:*
+        version: link:../mermaid
       '@verso-editor/extension-ordered-list':
         specifier: workspace:*
         version: link:../ordered-list
@@ -1395,6 +1425,9 @@ importers:
       '@verso-editor/extension-superscript':
         specifier: workspace:*
         version: link:../superscript
+      '@verso-editor/extension-tag':
+        specifier: workspace:*
+        version: link:../tag
       '@verso-editor/extension-task-list':
         specifier: workspace:*
         version: link:../task-list
@@ -1492,6 +1525,33 @@ importers:
       prosemirror-tables:
         specifier: ^1.6.0
         version: 1.8.5
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.0.2
+        version: 29.0.2
+      prosemirror-model:
+        specifier: ^1.25.0
+        version: 1.25.4
+      prosemirror-state:
+        specifier: ^1.4.0
+        version: 1.4.4
+      prosemirror-view:
+        specifier: ^1.40.0
+        version: 1.41.8
+      vite:
+        specifier: ^8.0.8
+        version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+
+  packages/extensions/tag:
     devDependencies:
       '@verso-editor/core':
         specifier: workspace:*
