@@ -12,7 +12,7 @@ export default defineConfig({
         index: resolve(__dirname, 'index.html'),
         bubble: resolve(__dirname, 'bubble.html'),
       },
-      external: [/prosemirror-.*/],
+      external: [/prosemirror-.*/, 'mermaid'],
     },
   },
 })

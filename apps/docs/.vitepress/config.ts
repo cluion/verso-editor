@@ -4,7 +4,7 @@ export default defineConfig({
   vite: {
     build: {
       rollupOptions: {
-        external: [/prosemirror-.*/],
+        external: [/prosemirror-.*/, 'mermaid'],
       },
     },
   },
