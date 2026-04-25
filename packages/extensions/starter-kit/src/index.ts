@@ -37,6 +37,7 @@ import { LinkExtension } from '@verso-editor/extension-link'
 import { ListItemExtension } from '@verso-editor/extension-list-item'
 import { MathExtension } from '@verso-editor/extension-math'
 import { MentionExtension } from '@verso-editor/extension-mention'
+import { MermaidExtension } from '@verso-editor/extension-mermaid'
 import { OrderedListExtension } from '@verso-editor/extension-ordered-list'
 import { OutlineExtension } from '@verso-editor/extension-outline'
 import { PaginationExtension } from '@verso-editor/extension-pagination'
@@ -51,6 +52,7 @@ import { RtlExtension } from '@verso-editor/extension-rtl'
 import { StrikethroughExtension } from '@verso-editor/extension-strikethrough'
 import { SubscriptExtension } from '@verso-editor/extension-subscript'
 import { SuperscriptExtension } from '@verso-editor/extension-superscript'
+import { TagExtension } from '@verso-editor/extension-tag'
 import { TaskItemExtension, TaskListExtension } from '@verso-editor/extension-task-list'
 import { TextAlignExtension } from '@verso-editor/extension-text-align'
 import { TextColorExtension } from '@verso-editor/extension-text-color'
@@ -115,6 +117,9 @@ interface StarterKitOptions {
   fullscreen?: boolean | typeof FullscreenExtension
   caseChange?: boolean | typeof CaseChangeExtension
   bookmark?: boolean | typeof BookmarkExtension
+  // Phase D-1 additions
+  mermaid?: boolean | typeof MermaidExtension
+  tag?: boolean | typeof TagExtension
 }
 
 export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
@@ -181,6 +186,9 @@ export function createStarterKit(options: StarterKitOptions = {}): Extension[] {
     ['fullscreen', FullscreenExtension],
     ['caseChange', CaseChangeExtension],
     ['bookmark', BookmarkExtension],
+    // Phase D-1 additions
+    ['mermaid', MermaidExtension],
+    ['tag', TagExtension],
   ]
 
   for (const [key, ext] of all) {

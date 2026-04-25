@@ -62,7 +62,9 @@
     "@verso-editor/extension-format-painter": "workspace:*",
     "@verso-editor/extension-fullscreen": "workspace:*",
     "@verso-editor/extension-case-change": "workspace:*",
-    "@verso-editor/extension-bookmark": "workspace:*"
+    "@verso-editor/extension-bookmark": "workspace:*",
+    "@verso-editor/extension-mermaid": "workspace:*",
+    "@verso-editor/extension-tag": "workspace:*"
   },
   "devDependencies": {
     "jsdom": "^29.0.2",
