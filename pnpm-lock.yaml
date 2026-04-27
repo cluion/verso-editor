@@ -25,7 +25,7 @@ importers:
         version: 25.6.0
       '@vitest/coverage-v8':
         specifier: ^3.2.4
-        version: 3.2.4(vitest@3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3))
+        version: 3.2.4(vitest@3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3))
       husky:
         specifier: ^9.1.0
         version: 9.1.7
@@ -40,7 +40,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: ^3.1.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   apps/demo:
     dependencies:
@@ -142,8 +142,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       react:
         specifier: ^19.1.0
         version: 19.2.4
@@ -158,7 +158,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/adapters/svelte:
     devDependencies:
@@ -166,8 +166,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -176,7 +176,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/adapters/vue:
     devDependencies:
@@ -187,8 +187,8 @@ importers:
         specifier: ^2.4.0
         version: 2.4.6
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -197,7 +197,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
       vue:
         specifier: ^3.5.33
         version: 3.5.33(typescript@6.0.3)
@@ -236,8 +236,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -246,7 +246,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.1.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/exporter/pdf:
     dependencies:
@@ -255,8 +255,8 @@ importers:
         version: 0.14.0
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -265,7 +265,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/ai:
     devDependencies:
@@ -273,8 +273,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -292,7 +292,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/autolink:
     devDependencies:
@@ -300,8 +300,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -316,7 +316,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/blockquote:
     devDependencies:
@@ -324,8 +324,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -334,7 +334,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/bold:
     devDependencies:
@@ -342,8 +342,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -352,7 +352,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/bookmark:
     devDependencies:
@@ -360,8 +360,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -379,7 +379,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/bullet-list:
     devDependencies:
@@ -387,8 +387,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -397,7 +397,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/case-change:
     devDependencies:
@@ -405,8 +405,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -424,7 +424,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/character-count:
     devDependencies:
@@ -432,8 +432,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -451,7 +451,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/code:
     devDependencies:
@@ -459,8 +459,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -469,7 +469,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/code-block:
     devDependencies:
@@ -477,8 +477,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -496,7 +496,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/collaboration:
     dependencies:
@@ -511,8 +511,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -530,7 +530,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
       y-websocket:
         specifier: ^3.0.0
         version: 3.0.0(yjs@13.6.30)
@@ -541,8 +541,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -560,7 +560,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/details:
     devDependencies:
@@ -568,8 +568,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -587,7 +587,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/drop-cursor:
     devDependencies:
@@ -595,8 +595,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -614,7 +614,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/file-embed:
     devDependencies:
@@ -622,8 +622,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -635,7 +635,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/find-replace:
     devDependencies:
@@ -643,8 +643,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -662,7 +662,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/font-family:
     devDependencies:
@@ -670,8 +670,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -686,7 +686,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/font-size:
     devDependencies:
@@ -694,8 +694,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -710,7 +710,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/footnote:
     devDependencies:
@@ -718,8 +718,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -737,7 +737,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/format-painter:
     devDependencies:
@@ -745,8 +745,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -764,7 +764,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/fullscreen:
     devDependencies:
@@ -772,8 +772,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -791,7 +791,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/gap-cursor:
     dependencies:
@@ -803,8 +803,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -813,7 +813,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/hard-break:
     devDependencies:
@@ -821,8 +821,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -831,7 +831,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/heading:
     devDependencies:
@@ -839,8 +839,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -849,7 +849,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/highlight:
     devDependencies:
@@ -857,8 +857,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -873,7 +873,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/history:
     dependencies:
@@ -885,8 +885,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -895,7 +895,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/horizontal-rule:
     devDependencies:
@@ -903,8 +903,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -913,7 +913,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/image:
     devDependencies:
@@ -921,8 +921,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -940,7 +940,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/image-upload:
     devDependencies:
@@ -948,8 +948,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -967,7 +967,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/italic:
     devDependencies:
@@ -975,8 +975,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -985,7 +985,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/link:
     devDependencies:
@@ -993,8 +993,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1003,7 +1003,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/list-item:
     devDependencies:
@@ -1011,8 +1011,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1021,7 +1021,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/math:
     dependencies:
@@ -1036,8 +1036,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-inputrules:
         specifier: ^1.5.0
         version: 1.5.1
@@ -1058,7 +1058,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/mention:
     devDependencies:
@@ -1066,8 +1066,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1085,7 +1085,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/mermaid:
     devDependencies:
@@ -1093,8 +1093,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1112,7 +1112,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/ordered-list:
     devDependencies:
@@ -1120,8 +1120,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1130,7 +1130,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/outline:
     devDependencies:
@@ -1138,8 +1138,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
@@ -1151,7 +1151,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/pagination:
     devDependencies:
@@ -1159,8 +1159,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -1178,7 +1178,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/paragraph:
     devDependencies:
@@ -1186,8 +1186,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1196,7 +1196,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/placeholder:
     devDependencies:
@@ -1204,8 +1204,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1223,7 +1223,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/print-view:
     devDependencies:
@@ -1231,8 +1231,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
@@ -1244,7 +1244,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/restricted-editing:
     devDependencies:
@@ -1252,8 +1252,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -1271,7 +1271,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/rtl:
     devDependencies:
@@ -1279,8 +1279,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -1298,7 +1298,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/starter-kit:
     dependencies:
@@ -1454,8 +1454,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1464,7 +1464,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/strikethrough:
     devDependencies:
@@ -1472,8 +1472,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1482,7 +1482,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/subscript:
     devDependencies:
@@ -1490,8 +1490,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1500,7 +1500,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/superscript:
     devDependencies:
@@ -1508,8 +1508,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1518,7 +1518,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/table:
     dependencies:
@@ -1530,8 +1530,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1549,7 +1549,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/tag:
     devDependencies:
@@ -1557,8 +1557,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1576,7 +1576,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/task-list:
     devDependencies:
@@ -1584,8 +1584,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -1603,7 +1603,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/text-align:
     devDependencies:
@@ -1611,8 +1611,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -1627,7 +1627,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/text-color:
     devDependencies:
@@ -1635,8 +1635,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.24.0
         version: 1.25.4
@@ -1651,7 +1651,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/track-changes:
     devDependencies:
@@ -1659,8 +1659,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -1678,7 +1678,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/typography:
     devDependencies:
@@ -1686,8 +1686,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-inputrules:
         specifier: ^1.5.0
         version: 1.5.1
@@ -1699,7 +1699,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/underline:
     devDependencies:
@@ -1707,8 +1707,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1717,7 +1717,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/extensions/video:
     devDependencies:
@@ -1725,8 +1725,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1744,7 +1744,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/importer/docx:
     dependencies:
@@ -1753,8 +1753,8 @@ importers:
         version: 1.12.0
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1763,13 +1763,13 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/locales:
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1778,7 +1778,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/serializers/html:
     devDependencies:
@@ -1786,8 +1786,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1799,7 +1799,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/serializers/json:
     devDependencies:
@@ -1807,8 +1807,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1820,7 +1820,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/serializers/markdown:
     dependencies:
@@ -1829,8 +1829,8 @@ importers:
         version: 1.13.4
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1842,13 +1842,13 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/templates:
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1857,7 +1857,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/bubble-menu:
     dependencies:
@@ -1878,8 +1878,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1888,7 +1888,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/context-menu:
     devDependencies:
@@ -1896,8 +1896,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -1906,7 +1906,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/drag-handle:
     devDependencies:
@@ -1914,8 +1914,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1933,7 +1933,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/emoji-picker:
     devDependencies:
@@ -1941,8 +1941,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.4
         version: 1.25.4
@@ -1960,7 +1960,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/slash-commands:
     devDependencies:
@@ -1968,8 +1968,8 @@ importers:
         specifier: workspace:*
         version: link:../../core
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       prosemirror-model:
         specifier: ^1.25.0
         version: 1.25.4
@@ -1987,13 +1987,13 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
   packages/ui/special-chars:
     devDependencies:
       jsdom:
-        specifier: ^29.0.2
-        version: 29.0.2
+        specifier: ^29.1.0
+        version: 29.1.0
       vite:
         specifier: ^8.0.8
         version: 8.0.8(@types/node@25.6.0)(yaml@2.8.3)
@@ -2002,7 +2002,7 @@ importers:
         version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
-        version: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
 packages:
 
@@ -3895,8 +3895,8 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
-  jsdom@29.0.2:
-    resolution: {integrity: sha512-9VnGEBosc/ZpwyOsJBCQ/3I5p7Q5ngOY14a9bf5btenAORmZfDse1ZEheMiWcJ3h81+Fv7HmJFdS0szo/waF2w==}
+  jsdom@29.1.0:
+    resolution: {integrity: sha512-YNUc7fB9QuvSSQWfrH0xF+TyABkxUwx8sswgIDaCrw4Hol8BghdZDkITtZheRJeMtzWlnTfsM3bBBusRvpO1wg==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -6043,7 +6043,7 @@ snapshots:
       vite: 5.4.21(@types/node@25.6.0)(lightningcss@1.32.0)
       vue: 3.5.33(typescript@6.0.3)
 
-  '@vitest/coverage-v8@3.2.4(vitest@3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3))':
+  '@vitest/coverage-v8@3.2.4(vitest@3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -6058,7 +6058,7 @@ snapshots:
       std-env: 3.10.0
       test-exclude: 7.0.2
       tinyrainbow: 2.0.0
-      vitest: 3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3)
+      vitest: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -6851,7 +6851,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@29.0.2:
+  jsdom@29.1.0:
     dependencies:
       '@asamuzakjp/css-color': 5.1.11
       '@asamuzakjp/dom-selector': 7.1.1
@@ -7875,7 +7875,7 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vitest@3.2.4(@types/node@25.6.0)(jsdom@29.0.2)(lightningcss@1.32.0)(yaml@2.8.3):
+  vitest@3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3):
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/expect': 3.2.4
@@ -7902,7 +7902,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.6.0
-      jsdom: 29.0.2
+      jsdom: 29.1.0
     transitivePeerDependencies:
       - jiti
       - less
