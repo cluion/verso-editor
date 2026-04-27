@@ -6,6 +6,11 @@ export default defineConfig({
     port: 3000,
     open: '/index.html',
   },
+  resolve: {
+    alias: {
+      mermaid: resolve(__dirname, 'src/stubs/mermaid.ts'),
+    },
+  },
   build: {
     rollupOptions: {
       input: {

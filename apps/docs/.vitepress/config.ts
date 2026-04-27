@@ -1,7 +1,16 @@
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   vite: {
+    resolve: {
+      alias: {
+        mermaid: resolve(__dirname, 'stubs/mermaid.ts'),
+      },
+    },
     build: {
       rollupOptions: {
         external: [/prosemirror-.*/, 'mermaid'],
