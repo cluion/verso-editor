@@ -26,6 +26,6 @@
     "prosemirror-view": "^1.40.0"
   },
   "devDependencies": {
-    "vite": "^8.0.8"
+    "vite": "^8.0.9"
   }
 }
