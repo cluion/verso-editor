@@ -26,6 +26,7 @@ export interface ExtensionConfig<
   inputRules?: ExtensionInputRulesFactory
   commands?: ExtensionCommands
   nodeView?: NodeViewFactory
+  serializeMarkdown?: unknown
 }
 
 export interface NodeExtensionConfig<
@@ -54,6 +55,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
   readonly inputRules: ExtensionInputRulesFactory | undefined
   readonly commands: ExtensionCommands | undefined
   readonly nodeView: NodeViewFactory | undefined
+  readonly serializeMarkdown: unknown
 
   protected constructor(
     name: string,
@@ -64,6 +66,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
     inputRules: ExtensionInputRulesFactory | undefined,
     commands: ExtensionCommands | undefined,
     nodeView: NodeViewFactory | undefined,
+    serializeMarkdown: unknown,
   ) {
     this.name = name
     this.options = options
@@ -73,6 +76,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
     this.inputRules = inputRules
     this.commands = commands
     this.nodeView = nodeView
+    this.serializeMarkdown = serializeMarkdown
   }
 
   static create<Options extends Record<string, unknown> = Record<string, unknown>>(
@@ -89,6 +93,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
       config.inputRules,
       config.commands,
       config.nodeView,
+      config.serializeMarkdown,
     )
   }
 
@@ -102,6 +107,7 @@ export class Extension<Options extends Record<string, unknown> = Record<string, 
       this.inputRules,
       this.commands,
       this.nodeView,
+      this.serializeMarkdown,
     )
   }
 }
@@ -121,6 +127,7 @@ export class NodeExtension<
       base.inputRules,
       base.commands,
       base.nodeView,
+      base.serializeMarkdown,
     )
     this.nodeSpec = nodeSpec
   }
@@ -153,6 +160,7 @@ export class MarkExtension<
       base.inputRules,
       base.commands,
       base.nodeView,
+      base.serializeMarkdown,
     )
     this.markSpec = markSpec
   }

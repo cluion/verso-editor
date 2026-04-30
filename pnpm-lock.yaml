@@ -1198,6 +1198,28 @@ importers:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/extensions/pdf-export:
+    dependencies:
+      html2pdf.js:
+        specifier: ^0.14.0
+        version: 0.14.0
+    devDependencies:
+      '@verso-editor/core':
+        specifier: workspace:*
+        version: link:../../core
+      jsdom:
+        specifier: ^29.1.0
+        version: 29.1.0
+      vite:
+        specifier: ^8.0.10
+        version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
+      vite-plugin-dts:
+        specifier: ^4.5.0
+        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+      vitest:
+        specifier: ^3.2.0
+        version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
+
   packages/extensions/placeholder:
     devDependencies:
       '@verso-editor/core':
@@ -1824,10 +1846,16 @@ importers:
 
   packages/serializers/markdown:
     dependencies:
+      markdown-it:
+        specifier: ^14.0.0
+        version: 14.1.1
       prosemirror-markdown:
         specifier: ^1.13.0
         version: 1.13.4
     devDependencies:
+      '@types/markdown-it':
+        specifier: ^14.1.0
+        version: 14.1.2
       jsdom:
         specifier: ^29.1.0
         version: 29.1.0

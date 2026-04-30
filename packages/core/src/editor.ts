@@ -40,6 +40,7 @@ export class Editor {
   private revisions = new RevisionHistory()
   readonly view: EditorView
   readonly schema: Schema
+  readonly serializerEntries: unknown[]
 
   constructor(options: EditorOptions) {
     this.errorHandler = options.onError ?? ((error: Error) => console.error(error))
@@ -51,11 +52,13 @@ export class Editor {
       this.schema = options.schema ?? resolveSchema(sorted)
       const plugins = this.createExtensionPlugins(sorted, options.plugins)
       const nodeViews = this.collectNodeViews(sorted)
+      this.serializerEntries = this.collectSerializerEntries(sorted)
       const doc = this.parseContent(options.content ?? '<p></p>')
       this.view = this.createView(options.element, doc, plugins, nodeViews)
     } else {
       this.schema = options.schema ?? defaultSchema
       const plugins = this.createDefaultPlugins(options.plugins)
+      this.serializerEntries = []
       const doc = this.parseContent(options.content ?? '<p></p>')
       this.view = this.createView(options.element, doc, plugins)
     }
@@ -273,6 +276,16 @@ export class Editor {
     }
 
     return nodeViews
+  }
+
+  private collectSerializerEntries(extensions: Extension[]): unknown[] {
+    const entries: unknown[] = []
+    for (const ext of extensions) {
+      if (ext.serializeMarkdown) {
+        entries.push(ext.serializeMarkdown)
+      }
+    }
+    return entries
   }
 
   /**
