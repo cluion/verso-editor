@@ -7,6 +7,7 @@ import { EditorState, Plugin } from 'prosemirror-state'
 import { EditorView, type NodeViewConstructor } from 'prosemirror-view'
 import { EventEmitter } from './event-emitter'
 import type { Extension, NodeViewFactory } from './extension'
+import { I18n } from './i18n'
 import { createInputRulesPlugin } from './input-rules'
 import { createKeymapPlugins } from './keymap'
 import { sortExtensions } from './plugin-manager'
@@ -14,12 +15,17 @@ import { RevisionHistory, type RevisionSnapshot, createSnapshot } from './revisi
 import { sanitizeHTML } from './sanitize'
 import { defaultSchema } from './schema'
 import { resolveSchema } from './schema-resolver'
+import { ThemeManager, type ThemeName } from './theme'
 
 type EditorEvents = {
   update: (json: Record<string, unknown>) => void
   focus: () => void
   blur: () => void
   destroy: () => void
+}
+
+interface I18nOptions {
+  locale?: string
 }
 
 interface EditorOptions {
@@ -30,6 +36,8 @@ interface EditorOptions {
   extensions?: Extension[]
   onError?: (error: Error) => void
   ariaLabel?: string
+  i18n?: I18nOptions
+  theme?: { defaultTheme?: string; persistTheme?: boolean }
 }
 
 export class Editor {
@@ -38,13 +46,16 @@ export class Editor {
   private readonly ariaLabel: string
   private liveRegion: HTMLElement | null = null
   private revisions = new RevisionHistory()
+  private themeManager: ThemeManager
   readonly view: EditorView
   readonly schema: Schema
   readonly serializerEntries: unknown[]
+  readonly i18n: I18n
 
   constructor(options: EditorOptions) {
     this.errorHandler = options.onError ?? ((error: Error) => console.error(error))
-    this.ariaLabel = options.ariaLabel ?? 'Rich text editor'
+    this.i18n = new I18n(options.i18n?.locale)
+    this.ariaLabel = options.ariaLabel ?? this.i18n.t('editor.ariaLabel')
     const extensionMode = options.extensions && options.extensions.length > 0
 
     if (extensionMode) {
@@ -64,6 +75,7 @@ export class Editor {
     }
 
     this.setupAccessibility(options.element)
+    this.themeManager = new ThemeManager(options.element, options.theme)
   }
 
   on<K extends keyof EditorEvents>(event: K, handler: EditorEvents[K]): this {
@@ -120,6 +132,7 @@ export class Editor {
       this.errorHandler(error instanceof Error ? error : new Error(String(error)))
     }
     this.emitter.destroy()
+    this.themeManager.destroy()
     this.liveRegion?.remove()
     this.liveRegion = null
   }
@@ -131,6 +144,15 @@ export class Editor {
     if (this.liveRegion) {
       this.liveRegion.textContent = message
     }
+  }
+
+  setTheme(name: ThemeName, overrides?: Record<string, string>): this {
+    this.themeManager.setTheme(name, overrides)
+    return this
+  }
+
+  getTheme(): ThemeName {
+    return this.themeManager.getTheme()
   }
 
   createSnapshot(): RevisionSnapshot {

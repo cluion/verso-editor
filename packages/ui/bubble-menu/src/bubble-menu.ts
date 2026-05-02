@@ -25,10 +25,14 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
 
   // Setup element
   element.setAttribute('role', 'toolbar')
-  element.setAttribute('aria-label', 'Bubble menu')
+  element.setAttribute('aria-label', editor.i18n.t('bubbleMenu.ariaLabel'))
   element.style.display = 'none'
   element.style.position = 'fixed'
   element.style.zIndex = '1000'
+
+  const offLocaleChange = editor.i18n.onChange(() => {
+    element.setAttribute('aria-label', editor.i18n.t('bubbleMenu.ariaLabel'))
+  })
 
   // Prevent editor blur when clicking bubble menu buttons
   element.addEventListener('mousedown', (e) => {
@@ -237,6 +241,7 @@ export function createBubbleMenu(options: BubbleMenuOptions): BubbleMenu {
     destroy() {
       if (destroyed) return
       destroyed = true
+      offLocaleChange()
       editor.off('update', onEditorUpdate)
       editor.off('blur', onEditorBlur)
       hide()

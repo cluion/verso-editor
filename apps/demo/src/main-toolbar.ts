@@ -1,4 +1,5 @@
 import { Editor } from '@verso-editor/core'
+import '@verso-editor/core/theme.css'
 import { goToBookmark } from '@verso-editor/extension-bookmark'
 import { toLowerCase, toTitleCase, toUpperCase } from '@verso-editor/extension-case-change'
 import { addComment, removeComment } from '@verso-editor/extension-comment'
@@ -44,6 +45,8 @@ const editor = new Editor({
   element,
   content: initialContent,
   extensions: createStarterKit(),
+  i18n: { locale: 'zh-TW' },
+  theme: { persistTheme: true },
 })
 
 // --- Helpers ---
@@ -346,3 +349,27 @@ for (const btn of document.querySelectorAll<HTMLButtonElement>('.copy-btn')) {
 }
 
 Object.assign(window, { editor })
+
+// --- Locale & Theme Controls ---
+
+const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select')
+if (localeSelect) {
+  localeSelect.value = editor.i18n.getLocale()
+  localeSelect.addEventListener('change', () => {
+    editor.i18n.setLocale(localeSelect.value)
+    updateLocaleStatus()
+  })
+}
+
+function updateLocaleStatus() {
+  const el = document.querySelector<HTMLElement>('#locale-status')
+  if (el) el.textContent = editor.i18n.t('editor.ariaLabel')
+}
+
+const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select')
+if (themeSelect) {
+  themeSelect.value = editor.getTheme()
+  themeSelect.addEventListener('change', () => {
+    editor.setTheme(themeSelect.value)
+  })
+}

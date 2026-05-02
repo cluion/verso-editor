@@ -1,3 +1,4 @@
+import type { I18n } from '@verso-editor/core'
 import type { Node as ProseMirrorNode } from 'prosemirror-model'
 import { Plugin, PluginKey } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
@@ -14,12 +15,16 @@ interface DragHandleState {
   fromPos: number | null
 }
 
+interface DragHandleOptions {
+  i18n?: I18n
+}
+
 /**
  * Create a Drag Handle plugin that provides:
  * - Hover detection to show/hide a drag handle next to block nodes
  * - Drag-and-drop sorting of block nodes via handle drag
  */
-export function createDragHandlePlugin(): Plugin {
+export function createDragHandlePlugin(options?: DragHandleOptions): Plugin {
   return new Plugin({
     key: dragHandleKey,
     state: {
@@ -40,7 +45,10 @@ export function createDragHandlePlugin(): Plugin {
       const handle = document.createElement('div')
       handle.classList.add('vs-drag-handle')
       handle.setAttribute('role', 'button')
-      handle.setAttribute('aria-label', 'Drag to move block')
+      handle.setAttribute(
+        'aria-label',
+        options?.i18n?.t('dragHandle.ariaLabel') ?? 'Drag to move block',
+      )
       handle.setAttribute('tabindex', '0')
       handle.setAttribute('draggable', 'true')
       handle.style.display = 'none'
@@ -81,6 +89,13 @@ export function createDragHandlePlugin(): Plugin {
         }
       })
 
+      const offLocaleChange = options?.i18n?.onChange(() => {
+        handle.setAttribute(
+          'aria-label',
+          options?.i18n?.t('dragHandle.ariaLabel') ?? 'Drag to move block',
+        )
+      })
+
       return {
         update(view: EditorView) {
           const state = dragHandleKey.getState(view.state) as DragHandleState
@@ -91,6 +106,7 @@ export function createDragHandlePlugin(): Plugin {
           }
         },
         destroy() {
+          offLocaleChange?.()
           handle.remove()
         },
       }

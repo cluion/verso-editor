@@ -25,6 +25,8 @@ export { defaultSchema, defaultNodeSpecs, defaultMarkSpecs } from './schema'
 export { resolveSchema } from './schema-resolver'
 export { sanitizeHTML, type SanitizeOptions } from './sanitize'
 export { setLocale, getLocale, t } from './locale'
+export { I18n, type LocaleDictionary } from './i18n'
+export { ThemeManager, type ThemeName } from './theme'
 export {
   createSnapshot,
   compareSnapshots,

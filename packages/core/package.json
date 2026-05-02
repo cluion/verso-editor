@@ -10,12 +10,17 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./theme.css": {
+      "import": "./dist/theme.css",
+      "require": "./dist/theme.css",
+      "default": "./dist/theme.css"
     }
   },
   "files": ["dist"],
   "sideEffects": false,
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && cp src/theme/theme.css dist/theme.css",
     "dev": "vite build --watch",
     "test": "vitest run",
     "test:watch": "vitest",

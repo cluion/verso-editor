@@ -12,10 +12,13 @@ pnpm add @verso-editor/core
 
 ```typescript
 import { Editor } from '@verso-editor/core'
+import '@verso-editor/core/theme.css'
 
 const editor = new Editor({
   element: document.getElementById('editor'),
   content: '<p>Hello world</p>',
+  i18n: { locale: 'zh-TW' },
+  theme: { persistTheme: true },
 })
 
 editor.getHTML()  // '<p>Hello world</p>'
@@ -45,6 +48,8 @@ new Editor(options: EditorOptions)
 | `plugins` | `Plugin[]` | Additional ProseMirror plugins |
 | `onError` | `(error: Error) => void` | Error handler |
 | `ariaLabel` | `string` | ARIA label for accessibility |
+| `i18n` | `{ locale?: string }` | i18n configuration |
+| `theme` | `{ defaultTheme?: string, persistTheme?: boolean }` | Theme configuration |
 
 ### Methods
 
@@ -56,6 +61,8 @@ new Editor(options: EditorOptions)
 | `getJSON()` | `object` | Get document as JSON |
 | `on(event, handler)` | `this` | Subscribe to event |
 | `off(event, handler)` | `this` | Unsubscribe from event |
+| `setTheme(name, overrides?)` | `this` | Switch theme (`'light'`, `'dark'`, or custom) |
+| `getTheme()` | `string` | Get current theme name |
 | `destroy()` | `void` | Clean up instance |
 
 ### Events
@@ -64,6 +71,72 @@ new Editor(options: EditorOptions)
 - `focus()` — editor focused
 - `blur()` — editor blurred
 - `destroy()` — editor destroyed
+
+## i18n
+
+Built-in locale management with `en` and `zh-TW` defaults. Extensions access translations via `editor.i18n`.
+
+```typescript
+// Basic translation
+editor.i18n.t('editor.ariaLabel') // → "Rich text editor"
+
+// Parameterized translation
+editor.i18n.t('characterCount.label', { count: 150 }) // → "150 characters"
+
+// Register custom locale
+editor.i18n.registerLocale('ja', { 'editor.ariaLabel': 'リッチテキストエディタ' })
+editor.i18n.setLocale('ja')
+
+// React to locale changes
+editor.i18n.onChange((locale) => {
+  console.log('Locale changed to:', locale)
+})
+```
+
+## Theme
+
+Theme tokens are CSS Custom Properties (`--vs-*`). Import the CSS and use `setTheme()` to switch.
+
+```css
+/* Available tokens */
+--vs-bg-primary
+--vs-bg-secondary
+--vs-text-primary
+--vs-text-secondary
+--vs-accent
+--vs-accent-hover
+--vs-border
+--vs-shadow
+--vs-hover
+--vs-active
+--vs-disabled
+--vs-menu-bg
+--vs-menu-border
+--vs-menu-shadow
+--vs-menu-item-hover
+--vs-menu-item-active
+--vs-button-bg
+--vs-button-hover
+--vs-button-active-bg
+--vs-button-active-text
+```
+
+```typescript
+// Switch to dark theme
+editor.setTheme('dark')
+
+// Switch to light theme
+editor.setTheme('light')
+
+// Custom theme with overrides
+editor.setTheme('custom', { '--vs-accent': '#e74c3c' })
+
+// Auto-detect system preference (default behavior)
+// No need to call setTheme — prefers-color-scheme is watched automatically
+
+// Persist user preference across sessions
+new Editor({ ..., theme: { persistTheme: true } })
+```
 
 ## Custom Extensions
 

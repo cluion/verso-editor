@@ -1,3 +1,4 @@
+import type { I18n } from '@verso-editor/core'
 import { Plugin, PluginKey } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 
@@ -16,12 +17,13 @@ interface SlashMenuState {
 
 interface SlashCommandOptions {
   commands: SlashCommandItem[]
+  i18n?: I18n
 }
 
 const slashKey = new PluginKey('versoSlashCommand')
 
 export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
-  const { commands } = options
+  const { commands, i18n } = options
 
   return new Plugin({
     key: slashKey,
@@ -48,7 +50,7 @@ export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
         el.classList.add('vs-slash-menu')
         el.id = menuId
         el.setAttribute('role', 'listbox')
-        el.setAttribute('aria-label', 'Slash commands')
+        el.setAttribute('aria-label', i18n?.t('slashCommands.ariaLabel') ?? 'Slash commands')
         el.style.display = 'none'
         el.style.position = 'absolute'
         el.style.zIndex = '1000'
@@ -130,12 +132,17 @@ export function createSlashCommandPlugin(options: SlashCommandOptions): Plugin {
       menu = createMenu()
       editorView.dom.parentElement?.appendChild(menu)
 
+      const offLocaleChange = i18n?.onChange(() => {
+        menu?.setAttribute('aria-label', i18n?.t('slashCommands.ariaLabel') ?? 'Slash commands')
+      })
+
       return {
         update(view: EditorView) {
           const state = slashKey.getState(view.state) as SlashMenuState
           renderItems(view, state)
         },
         destroy() {
+          offLocaleChange?.()
           menu?.remove()
           menu = null
         },

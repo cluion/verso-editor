@@ -1,0 +1,78 @@
+/* =========================================================================
+   Verso Editor — Design Tokens (Light / Dark)
+   ========================================================================= */
+
+/* --- Light Theme --- */
+:root,
+[data-vs-theme="light"] {
+  --vs-bg-primary: #ffffff;
+  --vs-bg-secondary: #f8fafc;
+  --vs-text-primary: #0f172a;
+  --vs-text-secondary: #64748b;
+  --vs-accent: #3b82f6;
+  --vs-accent-hover: #2563eb;
+  --vs-border: #e2e8f0;
+  --vs-shadow: rgba(0, 0, 0, 0.08);
+  --vs-hover: #f1f5f9;
+  --vs-active: #e2e8f0;
+  --vs-disabled: #94a3b8;
+  --vs-menu-bg: #ffffff;
+  --vs-menu-border: #e2e8f0;
+  --vs-menu-shadow: rgba(0, 0, 0, 0.12);
+  --vs-menu-item-hover: #f1f5f9;
+  --vs-menu-item-active: #e2e8f0;
+  --vs-button-bg: transparent;
+  --vs-button-hover: #f1f5f9;
+  --vs-button-active-bg: #e2e8f0;
+  --vs-button-active-text: #3b82f6;
+}
+
+/* --- Dark Theme --- */
+[data-vs-theme="dark"] {
+  --vs-bg-primary: #0f172a;
+  --vs-bg-secondary: #1e293b;
+  --vs-text-primary: #f1f5f9;
+  --vs-text-secondary: #94a3b8;
+  --vs-accent: #60a5fa;
+  --vs-accent-hover: #3b82f6;
+  --vs-border: #334155;
+  --vs-shadow: rgba(0, 0, 0, 0.24);
+  --vs-hover: #1e293b;
+  --vs-active: #334155;
+  --vs-disabled: #475569;
+  --vs-menu-bg: #1e293b;
+  --vs-menu-border: #334155;
+  --vs-menu-shadow: rgba(0, 0, 0, 0.32);
+  --vs-menu-item-hover: #334155;
+  --vs-menu-item-active: #475569;
+  --vs-button-bg: transparent;
+  --vs-button-hover: #334155;
+  --vs-button-active-bg: #475569;
+  --vs-button-active-text: #60a5fa;
+}
+
+/* --- Auto-detect system preference (only when no explicit theme set) --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-vs-theme]) {
+    --vs-bg-primary: #0f172a;
+    --vs-bg-secondary: #1e293b;
+    --vs-text-primary: #f1f5f9;
+    --vs-text-secondary: #94a3b8;
+    --vs-accent: #60a5fa;
+    --vs-accent-hover: #3b82f6;
+    --vs-border: #334155;
+    --vs-shadow: rgba(0, 0, 0, 0.24);
+    --vs-hover: #1e293b;
+    --vs-active: #334155;
+    --vs-disabled: #475569;
+    --vs-menu-bg: #1e293b;
+    --vs-menu-border: #334155;
+    --vs-menu-shadow: rgba(0, 0, 0, 0.32);
+    --vs-menu-item-hover: #334155;
+    --vs-menu-item-active: #475569;
+    --vs-button-bg: transparent;
+    --vs-button-hover: #334155;
+    --vs-button-active-bg: #475569;
+    --vs-button-active-text: #60a5fa;
+  }
+}

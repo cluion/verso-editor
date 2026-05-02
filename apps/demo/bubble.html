@@ -9,9 +9,26 @@
   <body>
     <div id="app">
       <h1 class="demo-title">Verso Editor — Bubble Menu</h1>
-      <nav class="demo-nav">
-        <a href="./index.html">Fixed Toolbar Demo</a>
-      </nav>
+      <div class="demo-controls">
+        <div class="control-group">
+          <label class="control-label">Locale</label>
+          <select id="locale-select">
+            <option value="en">English</option>
+            <option value="zh-TW" selected>繁體中文</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Theme</label>
+          <select id="theme-select">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <span id="locale-status" class="locale-status"></span>
+        <nav class="demo-nav">
+          <a href="./index.html">Fixed Toolbar Demo</a>
+        </nav>
+      </div>
       <p class="demo-hint">選取文字後會出現懸浮工具列</p>
       <div id="editor"></div>
     </div>

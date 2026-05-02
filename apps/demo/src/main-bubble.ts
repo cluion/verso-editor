@@ -1,5 +1,6 @@
 import { createBubbleMenu } from '@verso-editor/bubble-menu'
 import { Editor } from '@verso-editor/core'
+import '@verso-editor/core/theme.css'
 import { toLowerCase, toTitleCase, toUpperCase } from '@verso-editor/extension-case-change'
 import { addComment } from '@verso-editor/extension-comment'
 import { toggleFullscreen } from '@verso-editor/extension-fullscreen'
@@ -39,6 +40,8 @@ const editor = new Editor({
   element,
   content: initialContent,
   extensions: createStarterKit(),
+  i18n: { locale: 'zh-TW' },
+  theme: { persistTheme: true },
 })
 
 // --- Bubble Menu ---
@@ -165,3 +168,27 @@ element.addEventListener('contextmenu', (e) => {
 })
 
 Object.assign(window, { editor })
+
+// --- Locale & Theme Controls ---
+
+const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select')
+if (localeSelect) {
+  localeSelect.value = editor.i18n.getLocale()
+  localeSelect.addEventListener('change', () => {
+    editor.i18n.setLocale(localeSelect.value)
+    updateLocaleStatus()
+  })
+}
+
+function updateLocaleStatus() {
+  const el = document.querySelector<HTMLElement>('#locale-status')
+  if (el) el.textContent = editor.i18n.t('editor.ariaLabel')
+}
+
+const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select')
+if (themeSelect) {
+  themeSelect.value = editor.getTheme()
+  themeSelect.addEventListener('change', () => {
+    editor.setTheme(themeSelect.value)
+  })
+}
