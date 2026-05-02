@@ -1,5 +1,5 @@
 ---
-'@verso-editor/core': minor
+'@verso-editor/core': patch
 '@verso-editor/bubble-menu': minor
 '@verso-editor/slash-commands': minor
 '@verso-editor/drag-handle': minor
