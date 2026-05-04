@@ -154,8 +154,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -172,8 +172,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -193,8 +193,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -242,8 +242,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.1.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -261,8 +261,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -288,8 +288,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -312,8 +312,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -330,8 +330,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -348,8 +348,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -375,8 +375,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -393,8 +393,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -420,8 +420,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -447,8 +447,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -465,8 +465,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -492,8 +492,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -526,8 +526,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -556,8 +556,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -583,8 +583,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -610,8 +610,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -631,8 +631,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -658,8 +658,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -682,8 +682,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -706,8 +706,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -733,8 +733,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -760,8 +760,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -787,8 +787,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -809,8 +809,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -827,8 +827,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -845,8 +845,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -869,8 +869,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -891,8 +891,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -909,8 +909,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -936,8 +936,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -963,8 +963,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -981,8 +981,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -999,8 +999,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1017,8 +1017,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1054,8 +1054,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1081,8 +1081,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1108,8 +1108,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1126,8 +1126,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1147,8 +1147,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1174,8 +1174,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1192,8 +1192,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1214,8 +1214,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1241,8 +1241,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1262,8 +1262,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1289,8 +1289,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1316,8 +1316,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1482,8 +1482,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1500,8 +1500,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1518,8 +1518,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1536,8 +1536,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1567,8 +1567,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1594,8 +1594,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1621,8 +1621,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1645,8 +1645,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1669,8 +1669,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1696,8 +1696,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1717,8 +1717,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1735,8 +1735,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1762,8 +1762,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1781,8 +1781,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1796,8 +1796,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1817,8 +1817,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1838,8 +1838,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1866,8 +1866,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1881,8 +1881,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1912,8 +1912,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1930,8 +1930,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1957,8 +1957,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1984,8 +1984,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -2011,8 +2011,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -2026,8 +2026,8 @@ importers:
         specifier: ^8.0.10
         version: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
       vite-plugin-dts:
-        specifier: ^4.5.0
-        version: 4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
+        specifier: ^5.0.0
+        version: 5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jsdom@29.1.0)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -2682,6 +2682,9 @@ packages:
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
+  '@jridgewell/remapping@2.3.5':
+    resolution: {integrity: sha512-LI9u/+laYG4Ds1TDKSJW2YPrIlcVYOwi2fUC6xB43lueCjgxV4lffOCZCtYFiH6TNOX+tQKXx97T4IKHbhyHEQ==}
+
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
@@ -3211,9 +3214,6 @@ packages:
   '@vue/compiler-ssr@3.5.33':
     resolution: {integrity: sha512-IErjYdnj1qIupG5xxiVIYiiRvDhGWV4zuh/RCrwfYpuL+HWQzeU6lCk/nF9r7olWMnjKxCAkOctT2qFWFkzb1A==}
 
-  '@vue/compiler-vue2@2.7.16':
-    resolution: {integrity: sha512-qYC3Psj9S/mfu9uVi5WvNZIzq+xnXMhOwbTFKKDD7b1lhpnn71jXSFdTQ+WsIEk0ONCd7VV2IMm7ONl6tbQ86A==}
-
   '@vue/devtools-api@7.7.9':
     resolution: {integrity: sha512-kIE8wvwlcZ6TJTbNeU2HQNtaxLx3a84aotTITUuL/4bzfPxzajGBOoqjMhwZJ8L9qFYDU/lAYMEEm11dnZOD6g==}
 
@@ -3222,14 +3222,6 @@ packages:
 
   '@vue/devtools-shared@7.7.9':
     resolution: {integrity: sha512-iWAb0v2WYf0QWmxCGy0seZNDPdO3Sp5+u78ORnyeonS6MT4PC7VPrryX2BpMJrwlDeaZ6BD4vP4XKjK0SZqaeA==}
-
-  '@vue/language-core@2.2.0':
-    resolution: {integrity: sha512-O1ZZFaaBGkKbsRfnVH1ifOK1/1BUkyK+3SQsfnh6PmMmD4qJcTU8godCeA96jjDRTL6zgnK7YzCHfaUlH2r0Mw==}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   '@vue/reactivity@3.5.33':
     resolution: {integrity: sha512-p8UfIqyIhb0rYGlSgSBV+lPhF2iUSBcRy7enhTmPqKWadHy9kcOFYF1AejYBP9P+avnd3OBbD49DU4pLWX/94A==}
@@ -3339,9 +3331,6 @@ packages:
   algoliasearch@5.50.1:
     resolution: {integrity: sha512-/bwdue1/8LWELn/DBalGRfuLsXBLXULJo/yOeavJtDu8rBwxIzC6/Rz9Jg19S21VkJvRuZO1k8CZXBMS73mYbA==}
     engines: {node: '>= 14.0.0'}
-
-  alien-signals@0.4.14:
-    resolution: {integrity: sha512-itUAVzhczTmP2U5yX67xVpsbbOiquusbWVyA9N+sy6+r6YVbFkahXvNCeEPWEOMhwDYwbVbGHFkVL03N9I5g+Q==}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -3533,9 +3522,6 @@ packages:
   dataloader@1.4.0:
     resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
 
-  de-indent@1.0.2:
-    resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
-
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     engines: {node: '>=6.0'}
@@ -3630,6 +3616,10 @@ packages:
   environment@1.1.0:
     resolution: {integrity: sha512-xUtoPkMggbz0MPyPiIWr1Kp4aeWJjDZ6SMvURhimjdZgsRuDplF5/s9hcgGhyXMhs+6vpnuoiZ2kFiu3FMnS8Q==}
     engines: {node: '>=18'}
+
+  es-errors@1.3.0:
+    resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
+    engines: {node: '>= 0.4'}
 
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
@@ -3760,8 +3750,8 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
 
-  hasown@2.0.2:
-    resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
+  hasown@2.0.3:
+    resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
     engines: {node: '>= 0.4'}
 
   hast-util-to-html@9.0.5:
@@ -3769,10 +3759,6 @@ packages:
 
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
-
-  he@1.2.0:
-    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
-    hasBin: true
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -4169,9 +4155,6 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  muggle-string@0.4.1:
-    resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
-
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -4299,8 +4282,8 @@ packages:
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
-  pkg-types@2.3.0:
-    resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
+  pkg-types@2.3.1:
+    resolution: {integrity: sha512-y+ichcgc2LrADuhLNAx8DFjVfgz91pRxfZdI3UDhxHvcVEZsenLO+7XaU5vOp0u/7V/wZ+plyuQxtrDlZJ+yeg==}
 
   playwright-core@1.59.1:
     resolution: {integrity: sha512-HBV/RJg81z5BiiZ9yPzIiClYV/QMsDCKUyogwH9p3MCP6IYjUFu/MActgYAvK0oWyV9NlwM3GLBjADyWgydVyg==}
@@ -4426,8 +4409,8 @@ packages:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
 
-  resolve@1.22.11:
-    resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
+  resolve@1.22.12:
+    resolution: {integrity: sha512-TyeJ1zif53BPfHootBGwPRYT1RUt6oGWsaQr8UyZW/eAm9bKoijtvruSDEmZHm92CwS9nj7/fWttqPCgzep8CA==}
     engines: {node: '>= 0.4'}
     hasBin: true
 
@@ -4709,8 +4692,8 @@ packages:
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
-  ufo@1.6.3:
-    resolution: {integrity: sha512-yDJTmhydvl5lJzBmy/hyOAA0d+aqCBuwl818haVdYCRrWV84o7YyeVm4QlVHStqNrrJSTb6jKuFAVqAFsr+K3Q==}
+  ufo@1.6.4:
+    resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
 
   underscore@1.13.8:
     resolution: {integrity: sha512-DXtD3ZtEQzc7M8m4cXotyHR+FAS18C64asBYY5vqZexfYryNNnDc02W4hKg3rdQuqOYas1jkseX0+nZXjTXnvQ==}
@@ -4745,6 +4728,40 @@ packages:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
 
+  unplugin-dts@1.0.0:
+    resolution: {integrity: sha512-qz+U1lCscwq+t8Mkaxy5Esa7IQ5wWV18b4mnioOXSdnPaNiJ0+qgE3I+KL6UkXYZWxxGo2qdGone8LEQ52Sfkw==}
+    peerDependencies:
+      '@microsoft/api-extractor': '>=7'
+      '@rspack/core': ^1
+      '@vue/language-core': ~3.1.5
+      esbuild: '*'
+      rolldown: '*'
+      rollup: '>=3'
+      typescript: '>=4'
+      vite: '>=3'
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      '@rspack/core':
+        optional: true
+      '@vue/language-core':
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+
+  unplugin@2.3.11:
+    resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
+    engines: {node: '>=18.12.0'}
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -4762,12 +4779,17 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-plugin-dts@4.5.4:
-    resolution: {integrity: sha512-d4sOM8M/8z7vRXHHq/ebbblfaxENjogAAekcfcDCCwAyvGqnPrc7f4NZbvItS+g4WTgerW0xDwSz5qz11JT3vg==}
+  vite-plugin-dts@5.0.0:
+    resolution: {integrity: sha512-VLNAUttBq7pLxxL/m/ztjd5zj5yiviiC7ijfPFVLK5c45FLcibvieBsdjSka3a4ag1qdrAF9K3OysH4/lW+rPQ==}
     peerDependencies:
-      typescript: '*'
-      vite: '*'
+      '@microsoft/api-extractor': '>=7'
+      rollup: '>=3'
+      vite: '>=3'
     peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      rollup:
+        optional: true
       vite:
         optional: true
 
@@ -4952,6 +4974,9 @@ packages:
   webidl-conversions@8.0.1:
     resolution: {integrity: sha512-BMhLD/Sw+GbJC21C/UgyaZX41nPt8bUTg+jWyDeg7e7YN4xOM05YPSIXceACnXVtqyEw/LMClUQMtMZ+PGGpqQ==}
     engines: {node: '>=20'}
+
+  webpack-virtual-modules@0.6.2:
+    resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
   whatwg-mimetype@5.0.0:
     resolution: {integrity: sha512-sXcNcHOC51uPGF0P/D4NVtrkjSU2fNsm9iog4ZvZJsL3rjoDAzXZhkm2MWt1y+PUdggKAYVoMAIYcs78wJ51Cw==}
@@ -5646,6 +5671,11 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
       '@jridgewell/trace-mapping': 0.3.31
 
+  '@jridgewell/remapping@2.3.5':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.31
+
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
@@ -5678,6 +5708,7 @@ snapshots:
       '@rushstack/node-core-library': 5.21.0(@types/node@25.6.0)
     transitivePeerDependencies:
       - '@types/node'
+    optional: true
 
   '@microsoft/api-extractor@7.58.1(@types/node@25.6.0)':
     dependencies:
@@ -5691,21 +5722,24 @@ snapshots:
       diff: 8.0.4
       lodash: 4.18.1
       minimatch: 10.2.3
-      resolve: 1.22.11
+      resolve: 1.22.12
       semver: 7.5.4
       source-map: 0.6.1
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@types/node'
+    optional: true
 
   '@microsoft/tsdoc-config@0.18.1':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       ajv: 8.18.0
       jju: 1.4.0
-      resolve: 1.22.11
+      resolve: 1.22.12
+    optional: true
 
-  '@microsoft/tsdoc@0.16.0': {}
+  '@microsoft/tsdoc@0.16.0':
+    optional: true
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
@@ -5879,19 +5913,22 @@ snapshots:
       fs-extra: 11.3.4
       import-lazy: 4.0.0
       jju: 1.4.0
-      resolve: 1.22.11
+      resolve: 1.22.12
       semver: 7.5.4
     optionalDependencies:
       '@types/node': 25.6.0
+    optional: true
 
   '@rushstack/problem-matcher@0.2.1(@types/node@25.6.0)':
     optionalDependencies:
       '@types/node': 25.6.0
+    optional: true
 
   '@rushstack/rig-package@0.7.2':
     dependencies:
-      resolve: 1.22.11
+      resolve: 1.22.12
       strip-json-comments: 3.1.1
+    optional: true
 
   '@rushstack/terminal@0.22.4(@types/node@25.6.0)':
     dependencies:
@@ -5900,6 +5937,7 @@ snapshots:
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 25.6.0
+    optional: true
 
   '@rushstack/ts-command-line@5.3.4(@types/node@25.6.0)':
     dependencies:
@@ -5909,6 +5947,7 @@ snapshots:
       string-argv: 0.3.2
     transitivePeerDependencies:
       - '@types/node'
+    optional: true
 
   '@shikijs/core@2.5.0':
     dependencies:
@@ -5994,7 +6033,8 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@types/argparse@1.0.38': {}
+  '@types/argparse@1.0.38':
+    optional: true
 
   '@types/aria-query@5.0.4': {}
 
@@ -6166,11 +6206,6 @@ snapshots:
       '@vue/compiler-dom': 3.5.33
       '@vue/shared': 3.5.33
 
-  '@vue/compiler-vue2@2.7.16':
-    dependencies:
-      de-indent: 1.0.2
-      he: 1.2.0
-
   '@vue/devtools-api@7.7.9':
     dependencies:
       '@vue/devtools-kit': 7.7.9
@@ -6188,19 +6223,6 @@ snapshots:
   '@vue/devtools-shared@7.7.9':
     dependencies:
       rfdc: 1.4.1
-
-  '@vue/language-core@2.2.0(typescript@6.0.3)':
-    dependencies:
-      '@volar/language-core': 2.4.28
-      '@vue/compiler-dom': 3.5.33
-      '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.33
-      alien-signals: 0.4.14
-      minimatch: 9.0.9
-      muggle-string: 0.4.1
-      path-browserify: 1.0.1
-    optionalDependencies:
-      typescript: 6.0.3
 
   '@vue/reactivity@3.5.33':
     dependencies:
@@ -6269,10 +6291,12 @@ snapshots:
   ajv-draft-04@1.0.0(ajv@8.18.0):
     optionalDependencies:
       ajv: 8.18.0
+    optional: true
 
   ajv-formats@3.0.1(ajv@8.18.0):
     optionalDependencies:
       ajv: 8.18.0
+    optional: true
 
   ajv@8.18.0:
     dependencies:
@@ -6280,6 +6304,7 @@ snapshots:
       fast-uri: 3.1.0
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
+    optional: true
 
   algoliasearch@5.50.1:
     dependencies:
@@ -6297,8 +6322,6 @@ snapshots:
       '@algolia/requester-browser-xhr': 5.50.1
       '@algolia/requester-fetch': 5.50.1
       '@algolia/requester-node-http': 5.50.1
-
-  alien-signals@0.4.14: {}
 
   ansi-colors@4.1.3: {}
 
@@ -6473,8 +6496,6 @@ snapshots:
 
   dataloader@1.4.0: {}
 
-  de-indent@1.0.2: {}
-
   debug@4.4.3:
     dependencies:
       ms: 2.1.3
@@ -6493,7 +6514,8 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  diff@8.0.4: {}
+  diff@8.0.4:
+    optional: true
 
   dingbat-to-unicode@1.0.1: {}
 
@@ -6542,6 +6564,9 @@ snapshots:
   entities@8.0.0: {}
 
   environment@1.1.0: {}
+
+  es-errors@1.3.0:
+    optional: true
 
   es-module-lexer@1.7.0: {}
 
@@ -6616,7 +6641,8 @@ snapshots:
 
   extendable-error@0.1.7: {}
 
-  fast-deep-equal@3.1.3: {}
+  fast-deep-equal@3.1.3:
+    optional: true
 
   fast-glob@3.3.3:
     dependencies:
@@ -6632,7 +6658,8 @@ snapshots:
       iobuffer: 5.4.0
       pako: 2.1.0
 
-  fast-uri@3.1.0: {}
+  fast-uri@3.1.0:
+    optional: true
 
   fastq@1.20.1:
     dependencies:
@@ -6667,6 +6694,7 @@ snapshots:
       graceful-fs: 4.2.11
       jsonfile: 6.2.1
       universalify: 2.0.1
+    optional: true
 
   fs-extra@7.0.1:
     dependencies:
@@ -6686,7 +6714,8 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  function-bind@1.1.2: {}
+  function-bind@1.1.2:
+    optional: true
 
   get-east-asian-width@1.5.0: {}
 
@@ -6716,9 +6745,10 @@ snapshots:
 
   has-flag@4.0.0: {}
 
-  hasown@2.0.2:
+  hasown@2.0.3:
     dependencies:
       function-bind: 1.1.2
+    optional: true
 
   hast-util-to-html@9.0.5:
     dependencies:
@@ -6737,8 +6767,6 @@ snapshots:
   hast-util-whitespace@3.0.0:
     dependencies:
       '@types/hast': 3.0.4
-
-  he@1.2.0: {}
 
   hookable@5.5.3: {}
 
@@ -6775,7 +6803,8 @@ snapshots:
 
   immediate@3.0.6: {}
 
-  import-lazy@4.0.0: {}
+  import-lazy@4.0.0:
+    optional: true
 
   inherits@2.0.4: {}
 
@@ -6785,7 +6814,8 @@ snapshots:
 
   is-core-module@2.16.1:
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.3
+    optional: true
 
   is-extglob@2.1.1: {}
 
@@ -6844,7 +6874,8 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
-  jju@1.4.0: {}
+  jju@1.4.0:
+    optional: true
 
   js-beautify@1.15.4:
     dependencies:
@@ -6897,7 +6928,8 @@ snapshots:
     transitivePeerDependencies:
       - '@noble/hashes'
 
-  json-schema-traverse@1.0.0: {}
+  json-schema-traverse@1.0.0:
+    optional: true
 
   jsonfile@4.0.0:
     optionalDependencies:
@@ -6908,6 +6940,7 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
+    optional: true
 
   jspdf@4.2.1:
     dependencies:
@@ -7015,7 +7048,7 @@ snapshots:
   local-pkg@1.1.2:
     dependencies:
       mlly: 1.8.2
-      pkg-types: 2.3.0
+      pkg-types: 2.3.1
       quansync: 0.2.11
 
   locate-path@5.0.0:
@@ -7024,7 +7057,8 @@ snapshots:
 
   lodash.startcase@4.4.0: {}
 
-  lodash@4.18.1: {}
+  lodash@4.18.1:
+    optional: true
 
   log-update@6.1.0:
     dependencies:
@@ -7049,6 +7083,7 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
+    optional: true
 
   lz-string@1.5.0: {}
 
@@ -7151,13 +7186,11 @@ snapshots:
       acorn: 8.16.0
       pathe: 2.0.3
       pkg-types: 1.3.1
-      ufo: 1.6.3
+      ufo: 1.6.4
 
   mri@1.2.0: {}
 
   ms@2.1.3: {}
-
-  muggle-string@0.4.1: {}
 
   nanoid@3.3.11: {}
 
@@ -7223,7 +7256,8 @@ snapshots:
 
   path-key@3.1.1: {}
 
-  path-parse@1.0.7: {}
+  path-parse@1.0.7:
+    optional: true
 
   path-scurry@1.11.1:
     dependencies:
@@ -7255,7 +7289,7 @@ snapshots:
       mlly: 1.8.2
       pathe: 2.0.3
 
-  pkg-types@2.3.0:
+  pkg-types@2.3.1:
     dependencies:
       confbox: 0.2.4
       exsolve: 1.0.8
@@ -7411,11 +7445,13 @@ snapshots:
 
   resolve-from@5.0.0: {}
 
-  resolve@1.22.11:
+  resolve@1.22.12:
     dependencies:
+      es-errors: 1.3.0
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    optional: true
 
   restore-cursor@5.1.0:
     dependencies:
@@ -7502,6 +7538,7 @@ snapshots:
   semver@7.5.4:
     dependencies:
       lru-cache: 6.0.0
+    optional: true
 
   semver@7.7.4: {}
 
@@ -7542,7 +7579,8 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  source-map@0.6.1: {}
+  source-map@0.6.1:
+    optional: true
 
   space-separated-tokens@2.0.2: {}
 
@@ -7606,7 +7644,8 @@ snapshots:
 
   strip-bom@3.0.0: {}
 
-  strip-json-comments@3.1.1: {}
+  strip-json-comments@3.1.1:
+    optional: true
 
   strip-literal@3.1.0:
     dependencies:
@@ -7623,8 +7662,10 @@ snapshots:
   supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
+    optional: true
 
-  supports-preserve-symlinks-flag@1.0.0: {}
+  supports-preserve-symlinks-flag@1.0.0:
+    optional: true
 
   svg-pathdata@6.0.3:
     optional: true
@@ -7701,13 +7742,14 @@ snapshots:
       '@turbo/windows-64': 2.9.6
       '@turbo/windows-arm64': 2.9.6
 
-  typescript@5.9.3: {}
+  typescript@5.9.3:
+    optional: true
 
   typescript@6.0.3: {}
 
   uc.micro@2.1.0: {}
 
-  ufo@1.6.3: {}
+  ufo@1.6.4: {}
 
   underscore@1.13.8: {}
 
@@ -7740,7 +7782,34 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  universalify@2.0.1: {}
+  universalify@2.0.1:
+    optional: true
+
+  unplugin-dts@1.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)):
+    dependencies:
+      '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
+      '@volar/typescript': 2.4.28
+      compare-versions: 6.1.1
+      debug: 4.4.3
+      kolorist: 1.8.0
+      local-pkg: 1.1.2
+      magic-string: 0.30.21
+      typescript: 6.0.3
+      unplugin: 2.3.11
+    optionalDependencies:
+      '@microsoft/api-extractor': 7.58.1(@types/node@25.6.0)
+      esbuild: 0.27.7
+      rollup: 4.60.1
+      vite: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
+    transitivePeerDependencies:
+      - supports-color
+
+  unplugin@2.3.11:
+    dependencies:
+      '@jridgewell/remapping': 2.3.5
+      acorn: 8.16.0
+      picomatch: 4.0.4
+      webpack-virtual-modules: 0.6.2
 
   util-deprecate@1.0.2: {}
 
@@ -7779,24 +7848,21 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-dts@4.5.4(@types/node@25.6.0)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)):
+  vite-plugin-dts@5.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)):
     dependencies:
-      '@microsoft/api-extractor': 7.58.1(@types/node@25.6.0)
-      '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
-      '@volar/typescript': 2.4.28
-      '@vue/language-core': 2.2.0(typescript@6.0.3)
-      compare-versions: 6.1.1
-      debug: 4.4.3
-      kolorist: 1.8.0
-      local-pkg: 1.1.2
-      magic-string: 0.30.21
-      typescript: 6.0.3
+      unplugin-dts: 1.0.0(@microsoft/api-extractor@7.58.1(@types/node@25.6.0))(esbuild@0.27.7)(rollup@4.60.1)(typescript@6.0.3)(vite@8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3))
     optionalDependencies:
+      '@microsoft/api-extractor': 7.58.1(@types/node@25.6.0)
+      rollup: 4.60.1
       vite: 8.0.10(@types/node@25.6.0)(esbuild@0.27.7)(yaml@2.8.3)
     transitivePeerDependencies:
-      - '@types/node'
-      - rollup
+      - '@rspack/core'
+      - '@vue/language-core'
+      - esbuild
+      - rolldown
       - supports-color
+      - typescript
+      - webpack
 
   vite@5.4.21(@types/node@25.6.0)(lightningcss@1.32.0):
     dependencies:
@@ -7950,6 +8016,8 @@ snapshots:
 
   webidl-conversions@8.0.1: {}
 
+  webpack-virtual-modules@0.6.2: {}
+
   whatwg-mimetype@5.0.0: {}
 
   whatwg-url@16.0.1:
@@ -8018,7 +8086,8 @@ snapshots:
       y-protocols: 1.0.7(yjs@13.6.30)
       yjs: 13.6.30
 
-  yallist@4.0.0: {}
+  yallist@4.0.0:
+    optional: true
 
   yaml@2.8.3: {}
 
