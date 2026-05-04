@@ -20,7 +20,7 @@
     "@verso-editor/core": "workspace:^"
   },
   "devDependencies": {
-    "@vue/test-utils": "^2.4.0",
+    "@vue/test-utils": "^2.4.10",
     "jsdom": "^29.1.0",
     "vite": "^8.0.10",
     "vite-plugin-dts": "^4.5.0",
